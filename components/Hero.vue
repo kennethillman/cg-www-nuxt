@@ -140,7 +140,7 @@
 <style lang="scss">
   .cg-hero {
     display: flex;
-    background: #004A84;
+    background: $blue;
     position: relative;
     justify-content: center;
     align-items: center;

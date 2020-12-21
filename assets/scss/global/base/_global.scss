@@ -1,0 +1,23 @@
+//
+// GLOBAL
+//
+
+html {
+	-webkit-tap-highlight-color: transparent!important;
+}
+
+body {
+	background: $white;
+	overflow-x: hidden;
+
+	&.-menu-open {
+		height: 100vh;
+		overflow: hidden;
+	}
+}
+
+
+
+
+
+

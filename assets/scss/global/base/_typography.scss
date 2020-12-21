@@ -1,0 +1,40 @@
+//
+// TYPOGRAPHY
+//
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  //font-family: $font-cg;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $black;
+  text-align: left;
+}
+
+
+
+/////
+
+// TYPYGRAPHY CLASSES
+
+.-txt-s{
+  font-size: 13px;
+}
+
+.-txt-s {
+  font-size: 13px;
+}
+
+.-txt-m {
+  font-size: 15px;
+}
+
+
+

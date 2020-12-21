@@ -1,0 +1,117 @@
+//
+// HELPER CLASSES
+//
+
+
+body {
+
+
+// - - - COLOR
+
+  // Text
+
+  .-text-black {
+    color: $black;
+  }
+
+  .-text-white {
+    color: $white;
+  }
+
+
+  // Fill
+
+  .-fill-black {
+    fill: $black!important;
+  }
+
+  .-fill-white {
+    fill: $white!important;
+  }
+
+
+// - - - VISIBILITY
+
+  .-hide {
+     display: none!important;
+  }
+
+  .-hide-mobile{
+     display: none!important;
+     @include VP600 {
+      display: block!important;
+     }
+  }
+
+  .-show {
+     display: block!important;
+  }
+
+  .-wip {
+      opacity: .3;
+      filter: grayscale(100%);
+  }
+
+// - - - POSITION
+
+  .-absolute {
+    position: absolute;
+  }
+
+  .-relative {
+    position: relative;
+  }
+
+  .-static {
+    position: static;
+  }
+
+  .-static {
+    position: fixed;
+  }
+
+
+// - - - DISPLAY
+
+  .-inbl {
+    display: inline-block;
+    width: auto;
+  }
+
+  .-bl {
+    display: block;
+  }
+
+  .-fl {
+    display: flex;
+  }
+
+  .-in {
+    display: inline;
+  }
+
+// - - - TEXT
+
+  .-text-center {
+    text-align: center;
+  }
+  .-text-left {
+    text-align: left;
+  }
+  .-text-right {
+    text-align: right;
+  }
+  .-text-uppercase {
+    text-transform: uppercase!important;
+  }
+
+  .-text-decoration-none {
+    text-decoration: none!important;
+  }
+
+
+}
+
+
+
+

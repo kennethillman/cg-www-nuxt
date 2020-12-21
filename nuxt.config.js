@@ -5,22 +5,22 @@ export default {
     title: 'cg-www-nuxt',
     meta: [
       { charset: 'utf-8' },
+      { 'http-equiv':'X-UA-Compatible', content:'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-      rel: 'stylesheet',
+        rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Prata&display=swap'
       }
     ]
   },
 
-
-
-  // Global CSS (https://go.nuxtjs.dev/config-css)
+   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '@/assets/scss/global/index.scss'
   ],
 
 
@@ -34,6 +34,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     '@nuxtjs/prismic',
+    '@nuxtjs/style-resources',
     'nuxt-animejs'
   ],
 
@@ -41,7 +42,13 @@ export default {
     endpoint: 'https://lab-cg-www-nuxt.cdn.prismic.io/api/v2'
   },
 
-  // Add global page transition
+  styleResources: {
+    scss: [
+      '~/assets/scss/component-imports/*.scss'
+    ]
+  },
+
+  // Anime - Add global page transition
   pageTransition: {
     name: 'page',
     mode: 'out-in',
@@ -90,7 +97,6 @@ export default {
     }
 
   },
-
   generate: {
     fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
   }
