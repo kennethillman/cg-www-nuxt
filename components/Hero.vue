@@ -8,7 +8,7 @@
         <template v-if="this.$route.fullPath === '/'">
           <h1 class="header">
             Hi there!
-            <span>We are Common ground</span>
+            <div class="ani-text-fade" v-html="letterSpans('We are Common 12 ground')" ></div>
           </h1>
           <p>
             We transform... {{this.$route.fullPath}}
@@ -18,8 +18,8 @@
         <!-- EXPERTISE -->
         <template v-if="this.$route.fullPath === '/expertise'">
           <h1 class="header">
-            Positive Impact
-            <span>in the bigger picture</span>
+            <div>Positive Impact</div>
+            <div class="ani-text-fade" v-html="letterSpans('in the bigger picture')" ></div>
           </h1>
           <p>
             As a design studio...
@@ -30,7 +30,7 @@
          <template v-if="this.$route.fullPath === '/cases'">
           <h1 class="header">
             Our projects
-            <span>at Common Ground</span>
+            <div class="ani-text-fade" v-html="letterSpans('at Common ground')" ></div>
           </h1>
           <p>
             We work...
@@ -41,7 +41,7 @@
          <template v-if="this.$route.fullPath === '/case'">
           <h1 class="header">
             Boxer.se
-            <span>Redesign</span>
+            <div class="ani-text-fade" v-html="letterSpans('Redesign')" ></div>
           </h1>
           <p>
             Boxer is a...
@@ -78,13 +78,37 @@
           } else {
             this.c ++
           }
-
-          console.log('c -> ' + this.c);
-          this.wave();
+          this.animateWave();
+          this.animateLletters();
         },
       },
       methods: {
-        wave() {
+        letterSpans(text) {
+          return text.replace(/\S/g, '<span class="letter">$&</span>')
+        },
+        animateLletters(){
+          console.log('animateLletters()')
+          const anime = this.$anime
+
+          setTimeout( () => {
+               anime.timeline()
+                .add({
+                  targets: '.ani-text-fade .letter',
+                  translateY: ["1.2em", 0],
+                  translateZ: 0,
+                  duration: 750,
+                  delay: (el, i) => 50 * i
+                }).add({
+                  targets: '.ml6',
+                  opacity: 0,
+                  duration: 1000,
+                  easing: "easeOutExpo",
+                  delay: 1000
+                });
+          }, 30 )
+
+        },
+        animateWave() {
           const anime = this.$anime
 
           const
@@ -132,7 +156,8 @@
         }
       },
       mounted() {
-        this.wave()
+        this.animateWave()
+        this.animateLletters()
       }
     };
 </script>
@@ -242,11 +267,22 @@
       margin: 200px 0 56px;
          position: relative;
           z-index: 2;
-      span {
+
+      .ani-text-fade {
+        position: relative;
         display: block;
+        padding-top: 0.2em;
+        padding-right: 0.05em;
+        padding-bottom: 0.1em;
+        overflow: hidden;
+      }
+      span {
+        display: inline-block;
         color: #FFC9CA;
         font-family: 'Prata', serif;
+        line-height: 1em;
       }
+
     }
   }
 </style>

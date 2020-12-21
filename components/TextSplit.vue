@@ -41,6 +41,7 @@
     color: pink;
     text-transform: uppercase;
     display: inline-block;
+    font-family: $font-cg;
 
     div {
       display: inline-block;
@@ -49,6 +50,7 @@
       left: 0px;
       transform: rotate(90deg) translateY(-86%);
       transform-origin: 0 0;
+      line-height: 1;
     }
 
     &.-text-right {
