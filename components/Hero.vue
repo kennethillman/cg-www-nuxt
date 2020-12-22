@@ -7,8 +7,8 @@
         <!-- HOME -->
         <template v-if="this.$route.fullPath === '/'">
           <h1 class="header">
-            Hi there!
-            <div class="ani-text-fade" v-html="letterSpans('We are Common 12 ground')" ></div>
+            <div class="ani-letters-one" v-html="letterSpans('Hi there!')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('We are Common 12 ground')" ></div>
           </h1>
           <p>
             We transform... {{this.$route.fullPath}}
@@ -18,8 +18,8 @@
         <!-- EXPERTISE -->
         <template v-if="this.$route.fullPath === '/expertise'">
           <h1 class="header">
-            <div>Positive Impact</div>
-            <div class="ani-text-fade" v-html="letterSpans('in the bigger picture')" ></div>
+            <div class="ani-letters-one" v-html="letterSpans('Positiv Impact!')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('in the bigger picture')" ></div>
           </h1>
           <p>
             As a design studio...
@@ -29,8 +29,8 @@
         <!-- CASES -->
          <template v-if="this.$route.fullPath === '/cases'">
           <h1 class="header">
-            Our projects
-            <div class="ani-text-fade" v-html="letterSpans('at Common ground')" ></div>
+            <div class="ani-letters-one" v-html="letterSpans('Our projects!')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('at Common ground')" ></div>
           </h1>
           <p>
             We work...
@@ -40,8 +40,8 @@
         <!-- CASE -->
          <template v-if="this.$route.fullPath === '/case'">
           <h1 class="header">
-            Boxer.se
-            <div class="ani-text-fade" v-html="letterSpans('Redesign')" ></div>
+            <div class="ani-letters-one" v-html="letterSpans('Boxer.se')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('Redesign')" ></div>
           </h1>
           <p>
             Boxer is a...
@@ -79,32 +79,44 @@
             this.c ++
           }
           this.animateWave();
-          this.animateLletters();
+          this.animateLlettersOne();
+          this.animateLlettersTwo();
         },
       },
       methods: {
         letterSpans(text) {
           return text.replace(/\S/g, '<span class="letter">$&</span>')
         },
-        animateLletters(){
-          console.log('animateLletters()')
+        animateLlettersOne(){
+
           const anime = this.$anime
 
           setTimeout( () => {
                anime.timeline()
                 .add({
-                  targets: '.ani-text-fade .letter',
+                  targets: '.ani-letters-one .letter',
+                  // translateY: ["1.2em", 0],
+                  opacity: [0, 1],
+                  //translateZ: 0,
+                  duration: 750,
+                  delay: (el, i) => 50 * i
+                })
+          }, 30 )
+
+        },
+        animateLlettersTwo(){
+
+          const anime = this.$anime
+
+          setTimeout( () => {
+               anime.timeline()
+                .add({
+                  targets: '.ani-letters-two .letter',
                   translateY: ["1.2em", 0],
                   translateZ: 0,
                   duration: 750,
                   delay: (el, i) => 50 * i
-                }).add({
-                  targets: '.ml6',
-                  opacity: 0,
-                  duration: 1000,
-                  easing: "easeOutExpo",
-                  delay: 1000
-                });
+                })
           }, 30 )
 
         },
@@ -157,7 +169,8 @@
       },
       mounted() {
         this.animateWave()
-        this.animateLletters()
+        this.animateLlettersOne()
+        this.animateLlettersTwo()
       }
     };
 </script>
@@ -268,7 +281,8 @@
          position: relative;
           z-index: 2;
 
-      .ani-text-fade {
+      .ani-letters-two,
+      .ani-letters-one  {
         position: relative;
         display: block;
         padding-top: 0.2em;
@@ -276,10 +290,15 @@
         padding-bottom: 0.1em;
         overflow: hidden;
       }
-      span {
+      .ani-letters-two span {
         display: inline-block;
         color: #FFC9CA;
         font-family: 'Prata', serif;
+        line-height: 1em;
+      }
+
+      .ani-letters-one span {
+        display: inline-block;
         line-height: 1em;
       }
 

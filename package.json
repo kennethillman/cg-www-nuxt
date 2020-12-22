@@ -18,6 +18,9 @@
     "@nuxtjs/prismic": "^1.2.4",
     "node-sass": "^5.0.0",
     "nuxt-animejs": "^1.2.1",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.0",
+    "vue-check-view": "^0.3.0",
+    "vue-mq": "^1.0.1",
+    "vue-waypoint": "^3.5.2"
   }
 }
