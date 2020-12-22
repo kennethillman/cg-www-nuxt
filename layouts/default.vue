@@ -1,16 +1,9 @@
 <template>
   <div class="common-ground">
 
-    <!-- NAV -->
-    <div class="cg-nav" @click="toTop()">
-     <nuxt-link :to="'/'">Home</nuxt-link><br>
-   <!--   <nuxt-link :to="'/wave'">Wave</nuxt-link><br> -->
 
-  <!--    <nuxt-link :to="'/case'">Case</nuxt-link><br> -->
-     <nuxt-link :to="'/expertise'" >Expertise</nuxt-link><br>
-     <nuxt-link :to="'/cases'">Cases</nuxt-link><br>
-     <nuxt-link :to="'/case'">Case</nuxt-link>
-    </div>
+    <TheHeader />
+
 
     <div class="cg-container">
 
@@ -39,28 +32,7 @@
   </div>
 </template>
 
-<script>
 
-  export default {
-    methods: {
-      toTop() {
-
-        const anime = this.$anime
-        const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
-
-        anime({
-          targets: scrollElement,
-          scrollTop: 0,
-          duration: 375,
-          easing: 'easeInOutQuad'
-        });
-      }
-    }
-  }
-
-
-
-</script>
 
 <style lang="scss">
   html,

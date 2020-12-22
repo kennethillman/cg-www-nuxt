@@ -230,7 +230,7 @@
     .body {
       padding-bottom: 308px;
       width: 80vw;
-      max-width: 1280px;
+      max-width: 1080px;
     }
     p {
       font-size: 18px;
