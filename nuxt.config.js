@@ -42,7 +42,8 @@ export default {
   ],
 
   prismic: {
-    endpoint: 'https://lab-cg-www-nuxt.cdn.prismic.io/api/v2'
+    endpoint: 'https://lab-cg-www-nuxt.cdn.prismic.io/api/v2',
+    preview: '/preview/' // because we use nuxt generate
   },
 
   styleResources: {
@@ -51,38 +52,38 @@ export default {
     ]
   },
 
-  // Anime - Add global page transition
-  pageTransition: {
-    name: 'page',
-    mode: 'out-in',
-    css: false,
+  // // Anime - Add global page transition
+  // pageTransition: {
+  //   name: 'page',
+  //   mode: 'out-in',
+  //   css: false,
 
-    beforeEnter(el) {
-      this.$anime.set(el, {
-        opacity: 0
-      })
-    },
+  //   beforeEnter(el) {
+  //     this.$anime.set(el, {
+  //       opacity: 0
+  //     })
+  //   },
 
-    enter(el, done) {
-      this.$anime({
-        targets: el,
-        opacity: [0, 1],
-        duration: 500,
-        easing: 'easeInOutSine',
-        complete: done
-      })
-    },
+  //   enter(el, done) {
+  //     this.$anime({
+  //       targets: el,
+  //       opacity: [0, 1],
+  //       duration: 500,
+  //       easing: 'easeInOutSine',
+  //       complete: done
+  //     })
+  //   },
 
-    leave(el, done) {
-      this.$anime({
-        targets: el,
-        opacity: [1, 0],
-        duration: 500,
-        easing: 'easeInOutSine',
-        complete: done
-      })
-    }
-  },
+  //   leave(el, done) {
+  //     this.$anime({
+  //       targets: el,
+  //       opacity: [1, 0],
+  //       duration: 500,
+  //       easing: 'easeInOutSine',
+  //       complete: done
+  //     })
+  //   }
+  // },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

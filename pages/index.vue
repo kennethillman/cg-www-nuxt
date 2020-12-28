@@ -46,15 +46,16 @@
 
 <script type="text/javascript">
   export default {
-      async asyncData({ $prismic, params, error }) {
-        const document = await $prismic.api.getSingle('start')
+    async asyncData({ $prismic, params, error }) {
+          const document = await $prismic.api.getSingle('start')
 
-    if (document) {
-      return { document }
-    } else {
-      error({ statusCode: 404, message: 'Page not found' })
-    }
-  },
+      if (document) {
+        return { document }
+      } else {
+        error({ statusCode: 404, message: 'Page not found' })
+      }
+    },
+    transition: "default",
     methods: {
       viewHandlerScale (e) {
         //console.log(e) // 'enter', 'exit', 'progress'

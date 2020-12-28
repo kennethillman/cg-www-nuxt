@@ -13,8 +13,20 @@ export default function (doc) {
     return '/'
   }
 
-  if (doc.type === 'page') {
-    return '/page/' + doc.uid
+  if (doc.type === 'case') {
+    return '/cases/' + doc.uid
+  }
+
+  if (doc.type === 'hello') {
+    return '/hello'
+  }
+
+  if (doc.type === 'cases') {
+    return '/cases'
+  }
+
+   if (doc.type === 'expertise') {
+    return '/expertise'
   }
 
   return '/not-found'

@@ -5,7 +5,17 @@
 
 export const state = () => ({
 
-  hero: {},
+  theSettings: {},
+  theMenu: {},
+  theFooter: {},
+
+  hero: {
+    header1: 'hero 1',
+    header2: 'hero 2',
+    text: 'hero text'
+  },
+
+  isMenuOpen: false,
 
 
 })
@@ -15,10 +25,27 @@ export const state = () => ({
 
 export const mutations = {
 
+
+  // Singel loads
+  setTheSettings(state, payload) {
+    state.theSettings = payload
+  },
+  setTheMenu(state, payload) {
+    state.theMenu = payload
+  },
+  setTheFooter(state, payload) {
+    state.theFooter = payload
+  },
+
+
+  // Every page uses vuex to store Hero data.
   setHero(state, payload) {
     state.hero = payload
-  }
+  },
 
+  setIsMenuOpen(state, payload) {
+    state.isMenuOpen = payload
+  },
 
 
 }
@@ -28,20 +55,28 @@ export const mutations = {
 
 export const actions = {
 
-  async nuxtServerInit({ commit }, context) {
+  async nuxtServerInit({ commit }) {
 
-    // console.log(context);
+    // Getting the default settings and info from Prismic.io
+    const settings = await this.$prismic.api.getSingle('settings')
+    commit('setTheSettings', settings.data)
 
-    // const apiMerchants = await fetch('https://purspotapi-dev.azurewebsites.net/api/shop/merchants')
-    // .then(response => response.json())
+    // Getting the menu from Prismic.io
+    const menu = await this.$prismic.api.getSingle('menu')
+    commit('setTheMenu', menu.data.menu_links)
 
-    // commit('setMerchantList', apiMerchants)
-    // commit('setAppDefaults', psTempData)
+    // Getting the footer from Prismic.io
+    const footer = await this.$prismic.api.getSingle('footer')
+    commit('setTheFooter', footer.data)
 
   },
 
   setHero(vuexContext, state) {
     vuexContext.commit('setHero', state)
+  },
+
+  setIsMenuOpen(vuexContext, state) {
+    vuexContext.commit('setIsMenuOpen', state)
   }
 
 }
@@ -51,8 +86,21 @@ export const actions = {
 // GETTERS
 
 export const getters = {
+  getTheSettings(state) {
+    return state.theSettings
+  },
+  getTheMenu(state) {
+    return state.theMenu
+  },
+  getTheFooter(state) {
+    return state.theFooter
+  },
   getHero(state) {
     return state.hero
+  },
+
+  getIsMenuOpne(state) {
+    return state.isMenuOpen
   },
 
 

@@ -1,22 +1,22 @@
 <template>
-    <div class="cg-hero" :class="[ '-test-' + this.$route.fullPath,{'-expertise' : this.$route.fullPath === '/expertise','-cases' : this.$route.fullPath === '/cases','-case' : this.$route.fullPath === '/case' }]">
+    <div class="cg-hero" :class="[ '-test-' + this.$route.fullPath,{'-expertise' : this.$route.fullPath === '/expertise','-cases' : this.$route.fullPath === '/cases','-boxer' : this.$route.fullPath === '/cases/boxer' }]">
 
 
       <div  class="body">
 
         <!-- HOME -->
-        <template v-if="this.$route.fullPath === '/'">
+<!--         <template v-if="this.$route.fullPath === '/'">
           <h1 class="header">
             <div class="ani-letters-one" v-html="letterSpans('Hi there!')" ></div>
-            <div class="ani-letters-two" v-html="letterSpans('We are Common 12 ground')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('We are Common ground')" ></div>
           </h1>
           <p>
             We transform... {{this.$route.fullPath}}
           </p>
-        </template>
+        </template> -->
 
         <!-- EXPERTISE -->
-        <template v-if="this.$route.fullPath === '/expertise'">
+<!--         <template v-else-if="this.$route.fullPath === '/expertise'">
           <h1 class="header">
             <div class="ani-letters-one" v-html="letterSpans('Positiv Impact!')" ></div>
             <div class="ani-letters-two" v-html="letterSpans('in the bigger picture')" ></div>
@@ -24,10 +24,10 @@
           <p>
             As a design studio...
           </p>
-        </template>
+        </template> -->
 
         <!-- CASES -->
-         <template v-if="this.$route.fullPath === '/cases'">
+<!--          <template v-else-if="this.$route.fullPath === '/cases'">
           <h1 class="header">
             <div class="ani-letters-one" v-html="letterSpans('Our projects!')" ></div>
             <div class="ani-letters-two" v-html="letterSpans('at Common ground')" ></div>
@@ -35,10 +35,33 @@
           <p>
             We work...
           </p>
-        </template>
+        </template> -->
+
+         <!-- HELLO -->
+<!--          <template v-else-if="this.$route.fullPath === '/hello'">
+          <h1 class="header">
+            <div class="ani-letters-one" v-html="letterSpans('Hello!')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('from Common ground')" ></div>
+          </h1>
+          <p>
+            We work...
+          </p>
+        </template> -->
 
         <!-- CASE -->
-         <template v-if="this.$route.fullPath === '/case'">
+<!--          <template v-else-if="this.$route.fullPath === '/case'">
+          <h1 class="header">
+            <div class="ani-letters-one" v-html="letterSpans('Boxer.se')" ></div>
+            <div class="ani-letters-two" v-html="letterSpans('Redesign')" ></div>
+          </h1>
+          <p>
+            Boxer is a...
+          </p>
+        </template> -->
+
+
+
+        <template v-if="this.$route.fullPath === '/case'">
           <h1 class="header">
             <div class="ani-letters-one" v-html="letterSpans('Boxer.se')" ></div>
             <div class="ani-letters-two" v-html="letterSpans('Redesign')" ></div>
@@ -47,6 +70,20 @@
             Boxer is a...
           </p>
         </template>
+
+        <!-- CASE -->
+         <template v-else>
+          <h1 class="header">
+            <div class="ani-letters-one" v-html="letterSpans(compHero.header1)" ></div>
+            <div class="ani-letters-two" v-html="letterSpans(compHero.header2)" ></div>
+          </h1>
+          <p>
+            Else a...  {{hero.text}} <br><br>
+            {{compHero}}
+          </p>
+        </template>
+
+
 
           <figure>
             <svg class="wave"  viewBox="0 0 1400 300" enable-background="new 0 0 1400 300" xml:space="preserve">
@@ -67,25 +104,37 @@
 
       data() {
         return {
+          hero: this.$store.getters.getHero,
           r: this.$route.fullPath,
           c: 1
         }
       },
-       watch: {
+      watch: {
         $route() {
           if (this.c === 3) {
             this.c = 1;
           } else {
             this.c ++
           }
-          this.animateWave();
+          this.animateCurve();
           this.animateLlettersOne();
           this.animateLlettersTwo();
         },
       },
+      computed: {
+        compHero () {
+          return this.$store.getters.getHero
+        }
+      },
       methods: {
         letterSpans(text) {
-          return text.replace(/\S/g, '<span class="letter">$&</span>')
+          let txt
+          if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+            txt = text;
+          } else {
+            txt = text.replace(/\S/g, '<span class="letter">$&</span>');
+          }
+          return txt
         },
         animateLlettersOne(){
 
@@ -101,7 +150,7 @@
                   duration: 750,
                   delay: (el, i) => 50 * i
                 })
-          }, 30 )
+          }, 275 )
 
         },
         animateLlettersTwo(){
@@ -117,17 +166,17 @@
                   duration: 750,
                   delay: (el, i) => 50 * i
                 })
-          }, 30 )
+          }, 275 )
 
         },
-        animateWave() {
+        animateCurve() {
           const anime = this.$anime
 
           const
-          wave1 = "M-13,68c82-12,90-48,127-48s18,51,193,39s100-37,230-39 s231,59,319,60s215-48,298-47s230-22,256,61s-10,206-10,206H0L-13,68z",
-          wave2 = "M-13,68c82-12,87,20,124,20s17-37,192-49s103,11,233,9 s234-18,322-17s215,37,298,38s228-58,254,25s-10,206-10,206H0L-13,68z",
-          wave3 = "M-13,68c82-12,145,26,182,26s30-66,205-78s94,83,224,81s193-83,281-82s145,69,228,70s281-114,307-31s-14,246-14,246H0L-13,68z",
-          wave4 = "M-13,68c82-12,90-48,127-48s18,51,193,39s100-37,230-39 s231,59,319,60s215-48,298-47s230-22,256,61s-10,206-10,206H0L-13,68z";
+          curv1 = "M-13,68c82-12,90-48,127-48s18,51,193,39s100-37,230-39 s231,59,319,60s215-48,298-47s230-22,256,61s-10,206-10,206H0L-13,68z",
+          curv2 = "M-13,68c82-12,87,20,124,20s17-37,192-49s103,11,233,9 s234-18,322-17s215,37,298,38s228-58,254,25s-10,206-10,206H0L-13,68z",
+          curv3 = "M-13,68c82-12,145,26,182,26s30-66,205-78s94,83,224,81s193-83,281-82s145,69,228,70s281-114,307-31s-14,246-14,246H0L-13,68z",
+          curv4 = "M-13,68c82-12,90-48,127-48s18,51,193,39s100-37,230-39 s231,59,319,60s215-48,298-47s230-22,256,61s-10,206-10,206H0L-13,68z";
 
 
 
@@ -138,7 +187,7 @@
               duration: 3000,
               loop: false,
               d: [
-                { value: wave2 }
+                { value: curv2 }
               ],
             })
           } else if (this.c === 2)  {
@@ -148,7 +197,7 @@
               duration: 3000,
               loop: false,
               d: [
-                { value: wave3 }
+                { value: curv3 }
               ],
             })
           } else  {
@@ -158,7 +207,7 @@
               duration: 3000,
               loop: false,
               d: [
-                { value: wave1 }
+                { value: curv1 }
               ],
             })
           }
@@ -168,7 +217,7 @@
         }
       },
       mounted() {
-        this.animateWave()
+        this.animateCurve()
         this.animateLlettersOne()
         this.animateLlettersTwo()
       }
@@ -212,7 +261,7 @@
         color: black;
       }
     }
-    &.-case{
+    &.-boxer{
       background: lightblue url('https://images.unsplash.com/photo-1552665207-1ba54ee4be5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3840&q=80') no-repeat center center;
       background-size: cover;
 
@@ -229,7 +278,7 @@
     }
     .body {
       padding-bottom: 308px;
-      width: 80vw;
+      width: 90vw;
       max-width: 1080px;
     }
     p {
@@ -275,11 +324,16 @@
       opacity: 1;
       transition: all .5s ease;
       color: #fff;
-      font-size: 80px;
-      line-height: 96px;
+      font-size: 56px;
+      line-height: 67px;
       margin: 200px 0 56px;
          position: relative;
           z-index: 2;
+
+      @include VP1280 {
+        font-size: 80px;
+      line-height: 96px;
+      }
 
       .ani-letters-two,
       .ani-letters-one  {

@@ -2,7 +2,7 @@
   <div class="cg-page">
     <div class="cg-content" style="height: 200vh">
 
-        <prismic-rich-text :field="document.data.header" />
+        <prismic-rich-text :field="cases.data.header" />
 
     </div>
   </div>
@@ -14,12 +14,10 @@
 
   export default {
     async asyncData({ $prismic, params, error }) {
-      const document = await $prismic.api.getSingle('expertise')
+      const cases = await $prismic.api.getSingle('cases')
 
-      console.log('async -> ' , document.data)
-
-      if (document) {
-        return { document }
+      if (cases) {
+        return { cases }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }
