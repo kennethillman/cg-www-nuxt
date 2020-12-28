@@ -26,7 +26,7 @@ export default {
       this.$store.dispatch('setHero', newHero)
     }
   },
-  created () {
+  mounted () {
     this.setHero()
   }
 
