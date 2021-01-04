@@ -1,5 +1,5 @@
 <template>
-  <div class="common-ground">
+  <div class="common-ground" :class="[this.$store.getters.getClassAnimation]">
 
 
     <TheHeader />
@@ -32,7 +32,35 @@
   </div>
 </template>
 
+<script type="text/javascript">
+   export default {
 
+      data() {
+        return {
+          hero: this.$store.getters.getHero,
+          r: this.$route.fullPath,
+          c: 1,
+          hideHeader: false,
+        }
+      },
+      watch: {
+        classAnimation (){
+        },
+        $route() {
+
+        },
+      },
+      computed: {
+
+      },
+      methods: {
+
+      },
+      mounted() {
+
+      }
+    };
+</script>
 
 <style lang="scss">
   html,
@@ -88,11 +116,4 @@
       width: 100vw;
     }
   }
-
-
-
-
-
-
-
 </style>

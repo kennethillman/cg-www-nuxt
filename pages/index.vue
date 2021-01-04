@@ -46,16 +46,45 @@
 
 <script type="text/javascript">
   export default {
-    async asyncData({ $prismic, params, error }) {
-          const document = await $prismic.api.getSingle('start')
+    async asyncData({ $prismic, store, params, error }) {
+      const document = await $prismic.api.getSingle('start')
+
+      store.dispatch('setHero', false)
+      console.log('- - - Index async -->' , store.getters.getHero)
 
       if (document) {
+
+
+        if (document.data.body) {
+          document.data.body.forEach( (el) => {
+
+            if (el.slice_type === 'test'){
+
+                let newHero = {
+                    h1: el.primary.header1[0].text,
+                    h2: el.primary.header2[0].text,
+                    txt: el.primary.text1[0].text,
+                    color: null,
+                    image: null,
+                    svg: null,
+                    pattern: null
+                  }
+
+                store.dispatch('setHero', newHero)
+                console.log('- - - Index async -->' , store.getters.getHero)
+
+
+
+
+            }
+          })
+        }
+
         return { document }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }
     },
-    transition: "default",
     methods: {
       viewHandlerScale (e) {
         //console.log(e) // 'enter', 'exit', 'progress'
@@ -157,10 +186,10 @@
 
     },
     mounted() {
-
+      console.log('index mounted')
     },
     created () {
-
+      console.log('index created')
     },
     destroyed () {
 

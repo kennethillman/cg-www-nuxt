@@ -52,40 +52,64 @@ export default {
     ]
   },
 
-  // // Anime - Add global page transition
-  // pageTransition: {
-  //   name: 'page',
-  //   mode: 'out-in',
-  //   css: false,
+  // Anime - Add global page transition
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
 
-  //   beforeEnter(el) {
-  //     this.$anime.set(el, {
-  //       opacity: 0
-  //     })
-  //   },
+    // --- ENTER ---
+    beforeEnter(el) {
+       //console.log('before-enter')
+      this.$anime.set(el, {
+        opacity: 0
+      })
+      this.$store.dispatch('setClassAnimation', '-tran-before-enter')
+    },
 
-  //   enter(el, done) {
-  //     this.$anime({
-  //       targets: el,
-  //       opacity: [0, 1],
-  //       duration: 500,
-  //       easing: 'easeInOutSine',
-  //       complete: done
-  //     })
-  //   },
+    enter(el, done) {
+      //console.log('enter')
+      this.$store.dispatch('setClassAnimation', '-tran-enter')
+      this.$anime({
+        targets: el,
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'easeInOutSine',
+        complete: done
+      })
+    },
 
-  //   leave(el, done) {
-  //     this.$anime({
-  //       targets: el,
-  //       opacity: [1, 0],
-  //       duration: 500,
-  //       easing: 'easeInOutSine',
-  //       complete: done
-  //     })
-  //   }
-  // },
+    afterEnter(el, done) {
+      //console.log('after-enter')
+      this.$store.dispatch('setClassAnimation', '-tran-after-enter')
+    },
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
+    // --- LEAVE ---
+    beforeLeave(el, done) {
+      //console.log('before-leave')
+      this.$store.dispatch('setClassAnimation', '-tran-before-leave')
+    },
+
+    leave(el, done) {
+
+      // console.log('leave')
+      this.$store.dispatch('setClassAnimation', '-tran-leave')
+
+      this.$anime({
+        targets: el,
+        opacity: [1, 0],
+        duration: 500,
+        easing: 'easeInOutSine',
+        complete: done
+      })
+    },
+    afterLeave(el, done) {
+      // console.log('after-leave')
+      this.$store.dispatch('setClassAnimation', '')
+    },
+  },
+
+  // Modules (htts://go.nuxtjs.dev/config-modules)
   modules: [
   ],
 
