@@ -2,7 +2,7 @@
   <div class="cg-page">
     <div class="cg-content" style="height: 200vh">
 
-        <prismic-rich-text :field="cases.data.header" />
+        <prismic-rich-text :field="document.data.header" />
 
     </div>
   </div>
@@ -13,11 +13,22 @@
 <script>
 
   export default {
-    async asyncData({ $prismic, params, error }) {
-      const cases = await $prismic.api.getSingle('cases')
+    async asyncData({ $prismic, store, params, error }) {
+      const document = await $prismic.api.getSingle('cases')
 
-      if (cases) {
-        return { cases }
+      if (document) {
+          if (document.data.body) {
+          document.data.body.forEach( (el) => {
+
+            if (el.slice_type === 'cg-hero'){
+              let newHero = el.primary
+              store.dispatch('setHero', newHero)
+              //console.log('hello -> ' , newHero)
+            }
+
+          })
+        }
+        return { document }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }

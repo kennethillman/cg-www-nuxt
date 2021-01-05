@@ -11,15 +11,7 @@ export const state = () => ({
   theMenu: {},
   theFooter: {},
 
-  hero: {
-    h1: 'Default Header 1 store',
-    h2: 'Default Header 2 store',
-    txt: 'Text 1 from store',
-    color: null,
-    image: null,
-    svg: null,
-    pattern: null
-  },
+  hero: false,
   heroShow: true,
   heros: {},
 

@@ -6,8 +6,6 @@
 
         <slices :slices="slices" />
 
-
-
     </div>
   </div>
 </template>
@@ -18,28 +16,19 @@
 
   export default {
     async asyncData({ $prismic, store, params, error }) {
+
       const document = await $prismic.api.getSingle('hello')
 
       if (document) {
-
         if (document.data.body) {
           document.data.body.forEach( (el) => {
 
-            if (el.slice_type === 'test'){
-
-              let newHero = {
-                h1: el.primary.header1[0].text,
-                h2: el.primary.header2[0].text,
-                txt: el.primary.text1[0].text,
-                color: null,
-                image: null,
-                svg: null,
-                pattern: null
-              }
-
+            if (el.slice_type === 'cg-hero'){
+              let newHero = el.primary
               store.dispatch('setHero', newHero)
-
+              //console.log('hello -> ' , newHero)
             }
+
           })
         }
         return { doc: document.data, slices: document.data.body }

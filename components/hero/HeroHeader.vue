@@ -1,17 +1,27 @@
 <template>
-    <div class="cg-header-animated" :class="{'-ghost' : hideHeader}">
+    <div class="cg-hero-header" :class="{'-ghost' : hideHeader}" >
 
         <h1 class="the-header">
-          <div class="ani-letters-one" v-if="header1" v-html="addLetterSpans(header1)" ></div>
-          <div class="ani-letters-two" v-if="header2" v-html="addLetterSpans(header2)" ></div>
-        </h1>
 
+          <div class="ani-letters-one"
+            v-if="text.header1[0].text"
+            v-html="addLetterSpans(text.header1[0].text)"
+            :style="[text.header_1_color ? {'color': text.header_1_color} : {'color': '#fff'}]">
+          </div>
+
+          <div class="ani-letters-two"
+            v-if="text.header2[0].text"
+            v-html="addLetterSpans(text.header2[0].text)"
+            :style="[text.header_2_color ? {'color': text.header_2_color} : {'color': '#fff'}]">
+          </div>
+
+        </h1>
     </div>
 </template>
 
 <script type="text/javascript">
    export default {
-      props: ['header1', 'header2'],
+      props: ['text'],
       data() {
         return {
           hideHeader: true,
@@ -26,7 +36,8 @@
             txt = text.replace(/\S/g, '<span class="letter">$&</span>');
           }
 
-          this.hideHeader = false;
+
+
           return txt
         },
         animateHeaderOne(){
@@ -42,6 +53,8 @@
               duration: 750,
               delay: (el, i) => 50 * i
             })
+
+            this.animateHeaderTwo()
 
         },
         animateHeaderTwo(){
@@ -61,8 +74,13 @@
       },
       mounted() {
 
+        setTimeout(() => {
+          this.hideHeader = false
           this.animateHeaderOne()
           this.animateHeaderTwo()
+         }, 30)
+
+
 
 
       }
@@ -71,7 +89,7 @@
 
 <style lang="scss">
 
-  .cg-header-animated {
+  .cg-hero-header {
 
     &.-ghost {
       opacity: 0;
@@ -107,7 +125,6 @@
 
       .ani-letters-two span {
         display: inline-block;
-        color: #FFC9CA;
         font-family: 'Prata', serif;
         line-height: 1em;
       }
