@@ -17,16 +17,24 @@ export default function (doc) {
     return '/cases/' + doc.uid
   }
 
-  if (doc.type === 'hello') {
-    return '/hello'
-  }
-
   if (doc.type === 'cases') {
     return '/cases'
   }
 
-   if (doc.type === 'expertise') {
+  if (doc.type === 'hello') {
+    return '/hello'
+  }
+
+  if (doc.type === 'expertise') {
     return '/expertise'
+  }
+
+  if (doc.type === 'play') {
+    return '/playground/' + doc.uid
+  }
+
+  if (doc.type === 'playground') {
+    return '/playground'
   }
 
   return '/not-found'

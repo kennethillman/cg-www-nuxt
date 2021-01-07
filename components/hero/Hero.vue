@@ -1,7 +1,7 @@
 <template>
   <div class="cg-hero"
     v-if="compHero"
-    :class="[]"
+    :class="[{'-curtain' : compHero.curtain === 'yes', '-play' : compHero.background_color === '#000000'}]"
     :style="[compHero.background_color ? {'background': compHero.background_color} : {'background': '#004A84'}]"
   >
 
@@ -71,14 +71,28 @@
       max-width: 1080px;
     }
 
+    &.-curtain {
+      figure {
+        transform: translateY(0);
+      }
+    }
 
+    // &.-play {
+    //   figure {
+    //     &:after {
+    //       background: #000;
+    //     }
+    //     svg {
+    //       fill: #000;
+    //     }
+    //   }
+    // }
 
     figure {
       position: absolute;
       bottom: 308px;
       left: 0;
       width: 100vw;
-
       transition: all .5s ease;
       height: 100%;
       transform: translateY(100%);
@@ -92,14 +106,21 @@
           background: #fff;
           position: absolute;
           z-index: 1;
+          transition: all 1s ease;
         }
 
         svg {
+          transition: fill 1s ease;
           fill: #fff;
           width: 110vw;
           transform: translate(-5vw , 40%);
         }
       }
+
+
+
+
+
   }
 </style>
 
