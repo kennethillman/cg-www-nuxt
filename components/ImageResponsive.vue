@@ -25,7 +25,7 @@
   export default {
     props:{
       image: {
-        type: String
+        type: Object
       }
     },
   }
