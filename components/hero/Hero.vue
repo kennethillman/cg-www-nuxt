@@ -1,11 +1,14 @@
 <template>
   <div class="cg-hero"
     v-if="compHero"
-    :class="[{'-curtain' : compHero.curtain === 'yes', '-play' : compHero.background_color === '#000000'}]"
+    :class="[{
+              '-curtain' : compHero.curtain === 'yes',
+              '-play' : compHero.background_color === '#000000'
+            }]"
     :style="[compHero.background_color ? {'background': compHero.background_color} : {'background': '#004A84'}]"
   >
 
-      <div class="body">
+      <div class="hero-body">
 
         <!-- HEADERS -->
         <HeroHeader :text="compHero" :key="rerender" />
@@ -13,19 +16,21 @@
         <!-- TEXT -->
         <HeroText :hero="compHero" :key="rerender + 1" />
 
-        <!-- CURVE -->
-        <HeroCurveBottom />
-
-        <!-- ZEBRA -->
-        <HeroZebra :hero="compHero"/>
-
         <!-- SVG -->
-        <HeroSvg v-if="compHero.svg_graphic !== 'none' "/>
+        <HeroSvg :graphic="compHero.svg_graphic"  v-if="compHero.svg_graphic !== 'none' "/>
 
-        <!-- IMAGE -->
-        <HeroImage v-if="compHero.background_image.url"/>
+
 
       </div>
+
+      <!-- IMAGE -->
+      <HeroImage v-if="compHero.background_image.url"/>
+
+      <!-- ZEBRA -->
+      <HeroZebra :hero="compHero"/>
+
+      <!-- CURVE -->
+      <HeroCurveBottom />
 
   </div>
 </template>
@@ -64,11 +69,16 @@
     align-items: center;
     transition: all 1s ease;
     overflow: hidden;
+    height: 80vh;
+    max-height: 1040px;
 
-    .body {
-      padding-bottom: 308px;
+    .hero-body {
+      position: relative;
+      padding-bottom: 112px;
       width: 90vw;
-      max-width: 1080px;
+      max-width: 1040px;
+
+
     }
 
     &.-curtain {

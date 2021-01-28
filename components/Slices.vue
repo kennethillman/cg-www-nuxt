@@ -3,9 +3,9 @@
 
         <section v-for="(slice, index) in slices" :key="'slice-' + index">
 
-            <!-- Test -->
-            <template v-if="slice.slice_type === 'test'">
-               <slice-test :slice="slice"/>
+            <!-- cg-featured-project -->
+            <template v-if="slice.slice_type === 'cg-featured-project'">
+                <cg-featured-project :slice="slice"/>
             </template>
 
             <!-- Test name -->

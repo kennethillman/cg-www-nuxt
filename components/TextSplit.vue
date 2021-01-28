@@ -33,10 +33,10 @@
 
 <style lang="scss">
 
-  .cg-text-split {
+.cg-text-split {
 
     position: relative;
-    font-size: 144px;
+    font-size: 64px;
     line-height: 1;
     color: pink;
     text-transform: uppercase;
@@ -55,15 +55,26 @@
 
     &.-text-right {
       div {
+      left: auto;
+      right: -0px;
+      transform: rotate(90deg) translateX(100%);
+      transform-origin: top right;
+      }
+    }
 
-        left: auto;
-        right: -18px;
-        transform: rotate(90deg) translateX(100%);
-        transform-origin: top right;
+
+    @media only screen and (min-width: 1280px) {
+      font-size: 144px;
+
+      &.-text-right {
+        div {
+
+          right: -18px;
 
       }
     }
 
   }
 
+}
 </style>

@@ -17,6 +17,29 @@ body {
 }
 
 
+// Links
+
+a {
+  color: var(--ps-link);
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(108%);
+  }
+
+  &:active{
+    cursor: pointer;
+    filter: brightness(92%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+
 
 
 

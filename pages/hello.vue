@@ -3,7 +3,6 @@
     <div class="cg-content" style="height: 200vh">
 
         <prismic-rich-text :field="doc.header" />
-
         <slices :slices="slices" />
 
     </div>
@@ -21,7 +20,7 @@
 
       if (document) {
         if (document.data.body) {
-          document.data.body.forEach( (el) => {
+            document.data.body.forEach( (el) => {
 
             if (el.slice_type === 'cg-hero'){
               let newHero = el.primary

@@ -1,12 +1,9 @@
 <template>
   <div class="common-ground" :class="[this.$store.getters.getClassAnimation]">
 
-
     <TheHeader />
 
-
     <div class="cg-container">
-
 
     <Hero />
 
@@ -39,8 +36,8 @@
         return {
           hero: this.$store.getters.getHero,
           r: this.$route.fullPath,
-          c: 1,
           hideHeader: false,
+          hero: this.$store.getters.getHero,
         }
       },
       watch: {
@@ -57,7 +54,11 @@
 
       },
       mounted() {
-
+        if (!this.$store.getters.getClassAnimation) {
+          setTimeout(() => {
+            this.$store.dispatch('setClassAnimation', '-tran-enter')
+          }, 250)
+        }
       }
     };
 </script>

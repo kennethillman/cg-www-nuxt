@@ -7,17 +7,18 @@
 // COLORS
 ////////////////////
 
-$pink: #FFC9CA;
-$blue: #004A84;
-$lime: #E6FF00;
-$turqouise: #F4FCFF;
-$yellow: #EEF16B;
-$red: #FE5311;
+$pink:      #FFC9CA!default;
+$blue:      #004A84!default;
+$lime:      #E6FF00!default;
+$turquoise: #F4FCFF!default!default;
+$yellow:    #EEF16B!default;
+$red:       #FE5311!default;
 
 $gradient: linear-gradient(180deg, #F4FCFF 0%, #F7FFF4 49.48%, #FCF4FF 100%);;
 
-$black: 	 #000 !default;;
+$black: 	 #000 !default;
 $white:    #fff !default;
+
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;

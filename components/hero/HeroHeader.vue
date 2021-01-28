@@ -104,7 +104,7 @@
       color: #fff;
       font-size: 56px;
       line-height: 67px;
-      margin: 200px 0 56px;
+      margin: 56px 0 56px;
       position: relative;
       z-index: 2;
 

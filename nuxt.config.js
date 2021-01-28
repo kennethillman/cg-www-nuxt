@@ -64,7 +64,7 @@ export default {
       this.$anime.set(el, {
         opacity: 0
       })
-      this.$store.dispatch('setClassAnimation', '-tran-before-enter')
+      this.$store.dispatch('setClassAnimation', '-tran-before-enter -tran-enter')
     },
 
     enter(el, done) {
@@ -81,13 +81,13 @@ export default {
 
     afterEnter(el, done) {
       //console.log('after-enter')
-      this.$store.dispatch('setClassAnimation', '-tran-after-enter')
+      this.$store.dispatch('setClassAnimation', '-tran-after-enter -tran-enter')
     },
 
     // --- LEAVE ---
     beforeLeave(el, done) {
       //console.log('before-leave')
-      this.$store.dispatch('setClassAnimation', '-tran-before-leave')
+      this.$store.dispatch('setClassAnimation', '-tran-before-leave -tran-leave')
     },
 
     leave(el, done) {

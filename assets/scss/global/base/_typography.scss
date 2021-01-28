@@ -20,6 +20,23 @@ body {
 
 
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6  {
+    font-family: $font-cg;
+    color: $black;
+    display: block;
+    margin: 0 0 .44em;
+    word-break: break-word;
+    line-height: 1.1;
+  }
+
+
+
+
 /////
 
 // TYPYGRAPHY CLASSES

@@ -119,7 +119,7 @@
     height: 100%;
     opacity: 0;
     transition: opacity .5s ease-in-out;
-    z-index: 1;
+    z-index: 0;
     &.-show-zebra {
       opacity: 1;
     }

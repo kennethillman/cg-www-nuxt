@@ -1,6 +1,6 @@
 //
 // MIXINS
-// 
+//
 
 /////////////////////////////////////////////////////////////////////////
 // CLEARFIX
@@ -19,4 +19,31 @@
     &:after {
         clear: both;
     }
+}
+
+/////////////////////////////////////////////////////////////////////////
+// ASPECT-RATIO-IMG
+// -> @include aspect-ratio-picture(16,9)
+/////////////////////////////////////////////////////////////////////////
+
+@mixin aspect-ratio-picture($width, $height) {
+    position: relative;
+   // overflow: hidden;
+    display: block;
+
+    &:before {
+        display: block;
+        content: " ";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    picture {
+        position: absolute;
+        //top: 50%;
+        //left: 50%;
+       // bottom: 0;
+       //transform: translate(-50%,-50%);
+    }
+
 }

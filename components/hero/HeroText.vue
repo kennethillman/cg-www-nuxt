@@ -30,7 +30,7 @@
     opacity: 0;
     font-size: 18px;
     line-height: 32px;
-    width: 54%;
+    width: 100%;
     margin-bottom: 60px;
     color: #fff ;
     font-family: 'Prata', serif;

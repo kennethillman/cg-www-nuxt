@@ -18,15 +18,65 @@ body {
     color: $white;
   }
 
+  .-text-pink {
+    color: $pink;
+  }
+
+  .-text-blue {
+    color: $blue;
+  }
+
+  .-text-lime {
+    color: $lime;
+  }
+
+  .-text-turquoise {
+    color: $turquoise;
+  }
+
+  .-text-yellow {
+    color: $yellow;
+  }
+
+  .-text-red {
+    color: $red;
+  }
+
+
+
 
   // Fill
 
   .-fill-black {
-    fill: $black!important;
+    fill: $black;
   }
 
   .-fill-white {
-    fill: $white!important;
+    fill: $white;
+  }
+
+  .-fill-pink {
+    fill: $pink;
+  }
+
+  .-fill-blue {
+    fill: $blue;
+  }
+
+  .-fill-lime {
+    fill: $lime;
+  }
+
+  .-fill-turquoise {
+    fill: $turquoise;
+  }
+
+  .-fill-yellow {
+    fill: $yellow;
+  }
+
+  .-fill-red {
+    fill: $red;
   }
 
 
