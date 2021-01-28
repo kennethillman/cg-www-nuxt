@@ -56,7 +56,7 @@
     &.-text-right {
       div {
       left: auto;
-      right: -0px;
+      right: 3px;
       transform: rotate(90deg) translateX(100%);
       transform-origin: top right;
       }
@@ -69,7 +69,7 @@
       &.-text-right {
         div {
 
-          right: -18px;
+          right: 5px;
 
       }
     }

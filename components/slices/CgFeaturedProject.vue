@@ -217,9 +217,9 @@ export default {
         width: 53%;
       }
       &.right {
-        padding-top: 64px;
+        padding-top: 40px;
         width: 40%;
-        margin: 0 0 0 5%;
+        margin: 0 0 0 7%;
       }
     }
     figure {
