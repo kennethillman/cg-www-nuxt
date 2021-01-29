@@ -87,7 +87,7 @@ export default {
   }
 
   .cg-client-circle {
-    height: 120%;
+    width: 50%;
     max-height: 640px;
     max-width: 640px;
     position: absolute;
