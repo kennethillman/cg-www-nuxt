@@ -83,9 +83,9 @@
   }
 
   .cg-page {
-    background: #fff;
+    background: $gradient;
     flex: 1;
-    padding: 0 0 128px;
+    padding: 0 0 24px;
   }
 
   .cg-nav {
@@ -109,6 +109,7 @@
   .cg-footer {
     height: 400px;
     position: relative;
+    // background-color: #FCF4FF
     .bcg-blob {
       position: absolute;
       bottom: 0;

@@ -1,0 +1,111 @@
+//
+// BUTTONS
+//
+
+
+
+
+// BUTTON
+// (i) -> <a>, <button>, <div> etc.
+
+.cg-btn {
+  font-family: $font-cg-2;
+  display: inline-block;
+  color: $white;
+  background-color: $black;
+  border: 3px solid $black;
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+  padding: 24px 48px;
+  overflow: hidden;
+  border-radius: 999px;
+  min-width: 240px;
+
+  font-weight: bold;
+  position: relative;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(108%);
+  }
+
+  &:active{
+    cursor: pointer;
+    filter: brightness(92%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+
+  svg {
+    position: absolute;
+    fill: $white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 58%;
+    width: 58%;
+    max-width: 40px;
+  }
+
+
+  // DISABLED
+
+  &.-disabled {
+    background-color: $gray-300;
+    border-color: $gray-300;
+    &:hover,
+    &:active{
+      cursor: default;
+      background-color: $gray-300;
+      border-color: $gray-300;
+      filter: none;
+    }
+  }
+
+
+
+
+
+  // SIZES
+
+  &.-small {
+    padding-top: 6px;
+    height: 32px;
+    font-size: 15px;
+    max-width: 226px;
+  }
+
+  &.-xsmall {
+    padding-top: 4px;
+    height: 26px;
+    font-size: 14px;
+    max-width: 226px;
+  }
+
+
+  // GHOST
+  // (i) -> Transparent button with borders
+  // (!!)-> Use carefully with skins, som link colors may not have contrast.
+
+  &.-ghost {
+    background-color: transparent;
+    color: $black;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+
+  }
+
+
+
+
+}

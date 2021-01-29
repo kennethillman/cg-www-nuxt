@@ -26,6 +26,72 @@
 
 
 
+// 768
+
+  @media only screen and (min-width: 768px) {
+
+
+    [class*='-animate-']{
+      transition: all 1s ease-out;
+      transition-delay: .2s;
+      &.-delay-one {
+        transition-delay: 1s;
+      }
+      &.-delay-two {
+        transition-delay: 1.2s;
+      }
+      &.-delay-three {
+        transition-delay: 1.4s;
+      }
+      &.-delay-four {
+        transition-delay: 1.6s;
+      }
+      &.-delay-five {
+        transition-delay: 1.8s;
+      }
+      &.-delay-six{
+        transition-delay: 2s;
+      }
+      &.-delay-seven {
+        transition-delay: 2.2s;
+      }
+    }
+
+    .-animate {
+      opacity: 1;
+    }
+
+
+    // FADE IN
+    .-animate-fade-in {
+      opacity: 0;
+      &.-animate {
+        opacity: 1;
+      }
+    }
+
+    // FADE IN UP
+    .-animate-fade-in-up {
+      opacity: 0;
+      transform: translateY(50px);
+      &.-animate {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
 
 
 

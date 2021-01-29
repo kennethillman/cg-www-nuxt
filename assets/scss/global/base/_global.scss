@@ -21,7 +21,7 @@ body {
 
 a {
   color: var(--ps-link);
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent!important;
 
   &:hover {
     cursor: pointer;
@@ -38,6 +38,8 @@ a {
   }
 
 }
+
+
 
 
 

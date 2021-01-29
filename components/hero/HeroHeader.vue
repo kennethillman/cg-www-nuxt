@@ -64,7 +64,7 @@
           anime.timeline()
             .add({
               targets: '.ani-letters-two .letter',
-              translateY: ["1.2em", 0],
+              translateY: ["1.4em", 0],
               translateZ: 0,
               duration: 750,
               delay: (el, i) => 50 * i
@@ -117,7 +117,7 @@
       .ani-letters-one  {
         position: relative;
         display: block;
-        padding-top: 0.2em;
+        padding-top: 0;
         padding-right: 0.05em;
         padding-bottom: 0.1em;
         overflow: hidden;
@@ -125,12 +125,14 @@
 
       .ani-letters-two span {
         display: inline-block;
-        font-family: 'Prata', serif;
+        font-family: $font-cg;
         line-height: 1em;
       }
 
       .ani-letters-one span {
         display: inline-block;
+        font-family: $font-cg-2;
+        font-weight: 800;
         line-height: 1em;
       }
 

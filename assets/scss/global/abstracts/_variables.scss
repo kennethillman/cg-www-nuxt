@@ -14,7 +14,7 @@ $turquoise: #F4FCFF!default!default;
 $yellow:    #EEF16B!default;
 $red:       #FE5311!default;
 
-$gradient: linear-gradient(180deg, #F4FCFF 0%, #F7FFF4 49.48%, #FCF4FF 100%);;
+$gradient: linear-gradient(180deg, #fff 0% ,#fff 20% , #F7FFF4 50%, #FCF4FF 100%);
 
 $black: 	 #000 !default;
 $white:    #fff !default;
@@ -35,6 +35,7 @@ $gray-900: #212529 !default;
 
 // SPECIFIC NAMES
 $font-cg: 'Prata', serif;
+$font-cg-2: 'Raleway', sans-serif;
 $font-system: "-apple-system", BlinkMacSystemFont, "Apple Color Emoji", “Segoe UI”, Roboto, “Helvetica Neue”, Helvetica, Arial, sans-serif;
 
 // GENERAL NAMES

@@ -5,35 +5,40 @@
       <div class="featured-content left">
 
         <TextSplit
+          v-waypoint="{ active: true, callback: fadeTrigger }"
+          class="-animate-fade-in-up"
           :text="slice.primary.text_split[0].text"
           :split="slice.primary.text_split_at"
           :class="['-text-'+slice.primary.split_text_color, {'-text-right' : slice.primary.direction == 'right'}]"
         />
 
-        <figure>
+        <figure v-waypoint="{ active: true, callback: fadeTrigger }" class="-animate-fade-in-up">
           <ImageResponsive class="featured-browser" :image="slice.primary.image_browser" />
           <ImageResponsive class="featured-mobile"  :image="slice.primary.image_mobile" />
         </figure>
 
       </div>
 
-      <div class="featured-content right">
+      <div class="featured-content right" >
 
         <h2
+           v-waypoint="{ active: true, callback: fadeTrigger }"
            v-if="slice.primary.text_header[0].text !== ''"
-           class="featured-header"
+           class="featured-header -animate-fade-in-up"
         >{{slice.primary.text_header[0].text}}</h2>
 
         <prismic-rich-text
+          v-waypoint="{ active: true, callback: fadeTrigger }"
           v-if="slice.primary.text[0].text !== ''"
-          class="featured-text"
+          class="featured-text -animate-fade-in-up"
           :field="slice.primary.text"
         />
 
         <prismic-link
+          v-waypoint="{ active: true, callback: fadeTrigger }"
           v-if="slice.primary.link_text[0].text !== ''"
           :field="slice.primary.link"
-          class="featured-link"
+          class="featured-link -animate-fade-in-up"
         >
             {{slice.primary.link_text[0].text}}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
@@ -49,7 +54,16 @@
 <script>
 export default {
   props: ['slice'],
-  name: 'slice-test'
+  name: 'slice-featured-project',
+  methods: {
+    fadeTrigger ({ el, going, direction }) {
+
+    if (this.$waypointMap.GOING_IN === going) {
+      el.classList.add('-animate')
+    }
+
+    },
+  }
 
 }
 </script>
@@ -58,7 +72,7 @@ export default {
 
 .cg-featured-project {
 
-  padding: 24px 0 0;
+  padding: 50px 0 0;
   min-width: 300px;
 
 
@@ -209,6 +223,8 @@ export default {
 
   @media only screen and (min-width: 768px) {
 
+     padding: 100px 0 0;
+
     .site-content-width {
       display: flex;
     }
@@ -242,9 +258,6 @@ export default {
         margin-right: 50px;
       }
     }
-
-
-
 
   }
 
