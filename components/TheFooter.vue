@@ -110,132 +110,97 @@
 
 <style lang="scss">
 
-  .cg-the-footer {
+.cg-the-footer {
+  height: 400px;
+  position: relative;
+  color: $white;
+  padding: 80px 0 0;
+
+
+  .bg-blob {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
     height: 400px;
-    position: relative;
+    width: 100vw;
+  }
+
+  .footer-header {
+    margin: 0 0 32px;
+    font-size: 32px;
+    font-family: $font-cg-2;
+    line-height: 1.1;
     color: $white;
-    padding: 80px 0 0;
+    text-align: center;
+  }
 
-
-    .bg-blob {
-      position: absolute;
-      bottom: 0;
-      z-index: -1;
-      height: 400px;
-      width: 100vw;
+  .footer-text {
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+    font-family: $font-cg;
+    p {
+      margin-bottom: 0;
     }
+    a {
+      white-space: nowrap;
+    }
+  }
+
+
+  // Logo
+
+  .cg-logo {
+    display: block;
+    width: 90px;
+    margin: 22px auto 0;
+    position: relative;
+
+  }
+  .cg-the-logo {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  .cg-blob-yellow,
+  .cg-blob-pink {
+    width: 100%;
+    position: absolute;
+    top: 54%;
+    transform: translateY(-54%);
+  }
+  .cg-blob-yellow {
+
+    z-index: 2;
+    left: 26%;
+
+  }
+  .cg-blob-pink {
+    z-index: 1;
+    right: 26%;
+  }
+
+
+// 768
+
+  @media only screen and (min-width: 768px) {
+    padding: 100px 0 0;
 
     .footer-header {
-      margin: 0 0 32px;
       font-size: 40px;
-      font-family: $font-cg-2;
-      line-height: 1.1;
-      color: $white;
-      text-align: center;
-    }
-
-    .footer-text {
-      max-width: 620px;
-      margin: 0 auto 32px;
-      font-size: 18px;
-      line-height: 1.8;
-      text-align: center;
-      font-family: $font-cg;
-      p {
-        margin-bottom: 0;
-      }
-      a {
-        white-space: nowrap;
-      }
-    }
-
-
-    // Logo
-
-    .cg-logo {
-      display: block;
-      width: 90px;
-      margin: 22px auto 0;
-      position: relative;
-
-    }
-    .cg-the-logo {
-      width: 100%;
-      position: relative;
-      z-index: 3;
-    }
-
-    .cg-blob-yellow,
-    .cg-blob-pink {
-      width: 100%;
-      position: absolute;
-      top: 54%;
-      transform: translateY(-54%);
-    }
-    .cg-blob-yellow {
-
-      z-index: 2;
-      left: 26%;
-
-    }
-    .cg-blob-pink {
-      z-index: 1;
-      right: 26%;
-    }
-
-
-  }
-
-
-
-  .cg-footer {
-
-
-    .footer-body {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-     .cg-logo {
-      display: block;
-      width: 90px;
-      margin: 22px auto 0;
-      position: relative;
-
-    }
-    .cg-the-logo {
-      width: 100%;
-      position: relative;
-      z-index: 3;
-    }
-
-    .cg-blob-yellow,
-    .cg-blob-pink {
-      width: 100%;
-      position: absolute;
-      top: 54%;
-      transform: translateY(-54%);
-    }
-    .cg-blob-yellow {
-
-      z-index: 2;
-      left: 26%;
-
-    }
-    .cg-blob-pink {
-      z-index: 1;
-      right: 26%;
-    }
-
-
-    @include VP1024 {
-
-      .cg-logo {
-        width: 125px;
-        margin: 40px 48px 0;
-      }
     }
 
   }
+
+
+
+}
+
+
+
 </style>
 
 
