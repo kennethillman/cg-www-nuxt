@@ -4,24 +4,24 @@
 
       <h2
            v-if="slice.primary.header1[0].text !== ''"
-           v-waypoint="{ active: true, callback: fadeTrigger }"
+           v-waypoint="{ active: true, callback: triggerFade }"
            class="occasional-header -animate-fade-in-up"
         >{{slice.primary.header1[0].text}}
       </h2>
 
       <prismic-rich-text
         v-if="slice.primary.text[0].text !== ''"
-        v-waypoint="{ active: true, callback: fadeTrigger }"
+        v-waypoint="{ active: true, callback: triggerFade }"
         class="occasional-text -animate-fade-in-up"
         :field="slice.primary.text"
       />
 
       <div class="form" >
         <input
-         v-waypoint="{ active: true, callback: fadeTrigger }"
+         v-waypoint="{ active: true, callback: triggerFade }"
          class="input -animate-fade-in-up" type="text" name="" :placeholder="slice.primary.input_text[0].text">
         <button
-          v-waypoint="{ active: true, callback: fadeTrigger }"
+          v-waypoint="{ active: true, callback: triggerFade }"
           class="cg-btn -animate-fade-in-up">{{slice.primary.button_text[0].text}}</button>
       </div>
 
@@ -34,7 +34,7 @@ export default {
   props: ['slice'],
   name: 'slice-occasional',
   methods: {
-    fadeTrigger ({ el, going, direction }) {
+    triggerFade ({ el, going, direction }) {
 
     if (this.$waypointMap.GOING_IN === going) {
 
@@ -68,6 +68,7 @@ export default {
     margin: 0 auto 32px;
     font-size: 18px;
     line-height: 1.8;
+    font-family: $font-cg;
   }
 
   .input {

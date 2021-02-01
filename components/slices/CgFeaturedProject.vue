@@ -1,21 +1,21 @@
 <template>
   <section class="cg-featured-project" :class="['-'+slice.primary.direction]">
    <!--  {{slice.primary}} -->
-    <div class="site-content-width">
+    <div class="site-content-width" @click="this.triggerCaseLink()">
 
 
       <!-- Left / Top -->
       <div class="featured-content left">
 
         <TextSplit
-          v-waypoint="{ active: true, callback: fadeTrigger }"
+          v-waypoint="{ active: true, callback: triggerFade }"
           class="-animate-fade-in-up"
           :text="slice.primary.text_split[0].text"
           :split="slice.primary.text_split_at"
           :class="['-text-'+slice.primary.split_text_color, {'-text-right' : slice.primary.direction == 'right'}]"
         />
 
-        <figure v-waypoint="{ active: true, callback: fadeTrigger }" class="-animate-fade-in-up">
+        <figure v-waypoint="{ active: true, callback: triggerFade }" class="-animate-fade-in-up">
           <ImageResponsive class="featured-browser" :image="slice.primary.image_browser" />
           <ImageResponsive class="featured-mobile"  :image="slice.primary.image_mobile" />
         </figure>
@@ -27,20 +27,20 @@
       <div class="featured-content right" >
 
         <h2
-           v-waypoint="{ active: true, callback: fadeTrigger }"
+           v-waypoint="{ active: true, callback: triggerFade }"
            v-if="slice.primary.text_header[0].text !== ''"
            class="featured-header -animate-fade-in-up"
         >{{slice.primary.text_header[0].text}}</h2>
 
         <prismic-rich-text
-          v-waypoint="{ active: true, callback: fadeTrigger }"
+          v-waypoint="{ active: true, callback: triggerFade }"
           v-if="slice.primary.text[0].text !== ''"
           class="featured-text -animate-fade-in-up"
           :field="slice.primary.text"
         />
 
-        <prismic-link
-          v-waypoint="{ active: true, callback: fadeTrigger }"
+        <prismic-link ref="caseLink"
+          v-waypoint="{ active: true, callback: triggerFade }"
           :field="slice.primary.link"
           class="featured-link -animate-fade-in-up"
         >
@@ -54,7 +54,7 @@
 
     <div class="site-content-width bottom" v-if="slice.primary.more_projects_link_text[0]">
           <!-- Bottom -->
-      <div class="featured-content bottom -animate-fade-in-up" v-waypoint="{ active: true, callback: fadeTrigger }" >
+      <div class="featured-content bottom -animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }" >
 
           <svg  class="bottom-svg " width="305" height="178" viewBox="0 0 305 178" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0)">
@@ -72,7 +72,7 @@
 
 
       <prismic-link
-          v-waypoint="{ active: true, callback: fadeTrigger }"
+          v-waypoint="{ active: true, callback: triggerFade }"
           :field="slice.primary.more_projects_link"
           class="featured-link "
         >
@@ -91,12 +91,13 @@ export default {
   props: ['slice'],
   name: 'slice-featured-project',
   methods: {
-    fadeTrigger ({ el, going, direction }) {
-
-    if (this.$waypointMap.GOING_IN === going) {
-      el.classList.add('-animate')
-    }
-
+    triggerCaseLink () {
+      this.$refs.caseLink.click();
+    },
+    triggerFade ({ el, going, direction }) {
+      if (this.$waypointMap.GOING_IN === going) {
+        el.classList.add('-animate')
+      }
     },
   }
 
@@ -109,11 +110,11 @@ export default {
 
   padding: 50px 0 0;
   min-width: 300px;
+  cursor: pointer;
 
   .site-content-width {
      &.bottom {
       justify-content: center;
-
     }
   }
 
@@ -146,15 +147,16 @@ export default {
     &.bottom {
       padding: 50px 0 ;
       a {
-        margin-left: 32px;
+        // margin-left: 32px;
         font-size: 20px;
       }
       .bottom-svg {
-        width: 150px;
-        position: absolute;
-        left: -32px;
-        top: 22px;
-        transform: rotate(144deg);
+        display: none;
+        // width: 150px;
+        // position: absolute;
+        // left: -32px;
+        // top: 22px;
+        // transform: rotate(144deg);
       }
     }
 
@@ -300,6 +302,7 @@ export default {
           margin-left: 200px;
         }
         .bottom-svg {
+          display: block;
           width: 250px;
           position: absolute;
           left: -60px;
