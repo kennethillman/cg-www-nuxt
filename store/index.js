@@ -9,6 +9,7 @@ export const state = () => ({
 
   theSettings: {},
   theMenu: {},
+  theMenuFooter: {},
   theFooter: {},
 
   hero: false,
@@ -36,6 +37,9 @@ export const mutations = {
   },
   setTheMenu(state, payload) {
     state.theMenu = payload
+  },
+  setTheMenuFooter(state, payload) {
+    state.theMenuFooter = payload
   },
   setTheFooter(state, payload) {
     state.theFooter = payload
@@ -79,61 +83,9 @@ export const actions = {
     const footer = await this.$prismic.api.getSingle('footer')
     commit('setTheFooter', footer.data)
 
-    // Getting the footer from Prismic.io
-    // const heros = await this.$prismic.api.query('', { pageSize : 100 })
-    // commit('setHeros', heros.results)
-
-    // console.log(heros.results);
-
-    // const heroTexts = []
-
-    // heros.results.forEach((element, index) => {
-
-    //   let _h = {}
-    //   const hasHero = false
-
-
-    //   if (hasHero) {
-    //     _h = {
-    //       heroText: false,
-    //       id: element.id,
-    //       uid: element.uid,
-    //       color: null,
-    //       image: null,
-    //       svg: null,
-    //       h1: null,
-    //       h2: null,
-    //       txt: null
-    //     }
-    //   } else {
-    //     _h = {
-    //       heroText: false,
-    //       id: element.id,
-    //       uid: element.uid,
-    //       color: null,
-    //       image: null,
-    //       svg: null,
-    //       h1: null,
-    //       h2: null,
-    //       txt: null
-    //     }
-    //   }
-
-
-
-    //   heroTexts.push(_h)
-
-    //   console.log('- - -');
-    //   console.log(element.id);
-    //   console.log(element.uid);
-    //   console.log(element.data.body);
-
-    // });
-
-    // console.log('- - -');
-    // console.log('- - -');
-    // console.log(heroTexts);
-
+     // Getting the footer menu from Prismic.io
+    const menuFooter = await this.$prismic.api.getSingle('menu_footer')
+    commit('setTheMenuFooter', menuFooter.data.menu_links)
 
 
   },
@@ -171,6 +123,9 @@ export const getters = {
   },
   getTheMenu(state) {
     return state.theMenu
+  },
+  getTheMenuFooter(state) {
+    return state.theMenuFooter
   },
   getTheFooter(state) {
     return state.theFooter
