@@ -111,16 +111,33 @@
 <style lang="scss">
 
 .cg-the-footer {
-  height: 400px;
+
   position: relative;
   color: $white;
-  padding: 80px 0 0;
+  padding: 80px 0;
+  overflow: hidden;
+  background-color: #FCF4FF;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+  }
+
+  .site-content-width {
+    position: relative;
+    z-index: 2;
+  }
 
 
   .bg-blob {
     position: absolute;
-    bottom: 0;
-    z-index: -1;
+    top: 0;
+    z-index: 1;
     height: 400px;
     width: 100vw;
   }
@@ -157,6 +174,7 @@
     width: 90px;
     margin: 22px auto 0;
     position: relative;
+    z-index: 3;
 
   }
   .cg-the-logo {
@@ -187,7 +205,7 @@
 // 768
 
   @media only screen and (min-width: 768px) {
-    padding: 100px 0 0;
+    padding: 120px 0;
 
     .footer-header {
       font-size: 40px;
