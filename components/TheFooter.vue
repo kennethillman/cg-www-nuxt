@@ -1,6 +1,7 @@
 <template>
 
-      <div class="cg-the-footer">
+      <!-- @mouseenter="mouseEnter" -->
+      <div class="cg-the-footer" @mousemove="moveBlob">
 
         <!-- Header & Text -->
         <div class="site-content-width">
@@ -41,6 +42,32 @@
         </nuxt-link>
 
 
+
+          <div class="cg-nav-footer " @click="toTop()" >
+            <ul>
+              <template v-for="(item, index) in menu">
+                <li
+                  @mouseenter="startBlob"
+                  @mouseleave="endBlob">
+                    <nuxt-link :to="$prismic.asLink(item.link)">
+                      {{$prismic.asText(item.label)}}
+                    </nuxt-link>
+                </li>
+              </template>
+            </ul>
+
+            <div class="blob" ref="blob">
+              <div class="blob-inner">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path class="morph" fill="#004A84" d="M31.9,-53.9C42.9,-48.8,54.7,-43.6,63.2,-34.6C71.7,-25.6,76.9,-12.8,79.2,1.4C81.6,15.5,81.1,31,72.2,39.3C63.3,47.6,46,48.7,32.6,56.6C19.2,64.4,9.6,79,-2.6,83.5C-14.7,88,-29.5,82.3,-40.8,73.2C-52,64.1,-59.8,51.6,-61.5,38.8C-63.2,26,-58.8,13,-59.3,-0.3C-59.8,-13.6,-65.3,-27.2,-61.8,-36.9C-58.3,-46.6,-45.9,-52.3,-34.1,-57C-22.3,-61.7,-11.2,-65.4,-0.4,-64.7C10.4,-64,20.8,-59,31.9,-53.9Z" transform="translate(100 100)" />
+                </svg>
+              </div>
+            </div>
+
+          </div>
+
+
+
         <!-- Background & Svg Wave -->
         <svg class="bg-blob " fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"  viewBox="0 0 1440 537">
           <g clip-path="url(#clip0)">
@@ -65,25 +92,74 @@
       return {
           blob: 1,
           menu: this.$store.getters.getTheMenu,
-          footer: this.$store.getters.getTheFooter
+          footer: this.$store.getters.getTheFooter,
+          morph: null,
+          rotate: null,
+          paths: [
+                    {
+                        value:
+                            "M32.9,-54.7C44.1,-50.5,55.7,-44.7,65.7,-35.3C75.7,-25.9,84,-13,82.7,-0.7C81.5,11.6,70.8,23.1,62.6,35.6C54.5,48.1,48.9,61.6,38.9,65.2C28.9,68.7,14.5,62.3,-0.6,63.4C-15.7,64.5,-31.5,73.1,-43.1,70.5C-54.8,68,-62.4,54.2,-68.3,40.6C-74.2,27,-78.4,13.5,-77.8,0.3C-77.3,-12.8,-71.9,-25.6,-62.4,-33.1C-53,-40.5,-39.4,-42.7,-28.3,-46.9C-17.2,-51.1,-8.6,-57.3,1.1,-59.3C10.8,-61.2,21.7,-58.8,32.9,-54.7Z"
+                    },
+                    {
+                        value:
+                            "M29.1,-48.9C38.3,-45,46.8,-38.5,52.3,-29.9C57.9,-21.3,60.5,-10.6,59.3,-0.7C58.2,9.3,53.3,18.6,47.2,26.3C41.1,34,33.9,40.1,25.8,44.4C17.8,48.7,8.9,51.2,-2.7,55.8C-14.2,60.5,-28.5,67.2,-38,63.8C-47.6,60.3,-52.4,46.7,-60.7,34.4C-69,22.1,-80.6,11,-78.5,1.2C-76.3,-8.5,-60.3,-17.1,-53.2,-31.3C-46,-45.6,-47.7,-65.6,-40.3,-70.4C-32.9,-75.3,-16.5,-65.1,-3.3,-59.4C9.9,-53.8,19.9,-52.7,29.1,-48.9Z"
+                    },
+                    {
+                        value:
+                            "M31.3,-46.5C45.5,-45.9,65.5,-47.6,69.7,-40.3C73.8,-32.9,62.2,-16.4,56.1,-3.5C50,9.4,49.4,18.8,46.4,28.2C43.4,37.7,38.1,47.2,30,52.8C21.8,58.4,10.9,60,-1.4,62.3C-13.7,64.7,-27.3,67.9,-40.5,65.2C-53.6,62.5,-66.2,54,-75.4,42.2C-84.6,30.4,-90.3,15.2,-84.7,3.2C-79.2,-8.8,-62.4,-17.5,-53,-29C-43.6,-40.4,-41.6,-54.5,-34,-59C-26.4,-63.4,-13.2,-58.2,-2.3,-54.1C8.5,-50.1,17,-47.2,31.3,-46.5Z"
+                    },
+                    {
+                        value:
+                            "M31.9,-53.9C42.9,-48.8,54.7,-43.6,63.2,-34.6C71.7,-25.6,76.9,-12.8,79.2,1.4C81.6,15.5,81.1,31,72.2,39.3C63.3,47.6,46,48.7,32.6,56.6C19.2,64.4,9.6,79,-2.6,83.5C-14.7,88,-29.5,82.3,-40.8,73.2C-52,64.1,-59.8,51.6,-61.5,38.8C-63.2,26,-58.8,13,-59.3,-0.3C-59.8,-13.6,-65.3,-27.2,-61.8,-36.9C-58.3,-46.6,-45.9,-52.3,-34.1,-57C-22.3,-61.7,-11.2,-65.4,-0.4,-64.7C10.4,-64,20.8,-59,31.9,-53.9Z"
+                    },
+                    {
+                        value:
+                            "M40.3,-63.9C54,-61.9,68,-54.7,77,-43.1C85.9,-31.6,89.7,-15.8,87,-1.6C84.3,12.7,75.1,25.3,67.1,38.5C59.1,51.8,52.5,65.5,41.5,68.1C30.5,70.7,15.3,62,-0.2,62.3C-15.6,62.7,-31.3,71.9,-40.4,68.3C-49.5,64.7,-52.1,48.1,-60.7,34.6C-69.3,21.1,-83.8,10.5,-88.5,-2.7C-93.3,-16,-88.2,-32,-76.9,-40.7C-65.5,-49.4,-47.9,-50.9,-34,-52.8C-20.1,-54.6,-10.1,-56.9,1.6,-59.7C13.3,-62.5,26.6,-65.9,40.3,-63.9Z"
+                    },
+                    {
+                        value:
+                            "M35.5,-65.3C46,-55.4,54.5,-45.9,61.3,-35.1C68.1,-24.3,73.2,-12.1,73.3,0.1C73.5,12.3,68.8,24.7,62.7,36.8C56.7,48.8,49.3,60.7,38.6,65.2C27.9,69.7,14,66.8,2.7,62.2C-8.7,57.6,-17.3,51.3,-31.5,48.9C-45.8,46.4,-65.5,47.8,-72.3,40.3C-79,32.8,-72.7,16.4,-69.3,2C-65.9,-12.5,-65.4,-25,-59.6,-34.1C-53.8,-43.3,-42.8,-49.1,-31.9,-58.8C-21.1,-68.6,-10.6,-82.3,1,-83.9C12.5,-85.6,24.9,-75.2,35.5,-65.3Z"
+                    },
+                    {
+                        value:
+                            "M36.2,-68.3C44.8,-57.6,48.4,-43.8,54.3,-31.9C60.1,-20,68.2,-10,69.8,0.9C71.3,11.8,66.2,23.5,58.3,31.8C50.3,40.1,39.6,45,29.4,54.6C19.2,64.3,9.6,78.7,-3.3,84.4C-16.2,90.2,-32.5,87.3,-44.1,78.5C-55.8,69.7,-62.8,55,-63.5,40.9C-64.3,26.9,-58.8,13.4,-61.5,-1.6C-64.3,-16.6,-75.3,-33.2,-71.2,-41.4C-67,-49.6,-47.7,-49.4,-33.3,-56.8C-19,-64.2,-9.5,-79.1,2.1,-82.8C13.7,-86.5,27.5,-79,36.2,-68.3Z"
+                    },
+                    {
+                        value:
+                            "M31.9,-53.9C42.9,-48.8,54.7,-43.6,63.2,-34.6C71.7,-25.6,76.9,-12.8,79.2,1.4C81.6,15.5,81.1,31,72.2,39.3C63.3,47.6,46,48.7,32.6,56.6C19.2,64.4,9.6,79,-2.6,83.5C-14.7,88,-29.5,82.3,-40.8,73.2C-52,64.1,-59.8,51.6,-61.5,38.8C-63.2,26,-58.8,13,-59.3,-0.3C-59.8,-13.6,-65.3,-27.2,-61.8,-36.9C-58.3,-46.6,-45.9,-52.3,-34.1,-57C-22.3,-61.7,-11.2,-65.4,-0.4,-64.7C10.4,-64,20.8,-59,31.9,-53.9Z"
+                    }
+                ]
       }
     },
-    watch: {
-      $route() {
-        if (this.blob === 3) {
-          this.blob = 1;
-        } else {
-          this.blob ++
-        }
-        this.animateLogoBlobs();
-      },
-    },
+
     methods: {
+      moveBlob(event) {
+        this.$refs.blob.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+      },
+      startBlob(event) {
+        if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+          return
+        }
+        this.$refs.blob.classList.add('is-active')
+        this.morph.restart();
+        this.morph.play();
+        this.rotate.restart();
+        this.rotate.play();
+      },
+      endBlob(event) {
+        if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+          return
+        }
+        this.$refs.blob.classList.remove('is-active')
+        this.morph.pause();
+        this.rotate.pause();
+      },
       triggerFade ({ el, going, direction }) {
         if (this.$waypointMap.GOING_IN === going) {
           el.classList.add('-animate')
         }
       },
+
       toTop() {
         const anime = this.$anime
         const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
@@ -97,7 +173,34 @@
       },
 
     },
-    mounted() {
+    mounted (){
+
+      if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+        return
+      }
+
+      this.morph = this.$anime({
+        targets: ".morph",
+        d: this.paths,
+        easing: "easeInOutSine",
+        duration: 4000,
+        loop: true,
+        autoplay: false
+      });
+
+      this.rotate = this.$anime({
+        targets: ".blob svg",
+        easing: "linear",
+        duration: 14000,
+        rotate: [0, 360],
+        scale: 2,
+        loop: true,
+        direction: "alternate",
+        autoplay: false
+      });
+
+
+
 
     }
   }
@@ -128,6 +231,59 @@
     background-color: $black;
   }
 
+  .cg-nav-footer {
+    position: relative;
+
+    z-index: 3;
+    padding: 32px 0 0;
+
+    .blob {
+      position: fixed;
+      pointer-events: none;
+      top: -25px;
+      left: -25px;
+      z-index: -1;
+      .blob-inner {
+        transition: 150ms;
+        transform-origin: center center;
+        // transform: scale(0);
+        transform: scale(0);
+
+      }
+      &.is-active {
+        .blob-inner{
+          transform: scale(1);
+        }
+      }
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    ul{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    li {
+      padding: 15px 5px;
+      margin: 0 15px;
+    }
+
+    a {
+      color: $white;
+      font-family: $font-cg;
+      font-size: 16px;
+      text-decoration: none;
+      &:hover,
+      &:active {
+        color: $yellow;
+      }
+    }
+  }
+
   .site-content-width {
     position: relative;
     z-index: 2;
@@ -153,7 +309,7 @@
 
   .footer-text {
     max-width: 620px;
-    margin: 0 auto 32px;
+    margin: 0 auto 50px;
     font-size: 18px;
     line-height: 1.8;
     text-align: center;
@@ -206,6 +362,10 @@
 
   @media only screen and (min-width: 768px) {
     padding: 120px 0;
+
+    .cg-nav-footer {
+
+    }
 
     .footer-header {
       font-size: 40px;
