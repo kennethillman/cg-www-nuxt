@@ -35,25 +35,25 @@
       transition: all 1s ease-out;
       transition-delay: .2s;
       &.-delay-one {
-        transition-delay: 1s;
+        transition-delay: .4s;
       }
       &.-delay-two {
-        transition-delay: 1.2s;
+        transition-delay: .6s;
       }
       &.-delay-three {
-        transition-delay: 1.4s;
+        transition-delay: .8s;
       }
       &.-delay-four {
-        transition-delay: 1.6s;
+        transition-delay: 1s;
       }
       &.-delay-five {
-        transition-delay: 1.8s;
+        transition-delay: 1.2s;
       }
-      &.-delay-six{
-        transition-delay: 2s;
+      &.-delay-six {
+        transition-delay: 1.4s;
       }
       &.-delay-seven {
-        transition-delay: 2.2s;
+        transition-delay: 1.8s;
       }
     }
 
