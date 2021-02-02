@@ -1,7 +1,9 @@
 <template>
 
-<prismic-link :field="slice.primary" class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
-      <div class="site-content-width">
+<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
+      <div
+        v-waypoint="{ active: true, callback: triggerFade }"
+        class="site-content-width -animate-fade-in-up">
 
       <!-- Image -->
       <figure class="case-image">
@@ -23,15 +25,20 @@
 
     </div>
 </prismic-link>
-<!--   <section class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
 
-  </section> -->
 </template>
 
 <script>
 export default {
   props: ['slice'],
-  name: 'slice-case-one'
+  name: 'slice-case-one',
+  methods: {
+    triggerFade ({ el, going, direction }) {
+      if (this.$waypointMap.GOING_IN === going) {
+        el.classList.add('-animate')
+      }
+    },
+  }
 
 }
 </script>
@@ -53,7 +60,7 @@ export default {
   // Svg figure
   .cg-case-figure {
     position: absolute;
-    right: 0;
+    right: -5%;
     top: 50%;
     transform: translateY(-40%);
     z-index: -1;
@@ -100,6 +107,7 @@ export default {
   // - - - VERSION - B
 
   &.-version-b {
+
     .case-image {
       img {
         margin-left: 10%;
@@ -107,11 +115,18 @@ export default {
       }
     }
     .cg-case-figure {
-      right: auto;
-      left: 0;
-      top: 100%;
-      transform: translateY(-50%) rotate(180deg);
+        left: auto;
+        right: -5%;
+        top: 100%;
+        transform: translateY(-60%);
+        width: 50%;
     }
+    .case-box {
+      float: left;
+    }
+
+
+
   }
 
 
@@ -122,7 +137,7 @@ export default {
     float: right;
     .cg-case-figure {
       right: auto;
-      left: 0;
+      left: -5%;
       transform: translateY(-40%) rotate(180deg);
     }
     .case-image {
@@ -143,9 +158,16 @@ export default {
         }
       }
       .cg-case-figure {
-        left: auto;
-        right: 0;
-        transform: translateY(-50%);
+        right: auto;
+        left: -5%;
+        top: 100%;
+        transform: translateY(-50%) rotate(180deg);
+
+      }
+      .case-box {
+        float: right;
+        margin-left: 20%;
+        margin-right: 0;
       }
     }
 
@@ -165,6 +187,25 @@ export default {
       // Box
       .case-box {
         top: -80px;
+      }
+
+      // - - - VERSION - B
+      &.-version-b {
+        .cg-case-figure {
+            left: auto;
+            right: -12%;
+            top: 100%;
+            transform: translateY(-50%);
+            width: 68%;
+        }
+        &.-position-right{
+          .cg-case-figure {
+            left: -12%;
+            right: auto;
+            top: 100%;
+
+          }
+        }
       }
 
   }

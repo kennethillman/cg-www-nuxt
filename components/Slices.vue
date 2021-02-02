@@ -10,7 +10,7 @@
             </template>
 
             <!-- cg-case-two -->
-            <template v-if="slice.slice_type === 'cg_case_two'">
+            <template v-if="slice.slice_type === 'cg-case-two'">
                 <cg-case-two :slice="slice"/>
             </template>
 
@@ -39,7 +39,6 @@
             <template v-if="slice.slice_type === 'cg-occasional'">
                 <cg-occasional :slice="slice"/>
             </template>
-
 
 
             <!-- Test name -->
