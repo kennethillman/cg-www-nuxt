@@ -91,7 +91,7 @@
     data() {
       return {
           blob: 1,
-          menu: this.$store.getters.getTheMenuFooter,
+          menu: this.$store.getters.getTheMenu,
           footer: this.$store.getters.getTheFooter,
           morph: null,
           rotate: null,
@@ -311,6 +311,7 @@
   .footer-text {
     max-width: 620px;
     margin: 0 auto 50px;
+    padding: 0 16px;
     font-size: 18px;
     line-height: 1.8;
     text-align: center;
