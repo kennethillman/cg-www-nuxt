@@ -13,7 +13,6 @@
       </figure>
 
 
-
       <div class="case-box"
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
           <!-- Logo -->
