@@ -1,8 +1,8 @@
 <template>
   <div class="cg-page">
-    <div class="cg-content" style="height: 200vh">
+    <div class="cg-content">
 
-        <prismic-rich-text :field="document.data.header" />
+        <slices :slices="slices" />
 
     </div>
   </div>
@@ -28,7 +28,7 @@
 
           })
         }
-        return { document }
+        return { document, slices: document.data.body }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }

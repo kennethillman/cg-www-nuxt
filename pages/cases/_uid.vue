@@ -19,7 +19,7 @@
       const document = await $prismic.api.getByUID('case', params.uid)
 
       if (document) {
-        return { document }
+        return { document, slices: document.data.body   }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }

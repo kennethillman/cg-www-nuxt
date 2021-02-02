@@ -6,14 +6,17 @@
         :alt="image.alt"
       />
       <source
+        v-if="image.mobile"
         :srcSet="image.mobile.url"
         media="(min-width: 300px)"
       />
       <source
+        v-if="image.tablet"
         :srcSet="image.tablet"
         media="(min-width: 768px)"
       />
       <source
+        v-if="image.desktop"
         :srcSet="image.desktop"
         media="(min-width: 1280px)"
       />

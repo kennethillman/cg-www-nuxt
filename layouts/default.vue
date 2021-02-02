@@ -74,6 +74,12 @@
     background: $gradient;
     flex: 1;
     padding: 0 0 24px;
+
+    .container {
+      > section {
+        @include clearfix();
+      }
+    }
   }
 
   .cg-nav {

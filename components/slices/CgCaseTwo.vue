@@ -1,7 +1,8 @@
 <template>
-  <section class="cg-testamonials">
+  <section class="cg-case cg-case-two">
     <div class="site-content-width">
 
+      <br><br>
       {{slice}}
 
     </div>
@@ -11,14 +12,14 @@
 <script>
 export default {
   props: ['slice'],
-  name: 'slice-testamonials'
+  name: 'slice-case-two'
 
 }
 </script>
 
 <style lang="scss">
 
-.cg-testamonials {
+.cg-case-two {
 
   padding: 50px 0 0;
   text-align: center;

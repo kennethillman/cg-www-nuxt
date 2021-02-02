@@ -42,6 +42,39 @@ body {
     color: $red;
   }
 
+  // Background
+
+  .-bg-black {
+    background-color: $black;
+  }
+
+  .-bg-white {
+    background-color: $white;
+  }
+
+  .-bg-pink {
+    background-color: $pink;
+  }
+
+  .-bg-blue {
+    background-color: $blue;
+  }
+
+  .-bg-lime {
+    background-color: $lime;
+  }
+
+  .-bg-turquoise {
+    background-color: $turquoise;
+  }
+
+  .-bg-yellow {
+    background-color: $yellow;
+  }
+
+  .-bg-red {
+    background-color: $red;
+  }
 
 
 
@@ -49,34 +82,58 @@ body {
 
   .-fill-black {
     fill: $black;
+    svg {
+      fill: $black;
+    }
   }
 
   .-fill-white {
     fill: $white;
+    svg {
+      fill: $white;
+    }
   }
 
   .-fill-pink {
     fill: $pink;
+    svg {
+      fill: $pink;
+    }
   }
 
   .-fill-blue {
     fill: $blue;
+    svg {
+      fill: $blue;
+    }
   }
 
   .-fill-lime {
     fill: $lime;
+    svg {
+      fill: $lime;
+    }
   }
 
   .-fill-turquoise {
     fill: $turquoise;
+    svg {
+      fill: $turquoise;
+    }
   }
 
   .-fill-yellow {
     fill: $yellow;
+    svg {
+      fill: $yellow;
+    }
   }
 
   .-fill-red {
     fill: $red;
+    svg {
+      fill: $red;
+    }
   }
 
 
