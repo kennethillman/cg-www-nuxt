@@ -31,8 +31,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/vue-mq',
-    { src: "~/plugins/vue-waypoint.client.js", mode: 'client'},
-    { src: "~/plugins/vue-check-view.client.js", mode: 'client'}
+    { src: "~/plugins/lax.js", mode: 'client'},
+    { src: "~/plugins/vue-waypoint.client.js", mode: 'client'}
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

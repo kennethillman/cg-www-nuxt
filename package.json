@@ -11,15 +11,16 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
+    "lax.js": "^2.0.3",
     "nuxt": "^2.14.6",
     "style-loader": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/prismic": "^1.2.4",
+    "jarallax": "^1.12.5",
     "node-sass": "^5.0.0",
     "nuxt-animejs": "^1.2.1",
     "sass-loader": "^10.1.0",
-    "vue-check-view": "^0.3.0",
     "vue-mq": "^1.0.1",
     "vue-waypoint": "^3.5.2"
   }

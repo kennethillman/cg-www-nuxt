@@ -125,10 +125,6 @@ export default {
   }
 
 
-
-
-
-
   // - - - POSITION RIGHT
 
   &.-position-right {
@@ -148,10 +144,6 @@ export default {
        margin-left: 20%;
        margin-right: 0;
     }
-
-
-
-
   }
 
 

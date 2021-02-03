@@ -14,7 +14,6 @@
           <nuxt-link :to="'playground/'+link.uid">playground/{{link.uid}}</nuxt-link>
         </template>
 
-
       </li>
     </ul>
 

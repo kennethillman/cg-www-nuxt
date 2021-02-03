@@ -6,13 +6,17 @@
         class="site-content-width -animate-fade-in-up">
 
       <!-- Image -->
-      <figure class="case-image">
-        <ImageResponsive :image="slice.primary.image" />
+      <figure class="case-image lax-one">
+
+
+          <ImageResponsive :image="slice.primary.image" />
+
 
         <!-- Background figure-->
-        <cg-case-figure :figures="slice.primary.bg_figure":class="['-fill-'+slice.primary.bg_figure_color]" />
+        <cg-case-figure  :figures="slice.primary.bg_figure" :class="['-fill-'+slice.primary.bg_figure_color]" />
 
       </figure>
+
 
 
       <div class="case-box"
@@ -20,6 +24,7 @@
           <!-- Logo -->
           <prismic-image :field="slice.primary.logo_svg" />
           <!-- Text -->
+          <div >Hello</div>
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
       </div>
 
