@@ -6,14 +6,14 @@
         class="site-content-width -animate-fade-in-up">
 
       <!-- Image -->
-      <figure class="case-image lax-one">
+      <figure class="case-image lax-image">
 
 
           <ImageResponsive :image="slice.primary.image" />
 
 
         <!-- Background figure-->
-        <cg-case-figure  :figures="slice.primary.bg_figure" :class="['-fill-'+slice.primary.bg_figure_color]" />
+        <cg-case-figure  :figures="slice.primary.bg_figure" :class="['lax-svg -fill-'+slice.primary.bg_figure_color]" />
 
       </figure>
 
@@ -119,6 +119,7 @@ export default {
         margin-right: 10%;
       }
     }
+
     .cg-case-figure {
         left: auto;
         right: -5%;
@@ -126,11 +127,10 @@ export default {
         transform: translateY(-60%);
         width: 50%;
     }
+
     .case-box {
       float: left;
     }
-
-
 
   }
 

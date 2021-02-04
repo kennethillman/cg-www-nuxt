@@ -12,6 +12,8 @@
 
 <script>
 
+  import lax from 'lax.js'
+
   export default {
     async asyncData({ $prismic, store, params, error }) {
       const document = await $prismic.api.getSingle('cases')
@@ -32,6 +34,27 @@
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }
+    },
+    mounted() {
+
+      lax.init()
+
+      // Add a driver that we use to control our animations
+      lax.addDriver('scrollY', function () {
+        return window.scrollY
+      })
+
+      // Add animation bindings to elements
+      lax.addElements('.lax-image', {
+        scrollY: {
+           translateY: [           // CSS property
+              ['elInY', 'elOutY'],  // Driver value map
+              [0, 120],   // Animation value map
+
+            ],
+        }
+      })
+
     }
 
   }

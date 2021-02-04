@@ -2,6 +2,23 @@
   <section class="cg-clients">
     <div class="site-content-width">
 
+      <h2
+           v-if="slice.primary.header1[0].text !== ''"
+           v-waypoint="{ active: true, callback: triggerFadeText }"
+           class="client-header -animate-fade-in-up"
+        >{{slice.primary.header1[0].text}}
+      </h2>
+
+      <h3
+           v-if="slice.primary.header1[0].text !== ''"
+           v-waypoint="{ active: true, callback: triggerFadeText }"
+           class="client-sub-header -animate-fade-in-up"
+        >{{slice.primary.sub_header[0].text}}
+      </h3>
+
+    </div>
+    <div class="site-content-width -logos">
+
       <div
         class="cg-client -animate-fade-in-up"
         v-for="(item,index) in slice.items"
@@ -68,6 +85,14 @@ export default {
      }
 
     },
+    triggerFadeText ({ el, going, direction }) {
+
+    if (this.$waypointMap.GOING_IN === going) {
+
+      el.classList.add('-animate')
+     }
+
+    },
   }
 
 }
@@ -77,13 +102,32 @@ export default {
 
 .cg-clients {
   padding: 56px 0 32px;
+  text-align: center;
+
+  .client-header {
+    margin: 0 0 32px;
+    font-size: 40px;
+    font-family: $font-cg-2;
+    line-height: 1.1;
+    color: $red;
+  }
+
+  .client-text {
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: $font-cg;
+  }
 
   .site-content-width {
+    &.-logos{
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       position: relative;
       z-index: 1;
+    }
   }
 
   .cg-client-circle {
@@ -102,8 +146,10 @@ export default {
     margin: 4px 0;
   }
 
-  .cg-logo {
-
+  .cg-client-logo {
+    img {
+       height: 86px;
+    }
   }
 
   a {
