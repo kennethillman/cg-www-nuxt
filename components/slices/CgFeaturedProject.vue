@@ -2,7 +2,7 @@
 
   <prismic-link :field="slice.primary.link" class="cg-featured-project" :class="['-'+slice.primary.direction]">
 
-      <div class="site-content-width" @click="this.triggerCaseLink()">
+      <div class="site-content-width">
 
         <!-- Left / Top -->
         <div class="featured-content left">
