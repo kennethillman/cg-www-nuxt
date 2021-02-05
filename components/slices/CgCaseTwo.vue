@@ -113,6 +113,11 @@ export default {
       width: auto;
       margin: -16px 0 0 -16px
     }
+    &.-text-white {
+      img {
+        filter: invert(100%);
+      }
+    }
   }
 
   .case-box-text {

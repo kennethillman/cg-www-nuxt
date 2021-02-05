@@ -22,9 +22,8 @@
       <div class="case-box"
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
           <!-- Logo -->
-          <prismic-image :field="slice.primary.logo_svg" />
-          <!-- Text -->
-          <div >Hello</div>
+          <prismic-image  :field="slice.primary.logo_svg" />
+
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
       </div>
 
@@ -96,6 +95,12 @@ export default {
       height: 80px;
       width: auto;
       margin: -16px 0 0 -16px
+    }
+
+    &.-text-white {
+      img {
+        filter: invert(100%);
+      }
     }
   }
 

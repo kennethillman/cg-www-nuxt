@@ -24,13 +24,15 @@ export default {
 
    // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/assets/scss/global/index.scss'
+    '@/assets/scss/global/index.scss',
+    'vue-slick-carousel/dist/vue-slick-carousel.css'
   ],
 
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/vue-mq',
+    '~/plugins/vue-slick-carousel',
     { src: "~/plugins/lax.js", mode: 'client'},
     { src: "~/plugins/vue-waypoint.client.js", mode: 'client'}
   ],

@@ -9,12 +9,12 @@
         >{{slice.primary.header1[0].text}}
       </h2>
 
-      <prismic-rich-text
-        v-if="slice.primary.sub_header[0].text !== ''"
-        v-waypoint="{ active: true, callback: triggerFade }"
-        class="slider-text -animate-fade-in-up"
-        :field="slice.primary.sub_header"
-      />
+      <h3
+           v-if="slice.primary.sub_header[0].text !== ''"
+           v-waypoint="{ active: true, callback: triggerFade }"
+           class="slider-text -animate-fade-in-up"
+        >{{slice.primary.sub_header[0].text}}
+      </h3>
 
 
       {{slice}}
