@@ -309,6 +309,7 @@ export default {
     z-index: 2;
     transform: translate(0px, 34px);
     opacity: 1;
+    transition: all 1s ease-in-out;
   }
 
   .testamonial-text {
@@ -322,12 +323,13 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     left: 100%;
+    transition: all 1s ease-in-out;
   }
 
 
   .testamonial {
     opacity: 0;
-
+    transition: all 1s ease-in-out;
   }
 
   .name {
