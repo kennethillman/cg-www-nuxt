@@ -4218,6 +4218,11 @@
     "minimalistic-assert" "^1.0.0"
     "minimalistic-crypto-utils" "^1.0.1"
 
+"hooper@^0.3.4":
+  "integrity" "sha512-hV1c+MCiCfVjltdvZIgTrGYHInvhKiNLVNOT/hRWbfjZNIS9H6F6ZUPeaxhxrYkjsEL96Z0RIs+4YPoBqrrrHQ=="
+  "resolved" "https://registry.npmjs.org/hooper/-/hooper-0.3.4.tgz"
+  "version" "0.3.4"
+
 "hoopy@^0.1.4":
   "integrity" "sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ=="
   "resolved" "https://registry.yarnpkg.com/hoopy/-/hoopy-0.1.4.tgz"
