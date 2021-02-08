@@ -101,19 +101,29 @@
 
 <style lang="scss">
 
+
+
+
   .svg-bullshit {
-    width: 450px;
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transform: translate(33%, -26%) scale(.275);
-    transition: all 1s ease-in-out .5s;
-    .-tran-enter & {
-      opacity: 1;
-      transform: translate(33%, -26%) scale(1);
+    display: none;
+
+    // 768
+    @media only screen and (min-width: 768px) {
+      display: block;
+      width: 450px;
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transform: translate(33%, -26%) scale(.275);
+      transition: all 1s ease-in-out .5s;
+      .-tran-enter & {
+        opacity: 1;
+        transform: translate(33%, -26%) scale(1);
+      }
     }
+
   }
 
 </style>

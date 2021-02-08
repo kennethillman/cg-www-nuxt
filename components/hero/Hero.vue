@@ -69,16 +69,14 @@
     align-items: center;
     transition: all 1s ease;
     overflow: hidden;
-    height: 80vh;
+    min-height: 80vh;
     max-height: 1040px;
 
     .hero-body {
       position: relative;
-      padding-bottom: 112px;
+      padding: 90px 0;
       width: 90vw;
       max-width: 1040px;
-
-
     }
 
     &.-curtain {
@@ -98,35 +96,29 @@
     //   }
     // }
 
-    figure {
-      position: absolute;
-      bottom: 308px;
-      left: 0;
-      width: 100vw;
-      transition: all .5s ease;
-      height: 100%;
-      transform: translateY(100%);
 
-        &:after {
-          content: '';
-          top: 308px;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          background: #fff;
-          position: absolute;
-          z-index: 1;
-          transition: all 1s ease;
-        }
 
-        svg {
-          transition: fill 1s ease;
-          fill: #fff;
-          width: 110vw;
-          transform: translate(-5vw , 40%);
-        }
+    // 600
+    @media only screen and (min-width: 600px) {
+      .hero-body {
+        padding: 90px 0 160px;
       }
+    }
 
+
+    // 1024
+    @media only screen and (min-width: 1024px) {
+      .hero-body {
+        padding: 160px 0 220px;
+      }
+    }
+
+    // 1280
+    @media only screen and (min-width: 1280px) {
+      .hero-body {
+        padding: 210px 0 360px;
+      }
+    }
 
 
 
