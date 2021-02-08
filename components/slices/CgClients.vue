@@ -2,19 +2,21 @@
   <section class="cg-clients">
     <div class="site-content-width">
 
-      <h2
-           v-if="slice.primary.header1[0].text !== ''"
-           v-waypoint="{ active: true, callback: triggerFadeText }"
-           class="client-header -animate-fade-in-up"
-        >{{slice.primary.header1[0].text}}
-      </h2>
+      <div class="cg-header-group">
+        <h2
+             v-if="slice.primary.header1[0].text !== ''"
+             v-waypoint="{ active: true, callback: triggerFadeText }"
+             class="cg-group-header -animate-fade-in-up"
+          >{{slice.primary.header1[0].text}}
+        </h2>
 
-      <h3
-           v-if="slice.primary.header1[0].text !== ''"
-           v-waypoint="{ active: true, callback: triggerFadeText }"
-           class="client-sub-header -animate-fade-in-up"
-        >{{slice.primary.sub_header[0].text}}
-      </h3>
+        <h3
+             v-if="slice.primary.header1[0].text !== ''"
+             v-waypoint="{ active: true, callback: triggerFadeText }"
+             class="cg.cg-group-sub-header -animate-fade-in-up"
+          >{{slice.primary.sub_header[0].text}}
+        </h3>
+      </div>
 
     </div>
     <div class="site-content-width -logos">
@@ -104,21 +106,6 @@ export default {
   padding: 56px 0 32px;
   text-align: center;
 
-  .client-header {
-    margin: 0 0 32px;
-    font-size: 40px;
-    font-family: $font-cg-2;
-    line-height: 1.1;
-    color: $red;
-  }
-
-  .client-text {
-    max-width: 620px;
-    margin: 0 auto 32px;
-    font-size: 18px;
-    line-height: 1.8;
-    font-family: $font-cg;
-  }
 
   .site-content-width {
     &.-logos{

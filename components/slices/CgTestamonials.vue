@@ -2,6 +2,21 @@
   <section class="cg-testamonials">
     <div class="site-content-width">
 
+      <div class="cg-header-group">
+        <h2
+             v-if="slice.primary.header1[0].text !== ''"
+             v-waypoint="{ active: true, callback: triggerFade }"
+             class="cg-group-header -animate-fade-in-up"
+          >{{slice.primary.header1[0].text}}
+        </h2>
+        <h3
+             v-if="slice.primary.sub_header[0].text !== ''"
+             v-waypoint="{ active: true, callback: triggerFade }"
+             class="cg-group-sub-header  -animate-fade-in-up"
+          >{{slice.primary.sub_header[0].text}}
+        </h3>
+      </div>
+
       <hooper :settings="hooperSettings" :infiniteScroll="true"  :transition="1000" @beforeSlide="evBefore" @afterSlide="evAfter" @slide="evSlide"
           :class="[{'is-sliding' : this.noTrans}]" >
 
@@ -149,7 +164,15 @@ methods: {
   },
   evAfter(){
     this.noTrans = false;
-  }
+  },
+  triggerFade ({ el, going, direction }) {
+
+    if (this.$waypointMap.GOING_IN === going) {
+
+      el.classList.add('-animate')
+     }
+
+    },
 },
 created() {
 

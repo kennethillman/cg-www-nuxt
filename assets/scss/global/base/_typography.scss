@@ -35,6 +35,29 @@ body {
   }
 
 
+// Header group (Startpage)
+
+  .cg-header-group {
+
+    text-align: center;
+
+    .cg-group-header {
+      margin: 0 0 32px;
+      font-size: 40px;
+      font-family: $font-cg-2;
+      line-height: 1.1;
+      color: $red;
+    }
+
+    .cg-group-sub-header {
+      max-width: 620px;
+      margin: 0 auto 32px;
+      font-size: 18px;
+      line-height: 1.8;
+      font-family: $font-cg;
+    }
+
+  }
 
 
 /////
