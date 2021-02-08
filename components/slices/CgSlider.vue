@@ -17,7 +17,7 @@
         </h3>
       </div>
 
-        <hooper :transition="375" shortDrag="false" :settings="hooperSettings">
+        <hooper :transition="375" :shortDrag="false" :settings="hooperSettings">
 
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
