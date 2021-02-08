@@ -17,7 +17,7 @@
         </h3>
       </div>
 
-      <hooper :transition="375" :shortDrag="false"  :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
+      <hooper :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
           <div class="slide-body">
