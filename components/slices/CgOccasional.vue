@@ -2,19 +2,22 @@
   <section class="cg-occasional">
     <div class="site-content-width">
 
-      <h2
-           v-if="slice.primary.header1[0].text !== ''"
-           v-waypoint="{ active: true, callback: triggerFade }"
-           class="occasional-header -animate-fade-in-up"
-        >{{slice.primary.header1[0].text}}
-      </h2>
+      <div class="cg-header-group">
+        <h2
+             v-if="slice.primary.header1[0].text !== ''"
+             v-waypoint="{ active: true, callback: triggerFade }"
+             class="cg-group-header -animate-fade-in-up"
+          >{{slice.primary.header1[0].text}}
+        </h2>
 
-      <prismic-rich-text
-        v-if="slice.primary.text[0].text !== ''"
-        v-waypoint="{ active: true, callback: triggerFade }"
-        class="occasional-text -animate-fade-in-up"
-        :field="slice.primary.text"
-      />
+        <prismic-rich-text
+          v-if="slice.primary.text[0].text !== ''"
+          v-waypoint="{ active: true, callback: triggerFade }"
+          class="cg-group-sub-header -animate-fade-in-up"
+          :field="slice.primary.text"
+        />
+      </div>
+
 
       <div class="form" >
         <input
@@ -55,21 +58,6 @@ export default {
   padding: 50px 0 0;
   text-align: center;
 
-  .occasional-header {
-    margin: 0 0 32px;
-    font-size: 40px;
-    font-family: $font-cg-2;
-    line-height: 1.1;
-    color: $red;
-  }
-
-  .occasional-text {
-    max-width: 620px;
-    margin: 0 auto 32px;
-    font-size: 18px;
-    line-height: 1.8;
-    font-family: $font-cg;
-  }
 
   .input {
     font-size: 18px;
@@ -90,9 +78,6 @@ export default {
   @media only screen and (min-width: 768px) {
   padding: 180px 0 130px;
 
-  .occasional-header {
-    font-size: 64px;
-  }
 
   .input {
     font-size: 24px;

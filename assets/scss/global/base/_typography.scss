@@ -40,10 +40,12 @@ body {
   .cg-header-group {
 
     text-align: center;
+    position: relative;
+    z-index: 1;
 
     .cg-group-header {
       margin: 0 0 32px;
-      font-size: 40px;
+      font-size: 44px;
       font-family: $font-cg-2;
       line-height: 1.1;
       color: $red;
@@ -55,6 +57,12 @@ body {
       font-size: 18px;
       line-height: 1.8;
       font-family: $font-cg;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .cg-group-header {
+        font-size: 64px;
+      }
     }
 
   }

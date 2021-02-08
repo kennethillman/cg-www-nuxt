@@ -17,7 +17,7 @@
         </h3>
       </div>
 
-      <hooper :settings="hooperSettings" :infiniteScroll="true"  :transition="1000" @beforeSlide="evBefore" @afterSlide="evAfter" @slide="evSlide"
+      <hooper :settings="hooperSettings" :infiniteScroll="true"  :transition="1000"  @afterSlide="evAfter" @slide="evSlide"
           :class="[{'is-sliding' : this.noTrans}]" >
 
         <slide class="cg-testamonial"  v-for="(item, index) in slice.items" :key="index+'item'" :class="['-fill-'+item.color, '-text-'+item.color]">
