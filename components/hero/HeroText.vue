@@ -4,6 +4,7 @@
   >
 
     <prismic-rich-text :field="hero.text1" />
+
   </div>
 </template>
 
@@ -37,6 +38,7 @@
     position: relative;
     z-index: 2;
     transition: opacity .750s ease-in-out .250s;
+    max-width: 540px;
     &.-show-text {
       opacity: 1;
     }

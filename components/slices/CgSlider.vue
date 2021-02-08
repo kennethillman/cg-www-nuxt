@@ -17,26 +17,19 @@
         </h3>
       </div>
 
-        <hooper :transition="375" :shortDrag="false" :settings="hooperSettings">
-
+      <hooper :transition="375" :shortDrag="false" :settings="hooperSettings">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
           <div class="slide-body">
-
-          <!--   {{item}} -->
-
+            <!--   {{item}} -->
             <figure>
               <ImageResponsive class="featured-browser" :image="item.image" />
             </figure>
-
-
           </div>
 
 
         </slide>
-
-
-         <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
 
       </hooper>
 
