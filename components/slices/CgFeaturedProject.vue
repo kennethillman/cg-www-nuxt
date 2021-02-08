@@ -1,6 +1,6 @@
 <template>
 
-  <prismic-link :field="slice.primary.link" class="cg-featured-project" :class="['-'+slice.primary.direction]">
+  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project" :class="['-'+slice.primary.direction]">
 
       <div class="site-content-width">
 
@@ -79,7 +79,7 @@
     </div>
 
 
-  </prismic-link>
+  </nuxt-link>
 
 </template>
 
