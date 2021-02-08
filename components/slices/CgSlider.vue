@@ -17,15 +17,46 @@
         </h3>
       </div>
 
-      <hooper :transition="375" :shortDrag="false" :settings="hooperSettings">
+      <hooper :transition="375" :shortDrag="false"  :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
           <div class="slide-body">
-            <!--   {{item}} -->
+
             <figure>
-              <ImageResponsive class="featured-browser" :image="item.image" />
+
+              <template v-if="item.image">
+                <ImageResponsive class="featured-browser" :image="item.image" />
+              </template>
+
+<!--               <template v-if="item.header1.length > 0 || item.text.length > 0">
+
+                <div class="slide-box">
+
+
+                <h4 v-if="item.header1.length > 0 && item.header1[0].text !== ''">
+                  {{item.header1[0].text}}
+                </h4>
+
+                <p v-if="item.text.length > 0">
+                  {{item.text[0].text}}
+                </p>
+
+
+                </div>
+              </template> -->
+
             </figure>
+
+
+<!--             {{item.header1.length}}
+            {{item.header1}}
+            {{item.text.length}}
+            {{item.text}} -->
+
+
           </div>
+
+
 
 
         </slide>
@@ -95,6 +126,19 @@ export default {
 
   .cg-slide {
     padding:10px;
+  }
+
+  .slide-box {
+    padding: 24px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  figure {
+    position: relative;
   }
 
 
