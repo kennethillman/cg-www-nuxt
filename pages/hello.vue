@@ -2,12 +2,13 @@
   <div class="cg-page page-hello">
     <div class="cg-content">
 
-     <!--  <TextSplit
-            v-waypoint="{ active: true, callback: triggerFade }"
-            text="PEO"
-            split="PLE"
-            class="-text-yellow -text-right -animate-fade-in-up"
-          /> -->
+     <TextSplit
+        v-waypoint="{ active: true, callback: triggerFade }"
+        text="PEOPLE"
+        split="3"
+        class="-text-yellow -text-right -animate-fade-in-up"
+      />
+
       <slices :slices="slices" />
 
     </div>
@@ -40,6 +41,13 @@
         error({ statusCode: 404, message: 'Page not found' })
       }
     },
+    methods: {
+      triggerFade({ el, going, direction }) {
+        if (this.$waypointMap.GOING_IN === going) {
+          el.classList.add('-animate')
+         }
+      },
+    }
 
   }
 
@@ -52,21 +60,45 @@
   .cg-content {
     margin-top: -160px;
     position: relative;
-    width: 90vw;
+    width: 80vw;
+  }
+  .cg-text-split {
+    position: absolute;
+    right: 0;
+    top: -56px;
+    font-size: 76px;
   }
 }
 
 
-// 768
+// 480
 
-  @media only screen and (min-width: 768px) {
-     .page-hello {
+  @media only screen and (min-width: 480px) {
+    .page-hello {
 
       .cg-content {
-        margin-top: -240px;
+        margin-top: -200px;
       }
+
+      .cg-text-split {
+        font-size: 96px;
+      }
+
     }
   }
+
+  // 768
+
+  @media only screen and (min-width: 768px) {
+    .page-hello {
+      .cg-text-split {
+        font-size: 116px;
+      }
+
+    }
+  }
+
+
 
   // 1024
 
@@ -76,6 +108,10 @@
       .cg-content {
         margin-top: -320px;
       }
+        .cg-text-split {
+          top: 80px;
+          font-size: 136px;
+        }
     }
   }
 

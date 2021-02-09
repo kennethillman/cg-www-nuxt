@@ -109,7 +109,7 @@
     // 1024
     @media only screen and (min-width: 1024px) {
       .hero-body {
-        padding: 160px 0 220px;
+        padding: 160px 0 280px;
       }
     }
 

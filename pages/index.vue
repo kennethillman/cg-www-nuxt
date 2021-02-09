@@ -138,15 +138,13 @@
 
         el.classList.toggle('active', this.$waypointMap.GOING_IN === going)
 
-
-
         //let  rect = el.getBoundingClientRect();
 
         //console.log(el)
         //console.log(rect.top.toFixed(0), rect.right.toFixed(0), rect.bottom.toFixed(0), rect.left.toFixed(0));
 
-
         //console.log('this.$waypointMap -> ' , this.$waypointMap);
+
       },
 
 
