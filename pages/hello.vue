@@ -47,19 +47,21 @@
           el.classList.add('-animate')
          }
       },
-      handleScroll (event) {
-        let scrollTop = window.scrollY + ((window.innerHeight / 2));
-        let positions = [];
+      setCenterdActive (event) {
+
+        let scrollTop = window.scrollY + ((window.innerHeight / 2) - 120);
+        let _positions = [];
         let _items = document.querySelectorAll('.cg-person')
 
-        _items.forEach((element, index) => {
+        _items.forEach((element) => {
           element.classList.remove('-text-red')
           let elOffset = this.offset(element)
-          positions.push({position:elOffset.top, element: element})
+          _positions.push({position:elOffset.top, element: element})
         });
 
-        let getClosest = this.closest(positions,scrollTop);
+        let getClosest = this.closest(_positions,scrollTop);
         getClosest.classList.add('-text-red');
+
       },
       closest(array, number) {
         let num = 0;
@@ -75,17 +77,33 @@
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      },
+      handleResize() {
+        if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
+          // Add Scroll listner if small screen
+          window.addEventListener('scroll', this.setCenterdActive);
+        } else {
+          let _items = document.querySelectorAll('.cg-person')
+          _items.forEach((element) => {
+            element.classList.remove('-text-red')
+          });
+          window.removeEventListener('scroll', this.setCenterdActive);
+        }
       }
     },
     mounted() {
-      if (this.$mq === 'VP320' || this.$mq === 'VP600') {
-        window.addEventListener('scroll', this.handleScroll);
-      }
+
+        // Add Resize listner
+        window.addEventListener('resize', this.handleResize);
+
+        if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
+          // Add Scroll listner if small screen
+          window.addEventListener('scroll', this.setCenterdActive);
+        }
     },
     destroyed () {
-
-        window.removeEventListener('scroll', this.handleScroll);
-
+      window.removeEventListener('scroll', this.setCenterdActive);
+      window.removeEventListener('resize', this.handleResize);
     },
 
   }

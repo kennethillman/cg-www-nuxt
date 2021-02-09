@@ -7,7 +7,7 @@
         <div class="persons-text">
           <div class="person-name">
             <prismic-rich-text  v-if="slice.primary.name.length > 0" :field="slice.primary.name" />
-            <figure v-if="Object.keys(slice.primary.image.desktop).length > 0">
+            <figure v-if="Object.keys(slice.primary.image.desktop).length > 0" ref="image">
               <ImageResponsive class="featured-browser" :image="slice.primary.image" />
             </figure>
           </div>
@@ -31,16 +31,26 @@ export default {
   name: 'slice-person',
   data() {
     return {
-      number: 0,
+      ranRot: false
     }
   },
   methods: {
+    randomImgRotation(){
+      const _rotations = ['one', 'two', 'three', 'four'];
+      const rotationRandom = Math.floor ( Math.random() * _rotations.length)
+      const rotationName = '-rotation-'+_rotations[rotationRandom]
+
+      this.$refs.image.classList.add(rotationName)
+    },
     triggerFade({ el, going, direction }) {
       if (this.$waypointMap.GOING_IN === going) {
         el.classList.add('-animate')
        }
     }
   },
+  mounted() {
+    this.randomImgRotation()
+  }
 }
 </script>
 
@@ -53,8 +63,6 @@ export default {
   text-decoration: none;
   cursor: default;
 
-
-
   p {
     margin: 0 0 4px;
   }
@@ -62,25 +70,24 @@ export default {
   a {
     text-decoration: none;
     margin: 0 0 4px;
+
     &:hover {
       text-decoration: underline;
     }
   }
-
 
   h2,h3,h4 {
     margin: 0 0 4px;
     color: $blue;
   }
 
-  &.-text-red,
-  &:hover {
+  &.-text-red {
     color: $red;
      h2,h3,h4 {
       color: $red;
     }
     figure {
-      display: block;
+      opacity: 1;
     }
   }
 
@@ -90,9 +97,9 @@ export default {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%) rotate(5deg);
+
     z-index: -1;
-    display: none;
+    opacity: 0;
   }
 
   .person-name {
@@ -103,7 +110,6 @@ export default {
     > div > * {
       font-size: 40px;
       line-height: 1;
-
     }
   }
 
@@ -134,10 +140,19 @@ export default {
     margin-right: auto;
   }
 
-
 // 1024
 
   @media only screen and (min-width: 1024px) {
+
+    &:hover {
+      color: $red;
+       h2,h3,h4 {
+        color: $red;
+      }
+      figure {
+         opacity: 1;
+      }
+    }
 
     padding: 64px 0;
 
@@ -146,7 +161,6 @@ export default {
       width: 210px;
       right: auto;
       left: 94%;
-
     }
 
     .person-name {
@@ -165,11 +179,6 @@ export default {
     .person-link {
       font-family: $font-cg-2;
       font-size: 16px;
-    }
-
-    .person-details {
-      // display: flex;
-      // flex-wrap: wrap;
     }
 
   }
