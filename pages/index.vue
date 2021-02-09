@@ -48,6 +48,9 @@
 </template>
 
 <script type="text/javascript">
+
+  import lax from 'lax.js'
+
   export default {
     async asyncData({ $prismic, store, params, error }) {
       const document = await $prismic.api.getSingle('start')
@@ -169,12 +172,35 @@
 
     },
     mounted() {
-      // console.log('index mounted')
-    },
-    created () {
-      // console.log('index created')
-    },
-    destroyed () {
+
+      lax.init()
+
+      // Add a driver that we use to control our animations
+      lax.addDriver('scrollY', function () {
+        return window.scrollY
+      })
+
+      // Add animation bindings to elements
+      lax.addElements('.lax-svg', {
+        scrollY: {
+           translateY: [           // CSS property
+              ['elInY', 'elOutY'],  // Driver value map
+              [0, 60],   // Animation value map
+
+            ],
+        }
+      })
+
+      // Add animation bindings to elements
+      lax.addElements('.lax-svg-2', {
+        scrollY: {
+           translateY: [           // CSS property
+              ['elInY', 'elOutY'],  // Driver value map
+              [0, -100],   // Animation value map
+
+            ],
+        }
+      })
 
     },
   }

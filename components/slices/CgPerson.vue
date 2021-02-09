@@ -1,6 +1,6 @@
 <template>
 
-  <div class="cg-person -animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
+  <div class="cg-person -animate-fade-in-up" v-waypoint="{ active: true,  callback: triggerFade}">
     <div class="site-content-width">
       <div class="person-body">
 
@@ -29,14 +29,18 @@
 export default {
   props: ['slice'],
   name: 'slice-person',
+  data() {
+    return {
+      number: 0,
+    }
+  },
   methods: {
     triggerFade({ el, going, direction }) {
       if (this.$waypointMap.GOING_IN === going) {
         el.classList.add('-animate')
        }
-    },
-  }
-
+    }
+  },
 }
 </script>
 
@@ -69,6 +73,7 @@ export default {
     color: $blue;
   }
 
+  &.-text-red,
   &:hover {
     color: $red;
      h2,h3,h4 {

@@ -255,23 +255,21 @@ export default {
   // 1024
 
   @media only screen and (min-width: 1024px) {
-
-  .slide-box {
-    padding: 40px;
-    .box-header {
-      font-size: 40px;
+    .slide-box {
+      padding: 40px;
+      .box-header {
+        font-size: 40px;
+      }
     }
-  }
-
-  .svg-frog{
-    height: 180px;
-    width: 180px;
-    left: -180px;
-  }
-  .svg-eyes  {
-    height: 200px;
-    width: 200px;
-  }
+    .svg-frog{
+      height: 180px;
+      width: 180px;
+      left: -180px;
+    }
+    .svg-eyes  {
+      height: 200px;
+      width: 200px;
+    }
   }
 
 

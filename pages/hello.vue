@@ -47,7 +47,46 @@
           el.classList.add('-animate')
          }
       },
-    }
+      handleScroll (event) {
+        let scrollTop = window.scrollY + ((window.innerHeight / 2));
+        let positions = [];
+        let _items = document.querySelectorAll('.cg-person')
+
+        _items.forEach((element, index) => {
+          element.classList.remove('-text-red')
+          let elOffset = this.offset(element)
+          positions.push({position:elOffset.top, element: element})
+        });
+
+        let getClosest = this.closest(positions,scrollTop);
+        getClosest.classList.add('-text-red');
+      },
+      closest(array, number) {
+        let num = 0;
+        for (let i = array.length - 1; i >= 0; i--) {
+          if(Math.abs(number - array[i].position) < Math.abs(number - array[num].position)){
+            num = i;
+          }
+        }
+        return array[num].element;
+      },
+      offset(el) {
+        let rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      }
+    },
+    mounted() {
+      if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+    },
+    destroyed () {
+
+        window.removeEventListener('scroll', this.handleScroll);
+
+    },
 
   }
 
