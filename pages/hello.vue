@@ -2,12 +2,12 @@
   <div class="cg-page page-hello">
     <div class="cg-content">
 
-      <TextSplit
+     <!--  <TextSplit
             v-waypoint="{ active: true, callback: triggerFade }"
             text="PEO"
             split="PLE"
             class="-text-yellow -text-right -animate-fade-in-up"
-          />
+          /> -->
       <slices :slices="slices" />
 
     </div>
@@ -49,14 +49,49 @@
 
 .page-hello {
   position: relative;
+  .cg-content {
+    margin-top: -160px;
+    position: relative;
+    width: 90vw;
+  }
 }
 
-.cg-content {
-  position: relative;
-}
+
+// 768
+
+  @media only screen and (min-width: 768px) {
+     .page-hello {
+
+      .cg-content {
+        margin-top: -240px;
+      }
+    }
+  }
+
+  // 1024
+
+  @media only screen and (min-width: 1024px) {
+     .page-hello {
+
+      .cg-content {
+        margin-top: -320px;
+      }
+    }
+  }
+
+  // 1280
+
+  @media only screen and (min-width: 1280px) {
+     .page-hello {
+
+      .cg-content {
+        margin-top: -400px;
+      }
+    }
+  }
+
 
 .cg-hero {
-    margin-bottom: -128px;
 }
 
 .cg-person {

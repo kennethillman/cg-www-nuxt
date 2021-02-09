@@ -106,7 +106,9 @@ export default {
 
 
   .site-content-width {
-
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
