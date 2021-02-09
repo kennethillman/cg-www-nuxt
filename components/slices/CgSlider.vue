@@ -17,50 +17,59 @@
         </h3>
       </div>
 
-      <hooper :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
+
+
+      <hooper ref="carousel" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
-          <div class="slide-body">
+            <!-- LINK -->
+            <template v-if="item.link.uid || item.link.url">
+              <div class="slide-body">
+                <figure @click.stop="slideNext">
 
-            <figure>
+                  <template v-if="item.image">
+                    <ImageResponsive class="featured-browser" :image="item.image" />
+                  </template>
 
-              <template v-if="item.image">
-                <ImageResponsive class="featured-browser" :image="item.image" />
-              </template>
+                  <template v-if="item.header1.length > 0 && item.header1[0].text !== ''  || item.text.length > 0 && item.text[0].text !== '' ">
+                    <prismic-link :field="item.link"  class="slide-box" :class="['-bg-'+ item.color_background]">
+                      <h4 class="box-header" v-if="item.header1.length > 0 && item.header1[0].text !== ''" :class="['-text-'+ item.color_header]">
+                        {{item.header1[0].text}}
+                      </h4>
+                      <p v-if="item.text.length > 0 && item.text[0].text !== '' ">
+                        {{item.text[0].text}}
+                      </p>
+                    </prismic-link>
+                  </template>
+                </figure>
+              </div>
+            </template>
 
-<!--               <template v-if="item.header1.length > 0 || item.text.length > 0">
+            <!-- NO LINK -->
+            <template v-else>
+              <div class="slide-body" @click="slideNext">
+                <figure>
 
-                <div class="slide-box">
+                  <template v-if="item.image">
+                    <ImageResponsive class="featured-browser" :image="item.image" />
+                  </template>
 
-
-                <h4 v-if="item.header1.length > 0 && item.header1[0].text !== ''">
-                  {{item.header1[0].text}}
-                </h4>
-
-                <p v-if="item.text.length > 0">
-                  {{item.text[0].text}}
-                </p>
-
-
-                </div>
-              </template> -->
-
-            </figure>
-
-
-<!--             {{item.header1.length}}
-            {{item.header1}}
-            {{item.text.length}}
-            {{item.text}} -->
-
-
-          </div>
-
-
-
+                  <template v-if="item.header1.length > 0 && item.header1[0].text !== ''  || item.text.length > 0 && item.text[0].text !== '' ">
+                    <div class="slide-box" :class="['-bg-'+ item.color_background]">
+                      <h4 class="box-header" v-if="item.header1.length > 0 && item.header1[0].text !== ''" :class="['-text-'+ item.color_header]">
+                        {{item.header1[0].text}}
+                      </h4>
+                      <p v-if="item.text.length > 0 && item.text[0].text !== '' ">
+                        {{item.text[0].text}}
+                      </p>
+                    </div>
+                  </template>
+                </figure>
+              </div>
+            </template>
 
         </slide>
-        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        <!-- <hooper-navigation slot="hooper-addons"></hooper-navigation> -->
 
       </hooper>
 
@@ -95,6 +104,9 @@ export default {
     };
   },
   methods: {
+    slideNext() {
+      this.$refs.carousel.slideNext();
+    },
     triggerFade ({ el, going, direction }) {
 
     if (this.$waypointMap.GOING_IN === going) {
@@ -115,12 +127,34 @@ export default {
   padding: 50px 0 0;
   margin: 100px 0 100px;
 
+  img {
+    display: block;
+    * &:focus {
+        outline: none!important;
+      }
+  }
+
   .hooper {
     height: auto;
+        &:focus {
+        outline: none;
+        border: none;
+      }
   }
 
   .hooper-list {
     overflow: visible;
+    &:focus {
+        outline: none;
+        border: none;
+      }
+  }
+
+  .hooper-track {
+      &:focus {
+        outline: none;
+        border: none;
+      }
   }
 
 
@@ -128,19 +162,25 @@ export default {
     padding:10px;
   }
 
+  .slide-body {
+    text-decoration: none;
+  }
+
   .slide-box {
     padding: 24px;
-    background: rgba(0,0,0,.5);
-    position: absolute;
     width: 100%;
-    bottom: 0;
-    left: 0;
+    color: $white;
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
+    .box-header {
+      font-size: 40px;
+    }
   }
 
   figure {
     position: relative;
   }
-
 
   .bg-blob {
     width: 100vw;
