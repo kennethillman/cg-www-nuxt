@@ -77,7 +77,6 @@ body {
   }
 
 
-
   // Fill
 
   .-fill-black {
@@ -137,6 +136,25 @@ body {
   }
 
 
+// - - - ROTATION
+
+  .-rotation-one {
+    transform: translateY(-50%) rotate(5deg);
+  }
+
+  .-rotation-two {
+    transform: translateY(-50%) rotate(-5deg);
+  }
+
+  .-rotation-three {
+    transform: translateY(-50%) rotate(8deg);
+  }
+
+  .-rotation-four {
+    transform: translateY(-50%) rotate(-8deg);
+  }
+
+
 // - - - VISIBILITY
 
   .-hide {
@@ -173,29 +191,11 @@ body {
     position: static;
   }
 
-  .-static {
+  .-fixed {
     position: fixed;
   }
 
 
-// - - - DISPLAY
-
-  .-inbl {
-    display: inline-block;
-    width: auto;
-  }
-
-  .-bl {
-    display: block;
-  }
-
-  .-fl {
-    display: flex;
-  }
-
-  .-in {
-    display: inline;
-  }
 
 // - - - TEXT
 
