@@ -1,9 +1,14 @@
 <template>
-  <div class="cg-page">
-    <div class="cg-content" style="height: 200vh">
+  <div class="cg-page page-hello">
+    <div class="cg-content">
 
-        <prismic-rich-text :field="doc.header" />
-        <slices :slices="slices" />
+      <TextSplit
+            v-waypoint="{ active: true, callback: triggerFade }"
+            text="PEO"
+            split="PLE"
+            class="-text-yellow -text-right -animate-fade-in-up"
+          />
+      <slices :slices="slices" />
 
     </div>
   </div>
@@ -39,3 +44,24 @@
   }
 
 </script>
+
+<style lang="scss">
+
+.page-hello {
+  position: relative;
+}
+
+.cg-content {
+  position: relative;
+}
+
+.cg-hero {
+    margin-bottom: -128px;
+}
+
+.cg-person {
+    position: relative;
+    z-index: 10;
+}
+
+</style>

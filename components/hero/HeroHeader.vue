@@ -129,11 +129,14 @@
         line-height: 1em;
       }
 
-      .ani-letters-one span {
-        display: inline-block;
+      .ani-letters-one {
         font-family: $font-cg-2;
-        font-weight: 800;
-        line-height: 1em;
+        span {
+          display: inline-block;
+          font-family: $font-cg-2;
+          font-weight: 800;
+          line-height: 1em;
+        }
       }
 
     }
