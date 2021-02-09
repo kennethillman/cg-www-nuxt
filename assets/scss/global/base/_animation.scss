@@ -32,8 +32,7 @@
 
 
     [class*='-animate-']{
-      transition: all 1s ease-out;
-      transition-delay: .2s;
+
       &.-delay-one {
         transition-delay: .4s;
       }
@@ -55,6 +54,10 @@
       &.-delay-seven {
         transition-delay: 1.8s;
       }
+    }
+
+    [class*='-delay-']{
+      transition: all 1s ease-out;
     }
 
     .-animate {
