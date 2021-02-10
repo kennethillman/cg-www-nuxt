@@ -44,9 +44,24 @@ a {
   overflow: hidden;
 }
 
+
+// Hooper.js
+
 .hooper {
  z-index: 5;
+ min-width: 320px;
 }
+
+.hooper,
+.hooper-track,
+.hooper-list  {
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+
 
 
 
