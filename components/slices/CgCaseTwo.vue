@@ -15,20 +15,22 @@
         class="site-content-width -animate-fade-in-up">
 
       <!-- Image -->
-      <figure class="case-image">
 
-<!--             <template v-if="slice.primary.image_phone.url">
-              <ImageResponsive :image="slice.primary.image_phone" />
-            </template>
-            <template else-if="slice.primary.image_browser.url">
-              <ImageResponsive :image="slice.primary.image_browser" />
-            </template>
- -->
 
+        <template v-if="slice.primary.image_phone.url">
+          <figure class="case-image image-phone">
+            <ImageResponsive :image="slice.primary.image_phone" />
+          </figure>
+        </template>
+        <template else-if="slice.primary.image_browser.url">
+          <figure class="case-image image-browser">
+            <ImageResponsive :image="slice.primary.image_browser" />
+          </figure>
+        </template>
 
       </figure>
 
-      <div class="case-box"
+      <div class="case-box lax-box "
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
           <!-- Logo -->
           <prismic-image :field="slice.primary.svg_logo" />
@@ -66,7 +68,7 @@ export default {
 
 .cg-case-two {
 
-  margin: 50px 0 60px;
+  margin: 100px 0 120px;
   text-align: left;
   max-width: 420px;
   float: left;
@@ -90,11 +92,25 @@ export default {
 
   // Image
   .case-image {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+    position: absolute;
+    top: 50%;
+    right:0;
+    z-index: 5;
     img {
-      width: 80%;
+      width: 145px;
+      height: auto;
+    }
+
+    &.image-phone {
+      transform: perspective(240px) translateX(-16%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+    }
+
+    &.image-browser {
+      top: 30px;
+      transform: translateX(4%) translateY(-54%);
+      img {
+        width: 200px;
+      }
     }
   }
 
@@ -102,6 +118,7 @@ export default {
   .case-box {
     border-radius: 8px;
     padding: 16px 16px 24px;
+    padding-right: 100px;
     position: relative;
     z-index: 3;
     width: 80%;
@@ -129,6 +146,22 @@ export default {
    }
   }
 
+  &.-image-browser {
+    .case-box {
+      padding: 16px 16px 24px;
+    }
+    &.-position-right {
+      .case-box {
+        padding: 16px 16px 24px;
+        > img {
+          margin-left: 60px;
+        }
+      }
+
+    }
+
+  }
+
 
   // - - - POSITION RIGHT
 
@@ -140,11 +173,19 @@ export default {
       transform: translate(50%,-50%) rotate(180deg);
     }
     .case-image {
-      img {
-        margin-left: 20%;
+
+      right: auto;
+      left: 0;
+
+      &.image-phone {
+        transform: perspective(260px) translateX(16%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
+
       }
+
     }
     .case-box{
+      padding-right: 0px;
+      padding-left: 100px;
        float: right;
        margin-left: 20%;
        margin-right: 0;
@@ -163,6 +204,27 @@ export default {
   @media only screen and (min-width: 768px) {
     margin: 70px 0 80px;
 
+    // Image
+    .case-image {
+      &.image-browser {
+        top: 30px;
+        transform: translateX(12%) translateY(-54%);
+        img {
+          width: 280px;
+        }
+      }
+    }
+
+
+     &.-position-right {
+        .case-image {
+          &.image-browser {
+            transform: translateX(-12%) translateY(-54%);
+          }
+        }
+
+      }
+
   }
 
 
@@ -171,16 +233,17 @@ export default {
   @media only screen and (min-width: 1024px) {
 
      max-width: 600px;
+     margin: 180px 0 120px;
 
       // Box
       .case-box {
         padding: 32px 32px 48px;
-            svg,
-            img {
-              height: 120px;
-              margin: -32px 0 0 -32px;
-
-            }
+        padding-right: 100px;
+        svg,
+        img {
+          height: 120px;
+          margin: -32px 0 0 -32px;
+        }
       }
 
       .case-box-text {
@@ -189,6 +252,37 @@ export default {
 
       .cg-case-figure {
          width: 52%;
+      }
+
+      .case-image {
+        img {
+          width: 220px;
+        }
+        &.image-phone {
+          transform: perspective(300px) translateX(-6%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+        }
+        &.image-browser {
+          transform: translateX(12%) translateY(-54%);
+          img {
+            width: 330px;
+          }
+        }
+
+      }
+
+      &.-position-right {
+        .case-image {
+          &.image-phone {
+            transform: perspective(300px) translateX(6%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
+          }
+          &.image-browser {
+            transform: translateX(-12%) translateY(-54%);
+          }
+        }
+        .case-box{
+          padding-right: 0px;
+          padding-left: 120px;
+        }
       }
 
   }
@@ -200,7 +294,24 @@ export default {
 
     max-width: 800px;
 
-    margin: 100px 0 100px;
+      .case-image {
+        &.image-browser {
+          transform: translateX(0%) translateY(-54%);
+          img {
+            width: 480px;
+          }
+        }
+      }
+
+      &.-position-right {
+        .case-image {
+
+          &.image-browser {
+            transform: translateX(-24%) translateY(-54%);
+          }
+        }
+
+      }
 
 
   }

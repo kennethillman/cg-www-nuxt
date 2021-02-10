@@ -37,23 +37,40 @@
     },
     mounted() {
 
-      lax.init()
+      if (this.$mq === 'VP768' || this.$mq === 'VP1024' || this.$mq === 'VP1280') {
 
-      // Add a driver that we use to control our animations
-      lax.addDriver('scrollY', function () {
-        return window.scrollY
-      })
+        lax.init()
 
-      // Add animation bindings to elements
-      lax.addElements('.lax-image', {
-        scrollY: {
-           translateY: [           // CSS property
-              ['elInY', 'elOutY'],  // Driver value map
-              [0, 120],   // Animation value map
+        // Add a driver that we use to control our animations
+        lax.addDriver('scrollY', function () {
+          return window.scrollY
+        })
 
-            ],
-        }
-      })
+        // Add animation bindings to elements
+        lax.addElements('.lax-image', {
+          scrollY: {
+             translateY: [           // CSS property
+                ['elInY', 'elOutY'],  // Driver value map
+                [0, 120],   // Animation value map
+
+              ],
+          }
+        })
+
+         // Add animation bindings to elements
+        lax.addElements('.lax-box', {
+          scrollY: {
+             translateY: [           // CSS property
+                ['elInY', 'elOutY'],  // Driver value map
+                [0, 70],   // Animation value map
+
+              ],
+          }
+        })
+
+      }
+
+
 
     }
 

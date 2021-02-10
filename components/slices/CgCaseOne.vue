@@ -51,7 +51,7 @@ export default {
 
 .cg-case-one {
 
-  padding: 50px 0 0;
+  padding: 0 0 0;
   text-align: left;
   max-width: 420px;
   float: left;
@@ -117,7 +117,7 @@ export default {
   // - - - VERSION - B
 
   &.-version-b {
-
+    padding-bottom: 50px;
     .case-image {
       img {
         margin-left: 10%;
@@ -251,7 +251,7 @@ export default {
 
     max-width: 800px;
 
-    padding: 100px 0 50px;
+    // padding: 100px 0 50px;
 
 
   }
