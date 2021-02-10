@@ -92,7 +92,7 @@ s231,59,319,60s215-48,298-47s230-22,256,61s-10,206-10,206H0L-13,68z" />
         top: -1px;
         left: 0;
         width: 100%;
-        height: 150vh;
+        height: 110vh;
         background: #fff;
         position: absolute;
         z-index: 1;
