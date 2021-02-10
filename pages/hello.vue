@@ -78,32 +78,31 @@
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       },
-      handleResize() {
-        if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
-          // Add Scroll listner if small screen
-          window.addEventListener('scroll', this.setCenterdActive);
-        } else {
-          let _items = document.querySelectorAll('.cg-person')
-          _items.forEach((element) => {
-            element.classList.remove('-text-red')
-          });
-          window.removeEventListener('scroll', this.setCenterdActive);
-        }
-      }
+      // handleResize() {
+      //   if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
+      //     // Add Scroll listner if small screen
+      //     window.addEventListener('scroll', this.setCenterdActive);
+      //   } else {
+      //     let _items = document.querySelectorAll('.cg-person')
+      //     _items.forEach((element) => {
+      //       element.classList.remove('-text-red')
+      //     });
+      //     window.removeEventListener('scroll', this.setCenterdActive);
+      //   }
+      // }
     },
     mounted() {
 
         // Add Resize listner
-        window.addEventListener('resize', this.handleResize);
+        // window.addEventListener('resize', this.handleResize);
 
-        if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
-          // Add Scroll listner if small screen
+
           window.addEventListener('scroll', this.setCenterdActive);
-        }
+
     },
     destroyed () {
       window.removeEventListener('scroll', this.setCenterdActive);
-      window.removeEventListener('resize', this.handleResize);
+      // window.removeEventListener('resize', this.handleResize);
     },
 
   }

@@ -138,15 +138,15 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
-    &:hover {
-      color: $red;
-       h2,h3,h4 {
-        color: $red;
-      }
-      figure {
-         opacity: 1;
-      }
-    }
+    // &:hover {
+    //   color: $red;
+    //    h2,h3,h4 {
+    //     color: $red;
+    //   }
+    //   figure {
+    //      opacity: 1;
+    //   }
+    // }
 
     padding: 64px 0;
 
