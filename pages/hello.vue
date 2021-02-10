@@ -55,15 +55,15 @@
 
         _items.forEach((element) => {
           element.classList.remove('-text-red')
-          let elOffset = this.offset(element)
+          let elOffset = this.helperOffset(element)
           _positions.push({position:elOffset.top, element: element})
         });
 
-        let getClosest = this.closest(_positions,scrollTop);
+        let getClosest = this.helperClosest(_positions,scrollTop);
         getClosest.classList.add('-text-red');
 
       },
-      closest(array, number) {
+      helperClosest(array, number) {
         let num = 0;
         for (let i = array.length - 1; i >= 0; i--) {
           if(Math.abs(number - array[i].position) < Math.abs(number - array[num].position)){
@@ -72,7 +72,7 @@
         }
         return array[num].element;
       },
-      offset(el) {
+      helperOffset(el) {
         let rect = el.getBoundingClientRect(),
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;

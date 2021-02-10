@@ -29,17 +29,11 @@
 export default {
   props: ['slice'],
   name: 'slice-person',
-  data() {
-    return {
-      ranRot: false
-    }
-  },
   methods: {
     randomImgRotation(){
       const _rotations = ['one', 'two', 'three', 'four'];
       const rotationRandom = Math.floor ( Math.random() * _rotations.length)
       const rotationName = '-rotation-'+_rotations[rotationRandom]
-
       this.$refs.image.classList.add(rotationName)
     },
     triggerFade({ el, going, direction }) {
