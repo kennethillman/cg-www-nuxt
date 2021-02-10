@@ -24,7 +24,7 @@
       </div>
 
       <!-- IMAGE -->
-      <HeroImage v-if="compHero.background_image.url"/>
+      <HeroImage v-if="compHero.background_image.url" :hero="compHero"/>
 
       <!-- ZEBRA -->
       <HeroZebra :hero="compHero"/>
