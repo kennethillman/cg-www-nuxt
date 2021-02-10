@@ -85,7 +85,7 @@ export default {
 },
 methods: {
   slideNext() {
-    if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
+    if (this.$mq === 'VP320' || this.$mq === 'VP600') {
       this.$refs.sliderTestamonials.slideNext();
     } else {
       this.$refs.sliderTestamonials.slidePrev();
