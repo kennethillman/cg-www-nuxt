@@ -17,12 +17,12 @@
         </h3>
       </div>
 
-      <hooper :settings="hooperSettings" style="height: 400px" :infiniteScroll="true"  :transition="1000"  @afterSlide="evAfter" @slide="evSlide"
+      <hooper ref="sliderTestamonials" :settings="hooperSettings"  :infiniteScroll="true"  :transition="1000"  @afterSlide="evAfter" @slide="evSlide"
           :class="[{'is-sliding' : this.sliding}]" >
 
-        <slide class="cg-testamonial" style="height: 200px" v-for="(item, index) in slice.items" :key="index+'item'" :class="['-fill-'+item.color, '-text-'+item.color]">
+        <slide class="cg-testamonial" v-for="(item, index) in slice.items" :key="index+'item'" :class="['-fill-'+item.color, '-text-'+item.color]">
 
-          <div class="testamonial-body">
+          <div class="testamonial-body" @click.stop="slideNext">
             <svg class="testamonial-svg" width="120" height="56" viewBox="0 0 120 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0)">
               <path d="M3.10003 10.1998C9.50002 6.59975 18.3 1.69975 25.4 6.59975C30.7 10.1998 30.8 16.5998 32.9 21.9998C34.4 25.8998 37.4 27.6998 41.5 26.1998C44 25.2998 46.5 23.6998 48.8 22.2998C51.5 20.6998 54.9 17.1998 57.9 16.0998C61.7 14.7998 62.5 19.5998 63.8 22.2998C65 24.6998 66.3 26.9998 67.9 29.1998C70.7 33.2998 74.3 36.7998 78.8 39.0998C84.3 41.9998 90.6 41.9998 96.6 43.3998C104.1 45.0998 111 48.9998 116.5 54.3998C118.8 56.6998 120.8 52.9998 119 51.0998C114.4 46.4998 109.2 42.8998 103.2 40.4998C96.2 37.7998 88.5 38.2998 81.6 35.3998C74.8 32.4998 70.3 26.4998 67.1 20.0998C65.3 17.0998 63.8 9.59975 59 9.99975C56.4 10.1998 53.8 13.1998 51.8 14.4998C48.8 16.5998 45.7 18.4998 42.5 20.1998C40.2 21.3998 37.9 22.6998 36.1 19.7998C35.4 18.5998 35.3 16.4998 34.9 15.0998C34.1 12.3998 33 9.69975 31.5 7.29975C24 -4.40025 10.8 0.199752 0.900025 5.79975C-1.19997 6.99975 0.800025 11.4998 3.10003 10.1998Z" />
@@ -56,9 +56,6 @@
 
         </slide>
 
-
-         <hooper-navigation slot="hooper-addons"></hooper-navigation>
-
       </hooper>
 
     </div>
@@ -87,6 +84,13 @@ export default {
 
 },
 methods: {
+  slideNext() {
+    if (this.$mq === 'VP320' || this.$mq === 'VP600' || this.$mq === 'VP768' || this.$mq === 'VP1024') {
+      this.$refs.sliderTestamonials.slideNext();
+    } else {
+      this.$refs.sliderTestamonials.slidePrev();
+    }
+  },
   evSlide(){
     this.sliding = true;
   },
@@ -119,7 +123,118 @@ mounted() {
 
   padding: 50px 0 0;
   text-align: left;
-  display: none;
+
+
+// - - - - VERTICAL
+
+// 600
+
+  @media only screen and (max-width: 599px) {
+
+    .hooper {
+      height: 280px!important;
+    }
+
+    .hooper-slide {
+      height: 140px!important;
+    }
+
+    figure {
+      height: 100px;
+      width: 120px;
+      border-radius: 100px;
+      overflow: hidden;
+      transform: translateX(0);
+        clip-path: polygon(44% 0%, 90% 26%, 100% 80%, 75% 100%, 25% 100%, 0% 60%, 8% 20%);
+    }
+
+    .testamonial-body {
+      position: relative;
+      // transform: translateX(0px);
+      // display: flex;
+      // justify-content: flex-end;
+        // figure {
+        //   transform: translateX(0);
+        //   clip-path: polygon(44% 0%, 90% 26%, 100% 80%, 75% 100%, 25% 100%, 0% 60%, 8% 20%);
+        // }
+    }
+
+    .testamonial-svg {
+      position: absolute;
+      height: 56px;
+      width: 120px;
+      top: 0;
+      left: 100px;
+      z-index: 2;
+      opacity: 1;
+    }
+
+    .testamonial-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 0 0 100px;
+    }
+
+    .testamonial {
+      opacity: 0;
+    }
+
+    // CURRENT SLIDE
+
+      .cg-testamonial.is-current {
+          text-align: right;
+        .name {
+          color: $blue;
+        }
+        .title {
+          color: $red;
+        }
+        .testamonial {
+          opacity: 1;
+          color: $black;
+          height: auto;
+          padding-bottom: 4px;
+          font-size: 16px;
+        }
+        .testamonial-svg {
+          opacity: 0;
+        }
+        .testamonial-text {
+          bottom: auto;
+          top: 0;
+          padding: 0 100px 0 0;
+          display: flex;
+          // left: auto;
+          // padding-right: 140px;
+          align-items: flex-end;
+        }
+        .testamonial-body {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+
+  }
+
+
+// - - -  - - - - - - - - - - - - -  - - - - -  - - - - - - -  - - - - - - - - -  -
+// - - - - HORSIZONTAL
+
+// 600
+
+  @media only screen and (min-width: 600px) {
+
+    .hooper-list {
+      overflow: visible;
+    }
+
 
   figure {
     height: 140px;
@@ -129,7 +244,7 @@ mounted() {
   }
 
   .hooper {
-    // height: 400px;
+    min-width: 280px;
   }
 
   .cg-testamonial {
@@ -173,10 +288,13 @@ mounted() {
     flex-direction: column;
     align-items: flex-start;
     left: 100%;
+    width: 75%;
+    text-align: right;
   }
 
   .testamonial {
     opacity: 0;
+    height: 1.8em;
   }
 
   .name {
@@ -201,7 +319,10 @@ mounted() {
       color: $red;
     }
     .testamonial {
+
       opacity: 1;
+      color: $black;
+      height: auto;
     }
     .testamonial-svg {
       opacity: 0;
@@ -216,136 +337,6 @@ mounted() {
       justify-content: flex-end;
     }
   }
-
-
-
-  // ANIMATED
-  .hopper-animated-slide .cg-testamonial  {
-
-    .testamonial-svg {
-        // Done ?
-    }
-
-    .testamonial-body {
-        // Done ?
-
-    }
-
-    .testamonial-text {
-      width: 0;
-      display: block;
-      top: 0;
-      height: 100%;
-      transform: translate(0,0);
-    }
-
-    .name {
-      position: absolute;
-      bottom: 18px;
-      left: 0;
-      right: auto;
-      white-space: nowrap;
-    }
-
-    .title {
-        // Done ?
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: auto;
-       white-space: nowrap;
-    }
-
-    .testamonial {
-      transform: translate(100%,0);
-      // width: 100vw;
-      text-align: left;
-      position: absolute;
-      margin: 0;
-      right: 0;
-      bottom: 52px;
-      opacity: 0;
-    }
-
-  }
-
-   // ANIMATED CURRENT
-  .hopper-animated-slide .cg-testamonial.is-current  {
-
-
-    .testamonial-svg {
-
-    }
-
-    .testamonial-body {
-
-    }
-
-    .testamonial-text {
-      width: 0;
-      padding: 0;
-      transform: translate(-120px, 0);
-    }
-
-    .name {
-      transform: translate(-100%,0);
-    }
-
-    .title {
-      transform: translate(-100%,0);
-    }
-
-    .testamonial {
-
-      opacity: 1;
-      transform: translate(0,0);
-
-      > div {
-        transform: translate(-120px, 0);
-      }
-
-    }
-
-  }
-
-
-  // ANIATAING / TRANSITION
- .hopper-animated-slide.is-sliding .cg-testamonial  {
-    .testamonial-body {
-      //transition: all 1s ease-in-out;
-        figure {
-         // transition: all 1s ease-in-out;
-        }
-    }
-    .testamonial-svg {
-      transition: all 1s ease-in-out;
-    }
-    .testamonial-text {
-      transition: all 1s ease-in-out;
-    }
-    .name,
-    .title,
-    .testamonial,
-    .testamonial > div {
-      transition: all 1s ease-in-out;
-    }
-    .testamonial {
-      transition: all 1s ease-in-out;
-    }
-  }
-
-
-
-
-
-
-// 600
-
-  @media only screen and (min-width: 600px) {
-
-    .hooper-list {
-      overflow: visible;
-    }
 
   }
 
