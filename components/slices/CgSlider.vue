@@ -18,7 +18,7 @@
       </div>
 
       <!-- THE SLIDER -->
-      <hooper ref="carousel" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
+      <hooper ref="sliderContent" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
             <!-- LINK -->
@@ -151,7 +151,7 @@ export default {
   },
   methods: {
     slideNext() {
-      this.$refs.carousel.slideNext();
+      this.$refs.sliderContent.slideNext();
     },
     triggerFade ({ el, going, direction }) {
 
@@ -173,6 +173,13 @@ export default {
   padding: 50px 0 0;
   margin: 100px 0 100px;
   z-index: 2;
+
+  .cg-group-header {
+    color: $white;
+  }
+  .cg-group-sub-header {
+    color: $red;
+  }
 
   img {
     display: block;
@@ -197,25 +204,10 @@ export default {
 
   .hooper {
     height: auto;
-    &:focus {
-      outline: none;
-      border: none;
-    }
   }
 
   .hooper-list {
     overflow: visible;
-    &:focus {
-      outline: none;
-      border: none;
-    }
-  }
-
-  .hooper-track {
-    &:focus {
-      outline: none;
-      border: none;
-    }
   }
 
   .cg-slide {
