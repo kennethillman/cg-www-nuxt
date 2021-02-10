@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-page">
+  <div class="cg-page page-case">
     <div class="cg-content" style="padding-bottom: 60px;">
 
         <slices :slices="slices" />
@@ -77,3 +77,9 @@
   }
 
 </script>
+
+<style lang="scss">
+  .page-case {
+
+  }
+</style>

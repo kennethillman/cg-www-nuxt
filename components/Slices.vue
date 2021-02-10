@@ -3,6 +3,12 @@
 
         <section v-for="(slice, index) in slices" :key="'slice-' + index">
 
+
+            <!-- cg-content -->
+            <template v-if="slice.slice_type === 'cg-content'">
+                <cg-content :slice="slice"/>
+            </template>
+
             <!-- cg-person -->
             <template v-if="slice.slice_type === 'cg-person'">
                 <cg-person :slice="slice"/>

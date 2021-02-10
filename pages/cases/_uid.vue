@@ -1,17 +1,12 @@
 <template>
   <div class="cg-page">
-    <div class="cg-content" style="height: 200vh">
-
+    <div class="cg-content">
 
        <slices :slices="slices" />
-
-
 
     </div>
   </div>
 </template>
-
-
 
 <script>
 
