@@ -63,18 +63,15 @@ export default {
 
   @media only screen and (min-width: 768px) {
 
-    .centerd-content-width {
-
-    }
-
     ul {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
       padding: 32px 0 48px;
       width: 680px;
-      margin-left: -50px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-
     }
 
     li {
@@ -89,25 +86,14 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
-    .centerd-content-width {
-
-    }
-
   }
 
-  // 1280
+// 1280
 
   @media only screen and (min-width: 1280px) {
 
-
-    .centerd-content-width {
-
-    }
-
-
     ul {
-      width: 800px;
-      margin-left: -70px;
+      width: 1060px;
     }
 
     li {
