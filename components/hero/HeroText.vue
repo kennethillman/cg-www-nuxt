@@ -29,7 +29,7 @@
 
   .cg-hero-text {
     opacity: 0;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 32px;
     width: 100%;
     margin-bottom: 60px;
@@ -42,6 +42,18 @@
     &.-show-text {
       opacity: 1;
     }
+
+
+// 1280
+
+  @media only screen and (min-width: 1280px) {
+
+    .cg-client {
+      font-size: 24px;
+    }
+
+  }
+
   }
 
 </style>
