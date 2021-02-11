@@ -2,6 +2,10 @@
 
   <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project" :class="['-'+slice.primary.direction]">
 
+      <!--
+        (fix) -> Add fallback for if no link!!
+      -->
+
       <div class="site-content-width">
 
         <!-- Left / Top -->
@@ -27,13 +31,13 @@
 
           <h2
              v-waypoint="{ active: true, callback: triggerFade }"
-             v-if="slice.primary.text_header[0].text !== ''"
+             v-if="slice.primary.text_header.length > 0 "
              class="featured-header -animate-fade-in-up"
           >{{slice.primary.text_header[0].text}}</h2>
 
           <prismic-rich-text
             v-waypoint="{ active: true, callback: triggerFade }"
-            v-if="slice.primary.text[0].text !== ''"
+            v-if="slice.primary.text.length > 0 "
             class="featured-text -animate-fade-in-up"
             :field="slice.primary.text"
           />
@@ -41,6 +45,7 @@
           <div
             v-waypoint="{ active: true, callback: triggerFade }"
             class="featured-link -animate-fade-in-up"
+            v-if="slice.primary.link_text.length > 0 "
           >
             {{slice.primary.link_text[0].text}}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
@@ -70,6 +75,7 @@
           <div
             v-waypoint="{ active: true, callback: triggerFade }"
             class="featured-link "
+            v-if="slice.primary.more_projects_link_text.length > 0 "
           >
               {{slice.primary.more_projects_link_text[0].text}}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>

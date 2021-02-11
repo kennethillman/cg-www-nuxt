@@ -1,7 +1,5 @@
 <template>
-  <section class="cg-edt-content-quote" :class="['-image-'+slice.primary.image_position, {
-    '-no-image' : Object.keys(slice.primary.image.desktop).length === 0
-  }]">
+  <section class="cg-edt-content-quote" >
     <div class="case-content-width">
 
       <div class="quote-the">
@@ -15,10 +13,7 @@
 
       </div>
 
-
-
-
-      <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0"”>
+      <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0">
         <ImageResponsive class="featured-browser" :image="slice.primary.image" />
       </figure>
 

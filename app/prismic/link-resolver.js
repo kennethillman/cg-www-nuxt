@@ -33,6 +33,10 @@ export default function (doc) {
     return '/playground/' + doc.uid
   }
 
+  if (doc.type === 'page') {
+    return '/page/' + doc.uid
+  }
+
   if (doc.type === 'playground') {
     return '/playground'
   }
