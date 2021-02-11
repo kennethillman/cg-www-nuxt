@@ -44,11 +44,56 @@ a {
   overflow: hidden;
 }
 
+
+// Content
+
 .cg-content {
   width: 90vw;
   max-width: 1280px;
   margin: 0 auto;
 }
+
+
+// Case - content
+
+
+.case-content-width {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+// 768
+
+@media only screen and (min-width: 768px) {
+
+  .case-content-width {
+    box-sizing: content-box;
+    padding-right: 80px;
+  }
+
+}
+
+
+// 1024
+
+@media only screen and (min-width: 1024px) {
+
+  .case-content-width {
+    padding-right: 140px;
+  }
+
+}
+
+  // 1280
+
+  @media only screen and (min-width: 1280px) {
+
+    .case-content-width {
+      padding-right: 240px;
+    }
+
+  }
+
 
 // Hooper.js
 

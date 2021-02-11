@@ -1,8 +1,8 @@
 <template>
-  <section class="cg-edt-content">
-    <div class="case-content-width">
+  <section class="cg-expertise-list">
+    <div class="centerd-content-width">
 
-      <prismic-rich-text :field="slice.primary.content" />
+      <prismic-rich-text :field="slice.primary.list" />
 
     </div>
   </section>
@@ -11,42 +11,19 @@
 <script>
 export default {
   props: ['slice'],
-  name: 'slice-edt-content'
+  name: 'slice-expertise-list'
 }
 </script>
 
 <style lang="scss">
 
-.cg-edt-content {
+.cg-expertise-list {
 
   padding: 56px 0 32px;
-  font-size: 18px;
   font-family: $font-cg;
-  line-height: 1.8;
 
-  h2,h3,h4 {
-    line-height: 1.256;
-    margin: 0;
-    padding-bottom: 16px;
-    padding-top: 16px;
-    font-family: $font-cg-2;
-  }
 
-  h2 {
-    font-size: 40px;
-  }
-  h3 {
-    font-size: 32px;
-  }
-  h4 {
-    font-size: 24px;
-  }
-
-  p {
-    margin-bottom: 24px;
-  }
-
-  .case-content-width {
+  .centerd-content-width {
     max-width: 580px;
     margin: 0 auto;
   }
@@ -86,9 +63,8 @@ export default {
 
   @media only screen and (min-width: 768px) {
 
-    .case-content-width {
-      box-sizing: content-box;
-      padding-right: 80px;
+    .centerd-content-width {
+
     }
 
     ul {
@@ -113,8 +89,8 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
-    .case-content-width {
-      padding-right: 140px;
+    .centerd-content-width {
+
     }
 
   }
@@ -123,20 +99,9 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
-    font-size: 20px;
 
-    .case-content-width {
-      padding-right: 240px;
-    }
+    .centerd-content-width {
 
-    h2 {
-      font-size: 56px;
-    }
-    h3 {
-      font-size: 44px;
-    }
-    h4 {
-      font-size: 32px;
     }
 
 
@@ -146,7 +111,7 @@ export default {
     }
 
     li {
-      font-size: 26px;
+      font-size: 36px;
       padding-left: 32px;
       &:before {
         width: 10px;
