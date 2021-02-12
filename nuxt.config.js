@@ -111,13 +111,7 @@ export default {
   modules: [
   ],
 
-  render: {
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
-  },
+
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
