@@ -52,15 +52,5 @@
 export default {
   props: ['figures'],
   name: 'slice-case-figure'
-
 }
 </script>
-
-<style lang="scss">
-.cg-case-figure {
-
-}
-</style>
-
-
-
