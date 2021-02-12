@@ -1,5 +1,25 @@
 <template>
   <div class="cg-page page-page">
+
+    <section class="cg-section">
+      <div class="line -before"></div>
+      <h4>Spacing</h4>
+      <div class="line -after"></div>
+    </section>
+
+    <section class="cg-section">
+      <div class="line -before"></div>
+      <h4>Spacing</h4>
+      <div class="line -after"></div>
+    </section>
+
+    <section class="cg-section">
+      <div class="line -before"></div>
+      <h4>Spacing</h4>
+      <div class="line -after"></div>
+    </section>
+
+
     <div class="cg-content">
 
 
@@ -87,13 +107,130 @@
 
 <style lang="scss">
 
+  $spm: 40px !default;
+  $spt: 60px !default;
+  $spd: 80px !default;
+
+
+
   .page-page {
     position: relative;
     z-index: 100;
 
 
+    .cg-section {
+      padding: 40px 0;
+      background: #fff;
+      position: relative;
+      .line{
+        &.-after,
+        &.-before {
+          position: absolute;
+          left:50%;
+          top: 0;
+          border-left: 1px solid #333;
+          height: $spm;
+        }
+        &.-after {
+          top: auto;
+          bottom: 0;
+          &:before {
+            content: '';
+            position: absolute;
+            left:50%;
+            top: 0;
+            width: 15px;
+            border-bottom: 1px solid #333;
+            height: 0px;
+            transform: translateX(-50%);
+          }
+        }
+
+        &.-before {
+          &:before {
+            content: '';
+            position: absolute;
+            left:50%;
+            bottom: 0;
+            width: 15px;
+            border-bottom: 1px solid #333;
+            height: 0px;
+            transform: translateX(-50%);
+          }
+        }
+
+
+      }
+
+
+
+
+
+
+
+
+
+      // &:after {
+      //   top: auto;
+      //   bottom: 0;
+      // }
+
+
+      h4{
+        text-align: center;
+        padding: $spm 0;
+        margin: 0;
+        background: #f6f6f6;
+        // border-bottom: 1px solid black;
+        // border-top: 1px solid black;
+        &:after {
+          content: ' -> #{$spm} x2'
+        }
+        &:before {
+          content: 'Mobile, '
+        }
+      }
+    }
+
+
+    @media only screen and (min-width: 768px) {
+      .cg-section {
+        padding: $spt 0;
+        .line{
+          &.-after,
+          &.-before {
+            height: $spt;
+          }
+        }
+        h4{
+          &:after {
+            content: ' -> #{$spt} x2'
+          }
+          &:before {
+            content: 'Tablet, '
+          }
+        }
+      }
+    }
+
     @media only screen and (min-width: 1280px) {
-      // margin-top: -300px;
+      .cg-section {
+        padding: $spd 0;
+        .line {
+          &.-after,
+          &.-before {
+            height: $spd;
+          }
+        }
+        h4{
+          &:after {
+            content: ' -> #{$spd} x2'
+          }
+          &:before {
+            content: 'Desktop, '
+          }
+        }
+      }
     }
 
   }
