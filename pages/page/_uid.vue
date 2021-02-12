@@ -5,7 +5,7 @@
         <section class="cg-edt-content">
           <div class="case-content-width">
             <div>
-                <p>Machina should all be the same to save code oversides an wierd css attribute combos! </p>
+                <p>Machina should all be the same to save code overrides and wierd css attribute combos! </p>
                 <h3 class="-machina">Machina (Normal/Normal)</h3>
                 <h3 class="-machina -italic">Machina (Normal/Italic)</h3>
                 <h3 class="-machina -bold">Machina (Bold/Normal)</h3>
