@@ -12,7 +12,7 @@
 @font-face {
   font-family: 'SangBleuEmpire';
   font-weight: normal;
-  font-display: optional;
+  font-display: fallback;
   src: local("SangBleuEmpire-Regular"),
        local("Sang Bleu Empire Regular"),
        url(~assets/fonts/SangBleuEmpire-Regular.woff2) format('woff2'),
@@ -24,7 +24,7 @@
 @font-face {
   font-family: 'SangBleuEmpire';
   font-weight: bold;
-  font-display: optional;
+  font-display: fallback;
   src: local("SangBleuEmpire-Bold"),
        local("Sang Bleu Empire Bold"),
        url(~assets/fonts/SangBleuEmpire-Bold.woff2) format('woff2'),
@@ -35,7 +35,7 @@
 @font-face {
   font-family: 'SangBleuEmpire';
   font-weight: 900;
-  font-display: optional;
+  font-display: fallback;
   src: local("SangBleuEmpire-Black"),
        local("Sang Bleu Empire Black"),
        url(~assets/fonts/SangBleuEmpire-Black.woff2) format('woff2'),
@@ -58,7 +58,7 @@
   font-family: 'NeueMachina';
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: fallback;
   src: local("NeueMachina-Black"),
        local("Neue Machina Black"),
        url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
@@ -71,7 +71,7 @@
   font-family: 'NeueMachina';
   font-weight: normal;
   font-style: italic;
-  font-display: optional;
+  font-display: fallback;
   src: local("NeueMachina-Black"),
        local("Neue Machina Black"),
        url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
@@ -84,7 +84,7 @@
   font-family: 'NeueMachina';
   font-weight: bold;
   font-style: normal;
-  font-display: optional;
+  font-display: fallback;
   src: local("NeueMachina-Black"),
        local("Neue Machina Black"),
        url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
@@ -97,7 +97,7 @@
   font-family: 'NeueMachina';
   font-weight: bold;
   font-style: italic;
-  font-display: optional;
+  font-display: fallback;
   src: local("NeueMachina-Black"),
        local("Neue Machina Black"),
        url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
