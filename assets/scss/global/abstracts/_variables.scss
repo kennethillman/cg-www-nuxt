@@ -34,13 +34,54 @@ $gray-900: #212529 !default;
 ///////////////////
 
 // SPECIFIC NAMES
-$font-cg: 'Prata', serif;
-$font-cg-2: 'Raleway', sans-serif;
+
+
+$font-sangbleu: 'SangBleuEmpire', serif;
+$font-cg: 'SangBleuEmpire', serif;
+
+$font-machina: 'NeueMachina', serif;
+$font-cg-2: 'NeueMachina', sans-serif;
+
 $font-system: "-apple-system", BlinkMacSystemFont, "Apple Color Emoji", “Segoe UI”, Roboto, “Helvetica Neue”, Helvetica, Arial, sans-serif;
 
 // GENERAL NAMES
-$font-header: $font-cg;
+$font-header: $font-machina;
 $font-bread: $font-cg;
+
+
+.-machina {
+  font-family: $font-machina!important;
+  font-style: normal!important;
+  font-weight: normal!important;
+
+  &.-bold {
+    font-weight: bold!important;
+  }
+
+  &.-italic {
+    font-style: italic!important;
+  }
+
+}
+
+.-sangblue {
+  font-family: $font-sangbleu!important;
+  font-style: normal!important;
+  font-weight: normal!important;
+
+  &.-bold {
+    font-weight: bold!important;
+  }
+
+  &.-black {
+    font-weight: 900!important;
+  }
+
+  &.-italic {
+    font-style: italic!important;
+  }
+
+}
 
 
 

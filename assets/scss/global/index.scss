@@ -12,7 +12,9 @@
 @import "abstracts/_mixins-breakpoints";
 @import "abstracts/_variables";
 
+
 // BASE
+@import "base/_fonts";
 @import "base/_reset";
 @import "base/_global";
 @import "base/_animation";

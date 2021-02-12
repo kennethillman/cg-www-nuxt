@@ -7,18 +7,10 @@ export default {
       { charset: 'utf-8' },
       { 'http-equiv':'X-UA-Compatible', content:'IE=edge' },
       { name: 'viewport', content: 'initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Common Ground is a UX design studio based in Stockholm, Sweden.  The Common Ground toolbox holds research, strategy, design, user testing, prototyping and visual design.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Prata&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@800;900&display=swap'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -118,6 +110,14 @@ export default {
   // Modules (htts://go.nuxtjs.dev/config-modules)
   modules: [
   ],
+
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

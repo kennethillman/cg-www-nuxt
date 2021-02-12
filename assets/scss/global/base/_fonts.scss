@@ -1,0 +1,99 @@
+//
+// Fonts
+//
+
+
+///////////////////////////////////
+// SangBleuEmpire
+///////////////////////////////////
+
+
+// -> normal
+@font-face {
+  font-family: 'SangBleuEmpire';
+  font-weight: normal;
+  src: local("SangBleuEmpire-Regular"),
+       local("Sang Bleu Empire Regular"),
+       url(~assets/fonts/SangBleuEmpire-Regular.woff2) format('woff2'),
+       url(~assets/fonts/SangBleuEmpire-Regular.woff) format('woff'),
+       url(~assets/fonts/SangBleuEmpire-Regular.otf) format('otf');
+}
+
+
+@font-face {
+  font-family: 'SangBleuEmpire';
+  font-weight: bold;
+  src: local("SangBleuEmpire-Bold"),
+       local("Sang Bleu Empire Bold"),
+       url(~assets/fonts/SangBleuEmpire-Bold.woff2) format('woff2'),
+       url(~assets/fonts/SangBleuEmpire-Bold.woff) format('woff'),
+       url(~assets/fonts/SangBleuEmpire-Bold.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'SangBleuEmpire';
+  font-weight: 900;
+  src: local("SangBleuEmpire-Black"),
+       local("Sang Bleu Empire Black"),
+       url(~assets/fonts/SangBleuEmpire-Black.woff2) format('woff2'),
+       url(~assets/fonts/SangBleuEmpire-Black.woff) format('woff'),
+       url(~assets/fonts/SangBleuEmpire-Black.otf) format('otf');
+}
+
+
+
+///////////////////////////////////
+// NeueMachina-Black
+///////////////////////////////////
+
+/*
+  (i) -> Black is the only weight used, using a ovvride of styles and weight below for concistency.
+*/
+
+// -> normal / normal
+@font-face {
+  font-family: 'NeueMachina';
+  font-weight: normal;
+  font-style: normal;
+  src: local("NeueMachina-Black"),
+       local("Neue Machina Black"),
+       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+}
+
+// -> normal / italic
+@font-face {
+  font-family: 'NeueMachina';
+  font-weight: normal;
+  font-style: italic;
+  src: local("NeueMachina-Black"),
+       local("Neue Machina Black"),
+       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+}
+
+// -> bold / normal
+@font-face {
+  font-family: 'NeueMachina';
+  font-weight: bold;
+  font-style: normal;
+  src: local("NeueMachina-Black"),
+       local("Neue Machina Black"),
+       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+}
+
+// -> bold / italic
+@font-face {
+  font-family: 'NeueMachina';
+  font-weight: bold;
+  font-style: italic;
+  src: local("NeueMachina-Black"),
+       local("Neue Machina Black"),
+       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+}

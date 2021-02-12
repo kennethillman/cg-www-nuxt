@@ -2,6 +2,7 @@
   <div class="cg-page page-hello">
     <div class="cg-content">
 
+
      <TextSplit
         v-waypoint="{ active: true, callback: triggerFade }"
         text="PEOPLE"
@@ -20,6 +21,12 @@
 <script>
 
   export default {
+
+    data () {
+      return {
+        metaDescription: 'test meta desc'
+      }
+    },
     async asyncData({ $prismic, store, params, error }) {
 
       const document = await $prismic.api.getSingle('hello')
@@ -32,6 +39,8 @@
               let newHero = el.primary
               store.dispatch('setHero', newHero)
               //console.log('hello -> ' , newHero)
+
+
             }
 
           })
