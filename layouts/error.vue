@@ -3,25 +3,32 @@
 
 
 
-      <section class="slice-headers"><div class="header"><h1>Page not found</h1></div></section>
+   <div class="cg-content">
 
-      <p>Sorry we were unable to find the page you are looking for.</p>
-      <p><nuxt-link to="/" style="text-decoration: underline;">Back to home</nuxt-link></p>
+        <h1 v-if="error.statusCode === 404">Page not found</h1>
+        <h1 v-else>An error occurred</h1>
+        <nuxt-link to="/">Home page</nuxt-link>
 
+
+      <!-- <slices :slices="slices" /> -->
+
+    </div>
   </section>
 </template>
 
 <script>
 export default {
+  props: ['error'],
   name: 'NotFound',
+  layout: 'clean'
 }
 </script>
 
 <style lang="scss">
 
-.site-page-error {
-    text-align: center;
-}
+  .site-page-error {
+      text-align: center;
+  }
 
 </style>
 
