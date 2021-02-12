@@ -41,7 +41,7 @@
     color: pink;
     text-transform: uppercase;
     display: inline-block;
-    font-family: $font-cg;
+    font-family: $font-sangbleu;
 
     div {
       display: inline-block;

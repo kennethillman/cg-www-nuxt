@@ -125,15 +125,15 @@
 
       .ani-letters-two span {
         display: inline-block;
-        font-family: $font-cg;
+        font-family: $font-sangbleu;
         line-height: 1em;
       }
 
       .ani-letters-one {
-        font-family: $font-cg-2;
+        font-family: $font-machina;
         span {
           display: inline-block;
-          font-family: $font-cg-2;
+          font-family: $font-machina;
           font-weight: 800;
           line-height: 1em;
         }

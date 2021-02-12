@@ -10,29 +10,67 @@ html {
 
 
 body {
-  //font-family: $font-cg;
+  //font-family: $font-sangbleu;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   color: $black;
   text-align: left;
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: $font-machina;
+  color: $black;
+  display: block;
+  margin: 0 0 .44em;
+  word-break: break-word;
+  line-height: 1.256;
+}
 
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6  {
-    font-family: $font-cg;
-    color: $black;
-    display: block;
-    margin: 0 0 .44em;
-    word-break: break-word;
-    line-height: 1.1;
+h1, .h1 {
+  font-size: 48px;
+}
+h2, .h2 {
+  font-size: 40px;
+}
+h3, .h3 {
+  font-size: 32px;
+}
+h4, .h4,
+h5, .h5
+h6, .h6 {
+  font-size: 24px;
+}
+
+@media only screen and (min-width: 1280px) {
+  body {
+    font-size: 20px;
   }
+
+  h1, .h1 {
+    font-size: 80px;
+  }
+
+  h2, .h2 {
+    font-size: 56px;
+  }
+  h3, .h3 {
+    font-size: 44px;
+  }
+  h4, .h4,
+  h5, .h5
+  h6, .h6 {
+    font-size: 32px;
+  }
+
+
+}
 
 
 // Header group (Startpage)
@@ -46,7 +84,7 @@ body {
     .cg-group-header {
       margin: 0 0 32px;
       font-size: 38px;
-      font-family: $font-cg-2;
+      font-family: $font-machina;
       line-height: 1.1;
       color: $red;
     }
@@ -56,7 +94,7 @@ body {
       margin: 0 auto 32px;
       font-size: 18px;
       line-height: 1.8;
-      font-family: $font-cg;
+      font-family: $font-sangbleu;
     }
 
     @media only screen and (min-width: 768px) {
@@ -67,22 +105,6 @@ body {
 
   }
 
-
-/////
-
-// TYPYGRAPHY CLASSES
-
-.-txt-s{
-  font-size: 13px;
-}
-
-.-txt-s {
-  font-size: 13px;
-}
-
-.-txt-m {
-  font-size: 15px;
-}
 
 
 

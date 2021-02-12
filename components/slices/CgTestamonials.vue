@@ -248,7 +248,7 @@ mounted() {
   }
 
   .cg-testamonial {
-    font-family: $font-cg;
+    font-family: $font-sangbleu;
     font-size: 18px;
     position: relative;
     // margin: 0 0 24px;
@@ -298,7 +298,7 @@ mounted() {
   }
 
   .name {
-    font-family: $font-cg-2;
+    font-family: $font-machina;
     font-size: 20px;
     font-weight: bold;
   }

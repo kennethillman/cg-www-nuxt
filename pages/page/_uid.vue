@@ -2,6 +2,31 @@
   <div class="cg-page page-page">
     <div class="cg-content">
 
+
+        <section class="cg-">
+          <div class="case-content-width">
+            <div>
+              <h1>Header 1 (tag)</h1>
+              <h2>Header 2 (tag)</h2>
+              <h3>Header 3 (tag)</h3>
+              <h4>Header 4 (tag)</h4>
+              <h5>Header 5 (tag)</h5>
+              <h6>Header 6 (tag)</h6>
+
+              <p>Lorum ipsum</p>
+              Lorum
+
+              <div class="h1">Header 1 (class)</div>
+              <div class="h2">Header 2 (class)</div>
+              <div class="h3">Header 3 (class)</div>
+              <div class="h4">Header 4 (class)</div>
+              <div class="h5">Header 5 (class)</div>
+              <div class="h6">Header 6 (class)</div>
+
+            </div>
+          </div>
+        </section>
+
         <section class="cg-edt-content">
           <div class="case-content-width">
             <div>
@@ -25,7 +50,8 @@
           </div>
         </section>
 
-       <slices :slices="slices" />
+        <slices :slices="slices" />
+
     </div>
   </div>
 </template>
@@ -52,7 +78,8 @@
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }
-    }
+    },
+    layout: 'clean',
 
   }
 
@@ -66,7 +93,7 @@
 
 
     @media only screen and (min-width: 1280px) {
-      margin-top: -300px;
+      // margin-top: -300px;
     }
 
   }

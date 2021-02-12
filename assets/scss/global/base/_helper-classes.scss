@@ -217,6 +217,45 @@ body {
   }
 
 
+// - - Typography - Quality assurance
+
+  .-machina {
+
+    font-family: $font-machina!important;
+    font-style: normal!important;
+    font-weight: normal!important;
+
+    &.-bold {
+      font-weight: bold!important;
+    }
+
+    &.-italic {
+      font-style: italic!important;
+    }
+
+  }
+
+  .-sangblue {
+
+    font-family: $font-sangbleu!important;
+    font-style: normal!important;
+    font-weight: normal!important;
+
+    &.-bold {
+      font-weight: bold!important;
+    }
+
+    &.-black {
+      font-weight: 900!important;
+    }
+
+    &.-italic {
+      font-style: italic!important;
+    }
+
+  }
+
+
 }
 
 

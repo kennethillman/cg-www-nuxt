@@ -212,7 +212,7 @@ export default {
 
   .featured-header{
     font-size: 40px;
-    font-family: $font-cg;
+    font-family: $font-sangbleu;
     text-decoration: none;
   }
 
@@ -225,7 +225,7 @@ export default {
   // Link
 
   .featured-link{
-    font-family: $font-cg;
+    font-family: $font-sangbleu;
     font-size: 20px;
     line-height: 1.256;
     text-transform: uppercase;

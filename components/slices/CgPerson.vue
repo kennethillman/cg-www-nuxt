@@ -113,7 +113,7 @@ export default {
     > * {
       font-size: 16px;
       line-height: 1;
-      font-family: $font-cg-2;
+      font-family: $font-machina;
 
     }
   }
@@ -122,7 +122,7 @@ export default {
     margin: 0 0 4px;
     position: relative;
     z-index: 1;
-    font-family: $font-cg-2;
+    font-family: $font-machina;
     font-size: 16px;
     line-height: 1;
     display: inline-block;
@@ -171,7 +171,7 @@ export default {
     }
 
     .person-link {
-      font-family: $font-cg-2;
+      font-family: $font-machina;
       font-size: 16px;
     }
 

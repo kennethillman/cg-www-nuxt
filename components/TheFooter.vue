@@ -275,7 +275,7 @@
 
     a {
       color: $white;
-      font-family: $font-cg;
+      font-family: $font-sangbleu;
       font-size: 16px;
       text-decoration: none;
       &:hover,
@@ -302,7 +302,7 @@
   .footer-header {
     margin: 0 0 32px;
     font-size: 32px;
-    font-family: $font-cg-2;
+    font-family: $font-machina;
     line-height: 1.1;
     color: $white;
     text-align: center;
@@ -315,7 +315,7 @@
     font-size: 18px;
     line-height: 1.8;
     text-align: center;
-    font-family: $font-cg;
+    font-family: $font-sangbleu;
     p {
       margin-bottom: 0;
     }

@@ -20,7 +20,7 @@ export default {
 .cg-expertise-list {
 
   padding: 56px 0 32px;
-  font-family: $font-cg;
+  font-family: $font-sangbleu;
 
 
   .centerd-content-width {

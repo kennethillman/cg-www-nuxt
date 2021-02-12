@@ -21,26 +21,15 @@ export default {
 
   padding: 56px 0 32px;
   font-size: 18px;
-  font-family: $font-cg;
+  font-family: $font-sangbleu;
   line-height: 1.8;
 
   h2,h3,h4 {
-    line-height: 1.256;
-    margin: 0;
     padding-bottom: 16px;
     padding-top: 16px;
-    font-family: $font-cg-2;
+    margin: 0;
   }
 
-  h2 {
-    font-size: 40px;
-  }
-  h3 {
-    font-size: 32px;
-  }
-  h4 {
-    font-size: 24px;
-  }
 
   p {
     margin-bottom: 24px;
@@ -128,17 +117,6 @@ export default {
     .case-content-width {
       padding-right: 240px;
     }
-
-    h2 {
-      font-size: 56px;
-    }
-    h3 {
-      font-size: 44px;
-    }
-    h4 {
-      font-size: 32px;
-    }
-
 
     ul {
       width: 800px;

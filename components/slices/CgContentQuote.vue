@@ -33,7 +33,7 @@ export default {
 .cg-edt-content-quote {
 
   padding: 56px 0 32px;
-  font-family: $font-cg;
+  font-family: $font-sangbleu;
   font-weight: bold;
 
 
