@@ -30,7 +30,6 @@ export default {
     margin: 0;
   }
 
-
   p {
     margin-bottom: 24px;
   }

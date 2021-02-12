@@ -25,7 +25,7 @@
 
         <!-- NAV -->
 
-        <div class="cg-nav" @click="toTop()">
+        <div class="cg-nav" @click="clickToTop()">
 
           <template v-for="(item, index) in menu">
             <nuxt-link :to="$prismic.asLink(item.link)">
@@ -42,6 +42,8 @@
 
 <script>
 
+  import click from "~/mixins/click.js"
+
   export default {
     data() {
       return {
@@ -49,6 +51,7 @@
           menu: this.$store.getters.getTheMenu
       }
     },
+    mixins: [click],
     watch: {
       $route() {
         if (this.blob === 3) {
@@ -60,17 +63,7 @@
       },
     },
     methods: {
-      toTop() {
-        const anime = this.$anime
-        const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
-        anime({
-          targets: scrollElement,
-          scrollTop: 0,
-          duration: 375,
-          easing: 'easeInOutQuad'
-        });
-      },
       animateLogoBlobs() {
           const anime = this.$anime
 

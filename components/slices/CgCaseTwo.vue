@@ -11,7 +11,8 @@
                 }
               ]">
       <div
-        v-waypoint="{ active: true, callback: triggerFade }"
+        @click="clickToTop()"
+        v-waypoint="{ active: true, callback: animateTriggerFade }"
         class="site-content-width -animate-fade-in-up">
 
       <!-- Image -->
@@ -50,18 +51,16 @@
 </template>
 
 <script>
+
+import click from "~/mixins/click.js"
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-case-two',
-  methods: {
-    triggerFade ({ el, going, direction }) {
-      if (this.$waypointMap.GOING_IN === going) {
-        el.classList.add('-animate')
-      }
-    },
-  }
-
+  mixins: [click, animate]
 }
+
 </script>
 
 <style lang="scss">

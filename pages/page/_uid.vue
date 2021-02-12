@@ -111,8 +111,6 @@
   $spt: 60px !default;
   $spd: 80px !default;
 
-
-
   .page-page {
     position: relative;
     z-index: 100;

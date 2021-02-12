@@ -2,8 +2,9 @@
 
 <prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
       <div
-        v-waypoint="{ active: true, callback: triggerFade }"
-        class="site-content-width -animate-fade-in-up">
+        @click="clickToTop()"
+        v-waypoint="{ active: true, callback: animateTriggerFade }"
+        class="site-content-width -animate-fade-in-up" >
 
       <!-- Image -->
       <figure class="case-image lax-image">
@@ -16,8 +17,6 @@
         <cg-case-figure  :figures="slice.primary.bg_figure" :class="['lax-svg -fill-'+slice.primary.bg_figure_color]" />
 
       </figure>
-
-
 
       <div class="case-box"
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
@@ -33,17 +32,14 @@
 </template>
 
 <script>
+
+import click from "~/mixins/click.js"
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-case-one',
-  methods: {
-    triggerFade ({ el, going, direction }) {
-      if (this.$waypointMap.GOING_IN === going) {
-        el.classList.add('-animate')
-      }
-    },
-  }
-
+  mixins: [click, animate]
 }
 </script>
 
