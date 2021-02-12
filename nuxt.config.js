@@ -116,6 +116,9 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
 
+    // Makes an external css file
+    extractCSS:  true,
+
     extend(config, ctx) {
       config.node = {
         fs: 'empty',
