@@ -1,25 +1,28 @@
 <template>
 
-  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project" :class="['-'+slice.primary.direction]">
+  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project"
+  :class="[
+            {'-no-link' : slice.primary.link.link_type === 'Any'},
+              '-'+slice.primary.direction]">
 
       <!--
         (fix) -> Add fallback for if no link!!
       -->
 
-      <div class="site-content-width">
+      <div class="site-content-width" @click="localClickToTop()">
 
         <!-- Left / Top -->
         <div class="featured-content left">
 
           <TextSplit
-            v-waypoint="{ active: true, callback: triggerFade }"
+            v-waypoint="{ active: true, callback: animateTriggerFade }"
             class="-animate-fade-in-up"
             :text="slice.primary.text_split[0].text"
             :split="slice.primary.text_split_at"
             :class="['-text-'+slice.primary.split_text_color, {'-text-right' : slice.primary.direction == 'right'}]"
           />
 
-          <figure v-waypoint="{ active: true, callback: triggerFade }" class="-animate-fade-in-up">
+          <figure v-waypoint="{ active: true, callback: animateTriggerFade }" class="-animate-fade-in-up">
             <ImageResponsive class="featured-browser" :image="slice.primary.image_browser" />
             <ImageResponsive class="featured-mobile"  :image="slice.primary.image_mobile" />
           </figure>
@@ -30,20 +33,20 @@
         <div class="featured-content right" >
 
           <h2
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              v-if="slice.primary.text_header.length > 0 "
              class="featured-header -animate-fade-in-up"
           >{{slice.primary.text_header[0].text}}</h2>
 
           <prismic-rich-text
-            v-waypoint="{ active: true, callback: triggerFade }"
+            v-waypoint="{ active: true, callback: animateTriggerFade }"
             v-if="slice.primary.text.length > 0 "
             class="featured-text -animate-fade-in-up"
             :field="slice.primary.text"
           />
 
           <div
-            v-waypoint="{ active: true, callback: triggerFade }"
+            v-waypoint="{ active: true, callback: animateTriggerFade }"
             class="featured-link -animate-fade-in-up"
             v-if="slice.primary.link_text.length > 0 "
           >
@@ -57,7 +60,7 @@
 
       <div class="site-content-width bottom" v-if="slice.primary.more_projects_link_text[0]">
             <!-- Bottom -->
-        <div class="featured-content bottom -animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }" >
+        <div class="featured-content bottom -animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }" >
 
             <svg  class="bottom-svg " width="305" height="178" viewBox="0 0 305 178" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0)">
@@ -73,7 +76,7 @@
             </svg>
 
           <div
-            v-waypoint="{ active: true, callback: triggerFade }"
+            v-waypoint="{ active: true, callback: animateTriggerFade }"
             class="featured-link "
             v-if="slice.primary.more_projects_link_text.length > 0 "
           >
@@ -90,15 +93,25 @@
 </template>
 
 <script>
+
+import click from "~/mixins/click.js"
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-featured-project',
+  mixins: [click, animate],
   methods: {
-    triggerFade ({ el, going, direction }) {
-      if (this.$waypointMap.GOING_IN === going) {
-        el.classList.add('-animate')
+    localClickToTop() {
+      if(this.slice.primary.link.link_type !== 'Any'){
+        this.clickToTop()
       }
-    },
+    }
+  },
+  mounted() {
+    if (process.client) {
+      this.clickNoLink()
+    }
   }
 
 }
@@ -112,6 +125,7 @@ export default {
   min-width: 300px;
   cursor: pointer;
   text-decoration: none;
+  display: block;
 
   .site-content-width {
      &.bottom {

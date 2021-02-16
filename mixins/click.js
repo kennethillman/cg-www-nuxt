@@ -10,6 +10,15 @@ export default {
         easing: 'easeInOutQuad'
       });
     },
+    clickNoLink() {
+      if (document.querySelector('.-no-link')){
+        document.querySelector('.-no-link').addEventListener('click', event => {
+          event.preventDefault()
+          event.stopPropagation()
+        })
+      }
+    }
+
   }
 };
 

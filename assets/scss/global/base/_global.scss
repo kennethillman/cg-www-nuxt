@@ -38,6 +38,11 @@ a {
     outline: none;
   }
 
+  &.-no-link {
+    cursor: default;
+    filter: none!important
+  }
+
 }
 
 .common-ground {
