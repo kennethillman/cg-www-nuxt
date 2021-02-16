@@ -2,10 +2,20 @@
 // GLOBAL
 //
 
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
 html {
 	-webkit-tap-highlight-color: transparent!important;
   background: #fff;
 }
+
+
+
+
 
 body {
 	background: $white;
@@ -16,6 +26,7 @@ body {
 		overflow: hidden;
 	}
 }
+
 
 
 // Links

@@ -1,8 +1,7 @@
 <template>
   <div class="cg-page page-cases">
-
+    <div class="cg-content">
       <slices :slices="slices" />
-
     </div>
   </div>
 </template>

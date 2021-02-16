@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-hero"
+  <div class="cg-hero" ref="thehero"
     v-if="compHero"
     :class="[{
               '-curtain' : compHero.curtain === 'yes',
@@ -8,7 +8,7 @@
     :style="[compHero.background_color ? {'background': compHero.background_color} : {'background': '#004A84'}]"
   >
 
-      <div class="hero-body">
+      <div class="hero-body" ref="herobody">
 
         <!-- HEADERS -->
         <HeroHeader :text="compHero" :key="rerender" />
@@ -18,7 +18,6 @@
 
         <!-- SVG -->
         <HeroSvg :graphic="compHero.svg_graphic"  v-if="compHero.svg_graphic !== 'none' "/>
-
 
 
       </div>
@@ -41,7 +40,9 @@
       data() {
         return {
           hero: this.$store.getters.getHero,
-          rerender: 1
+          rerender: 1,
+          heightOld: false,
+          heightNew: false
         }
       },
 
@@ -52,9 +53,60 @@
         }
       },
       methods: {
+        animateHeight(he){
+          // console.log('th -> ', this.$refs.thehero.clientHeight)
+          // console.log('hb -> ', this.$refs.herobody.clientHeight)
 
+        const anime = this.$anime;
+
+        anime({
+          targets: '.cg-hero',
+          height: [this.heightOld, this.heightNew],
+          easing: 'easeInOutSine',
+          duration: 500,
+          loop: false
+        });
+        }
       },
       mounted() {
+
+        this.heightOld = this.$refs.thehero.clientHeight + 570
+        this.heightNew = this.$refs.thehero.clientHeight + 570
+
+
+
+          console.log('th -> ', this.$refs.thehero.clientHeight)
+          console.log('hb -> ', this.$refs.herobody.clientHeight)
+
+
+        let hero = new ResizeObserver(entries => {
+          for (let entry of entries) {
+            const cr = entry.contentRect;
+            // console.log(`Element total height: ${Math.trunc(cr.height + 570)}px`);
+
+            let tp = 90
+            let bp = 90
+
+            if (this.$mq === 'VP600') {
+              tp = 90
+              bp = 160
+            } else if (this.$mq === 'VP1024') {
+              tp = 160
+              bp = 280
+            } else if (this.$mq === 'VP1280') {
+              tp = 210
+              bp = 360
+            }
+
+            this.heightOld = document.querySelector('.cg-hero').clientHeight
+            this.heightNew = cr.height + tp + bp
+
+            this.animateHeight()
+          }
+        });
+
+        // Observe one or multiple elements
+        hero.observe(this.$refs.herobody);
 
       }
     };
@@ -69,12 +121,12 @@
     align-items: center;
     transition: all 1s ease;
     overflow: hidden;
-    min-height: 80vh;
+
     max-height: 1040px;
 
     .hero-body {
       position: relative;
-      padding: 90px 0;
+      margin: 90px 0 140px;
       width: 90vw;
       max-width: 1040px;
     }
@@ -101,7 +153,7 @@
     // 600
     @media only screen and (min-width: 600px) {
       .hero-body {
-        padding: 90px 0 160px;
+        margin: 90px 0 160px;
       }
     }
 
@@ -109,14 +161,14 @@
     // 1024
     @media only screen and (min-width: 1024px) {
       .hero-body {
-        padding: 160px 0 280px;
+        margin: 160px 0 280px;
       }
     }
 
     // 1280
     @media only screen and (min-width: 1280px) {
       .hero-body {
-        padding: 210px 0 360px;
+        margin: 210px 0 360px;
       }
     }
 

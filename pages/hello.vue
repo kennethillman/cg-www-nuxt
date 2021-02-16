@@ -9,11 +9,6 @@
         class="-text-yellow -text-right -animate-fade-in-up"
       />
 
-            <p>{{doc.seo_title}} {{this.$store.state.theSettings.seo_title[0].text}}</p>
-      <p>{{doc.seo_description}} {{this.$store.state.theSettings.seo_description[0].text}}</p>
-      <p>{{doc.seo_keywords}} {{this.$store.state.theSettings.seo_keywords[0].text}}</p>
-      <p>{{doc.seo_robots}}  {{this.$store.state.theSettings.seo_robots[0].text}}</p>
-
       <slices :slices="slices" />
 
     </div>
@@ -220,7 +215,7 @@
      .page-hello {
 
       .cg-content {
-        margin-top: -320px;
+        margin-top: -300px;
       }
         .cg-text-split {
           top: 80px;
@@ -235,7 +230,7 @@
      .page-hello {
 
       .cg-content {
-        margin-top: -400px;
+        margin-top: -360px;
       }
     }
   }

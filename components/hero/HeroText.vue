@@ -32,7 +32,7 @@
     font-size: 22px;
     line-height: 32px;
     width: 100%;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
     color: #fff ;
     font-family: 'Prata', serif;
     position: relative;

@@ -1,6 +1,6 @@
 //
 // RESET
-// 
+//
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 
@@ -15,7 +15,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-body, 
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+
+body,
 ul,
 li {
 	padding: 0;
@@ -27,7 +33,7 @@ li {
 }
 
 p {
-	margin-top: 0; 
+	margin-top: 0;
 }
 
 img,

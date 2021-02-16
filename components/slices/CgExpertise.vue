@@ -1,33 +1,22 @@
 <template>
 
-<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
+<div class="cg-expertise">
       <div
-        @click="clickToTop()"
         v-waypoint="{ active: true, callback: animateTriggerFade }"
         class="site-content-width -animate-fade-in-up" >
 
       <!-- Image -->
-      <figure class="case-image lax-image">
-
-
-          <ImageResponsive :image="slice.primary.image" />
-
-
-        <!-- Background figure-->
-        <cg-figures  :figures="slice.primary.bg_figure" :class="['lax-svg -fill-'+slice.primary.bg_figure_color]" />
-
+  <!--     <figure class="case-image ">
+        <cg-figure class="expertise-svg"  :figures="slice.primary.bg_figure" :class="['lax-svg -fill-'+slice.primary.bg_figure_color]" />
       </figure>
-
-      <div class="case-box"
+ -->
+     <!--  <div class="case-box"
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
-          <!-- Logo -->
-          <prismic-image  :field="slice.primary.logo_svg" />
-
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
-      </div>
+      </div> -->
 
     </div>
-</prismic-link>
+</div>
 
 </template>
 
@@ -38,14 +27,14 @@ import animate from "~/mixins/animate.js"
 
 export default {
   props: ['slice'],
-  name: 'slice-case-one',
-  mixins: [click, animate]
+  name: 'slice-exeprtise',
+  mixins: [animate]
 }
 </script>
 
 <style lang="scss">
 
-.cg-case-one {
+.cg-expertise {
 
   padding: 0 0 0;
   text-align: left;
@@ -184,36 +173,12 @@ export default {
 // 480
 
   @media only screen and (min-width: 480px) {
-     max-width: 480px;
+
   }
 
 // 768
 
   @media only screen and (min-width: 768px) {
-
-      // Box
-      .case-box {
-        top: -80px;
-      }
-
-      // - - - VERSION - B
-      &.-version-b {
-        .cg-figure {
-            left: auto;
-            right: -12%;
-            top: 100%;
-            transform: translateY(-50%);
-            width: 68%;
-        }
-        &.-position-right{
-          .cg-figure {
-            left: -12%;
-            right: auto;
-            top: 100%;
-
-          }
-        }
-      }
 
   }
 
@@ -222,22 +187,6 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
-     max-width: 600px;
-
-      // Box
-      .case-box {
-        top: -120px;
-        padding: 32px 32px 48px;
-            svg,
-            img {
-              height: 120px;
-              margin: -32px 0 0 -32px
-            }
-      }
-
-      .case-box-text {
-        font-size: 20px;
-      }
 
   }
 
@@ -246,9 +195,6 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
-    max-width: 800px;
-
-    // padding: 100px 0 50px;
 
 
   }

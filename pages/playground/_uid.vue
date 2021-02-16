@@ -3,8 +3,6 @@
     <div class="cg-content" style="height: 200vh">
 
 
-       <prismic-rich-text :field="document.data.header" />
-
 
     </div>
   </div>

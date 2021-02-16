@@ -34,6 +34,11 @@
                 <cg-expertise-list :slice="slice"/>
             </template>
 
+             <!-- cg-expertise -->
+            <template v-if="slice.slice_type === 'cg-expertise'">
+                <cg-expertise :slice="slice"/>
+            </template>
+
 
         <!-- Hello -->
 

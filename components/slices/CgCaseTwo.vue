@@ -42,7 +42,7 @@
       </div>
 
       <!-- Background figure-->
-      <cg-case-figure :figures="slice.primary.bg_figure":class="['-fill-'+slice.primary.bg_figure_color]" />
+      <cg-figures :figures="slice.primary.bg_figure":class="['-fill-'+slice.primary.bg_figure_color]" />
 
     </div>
 </prismic-link>
@@ -80,7 +80,7 @@ export default {
   }
 
   // Svg figure
-  .cg-case-figure {
+  .cg-figure {
     position: absolute;
     left: 80%;
     top: 94%;
@@ -120,6 +120,7 @@ export default {
     padding-right: 100px;
     position: relative;
     z-index: 3;
+    transform: translate3d(0, 0, 2px);
     width: 80%;
     float: left;
     margin-right: 20%;
@@ -166,7 +167,7 @@ export default {
 
   &.-position-right {
     float: right;
-    .cg-case-figure {
+    .cg-figure {
       right: 80%;
       left: auto;
       transform: translate(50%,-50%) rotate(180deg);
@@ -249,7 +250,7 @@ export default {
         font-size: 20px;
       }
 
-      .cg-case-figure {
+      .cg-figure {
          width: 52%;
       }
 

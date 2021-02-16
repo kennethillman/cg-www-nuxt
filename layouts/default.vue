@@ -52,16 +52,7 @@
 </script>
 
 <style lang="scss">
-  html,
-  body {
-    min-height: 100vh;
-    margin: 0;
-  }
 
-  figure {
-    padding: 0;
-    margin: 0;
-  }
 
   .cg-container {
     display: flex;

@@ -1,19 +1,6 @@
 <template>
   <div class="cg-page page-page">
 
-
-      <p>{{doc.seo_title}} {{this.$store.state.theSettings.seo_title[0].text}}</p>
-      <p>{{doc.seo_description}} {{this.$store.state.theSettings.seo_description[0].text}}</p>
-      <p>{{doc.seo_keywords}} {{this.$store.state.theSettings.seo_keywords[0].text}}</p>
-      <p>{{doc.seo_robots}}  {{this.$store.state.theSettings.seo_robots[0].text}}</p>
-
-
-<!--     <section class="cg-section">
-      <div class="line -before"></div>
-      <h4>Spacing</h4>
-      <div class="line -after"></div>
-    </section>
-
     <section class="cg-section">
       <div class="line -before"></div>
       <h4>Spacing</h4>
@@ -24,7 +11,13 @@
       <div class="line -before"></div>
       <h4>Spacing</h4>
       <div class="line -after"></div>
-    </section> -->
+    </section>
+
+    <section class="cg-section">
+      <div class="line -before"></div>
+      <h4>Spacing</h4>
+      <div class="line -after"></div>
+    </section>
 
 
     <div class="cg-content">
