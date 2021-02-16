@@ -2,12 +2,14 @@ export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'cg-www-nuxt',
+    title: 'DEV | Common Ground - UX Design Studio',
     meta: [
       { charset: 'utf-8' },
       { 'http-equiv':'X-UA-Compatible', content:'IE=edge' },
       { name: 'viewport', content: 'initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86' },
-      { hid: 'description', name: 'description', content: 'Common Ground is a UX design studio based in Stockholm, Sweden.  The Common Ground toolbox holds research, strategy, design, user testing, prototyping and visual design.' }
+      { hid: 'description', name: 'description', content: 'Common Ground is a UX design studio based in Stockholm, Sweden.  The Common Ground toolbox holds research, strategy, design, user testing, prototyping and visual design.' },
+      { hid: 'keywords', name: 'keywords', content: 'Common Ground, UX, Design studio' },
+      { hid: 'robots', name: 'robots', content: 'index, follow '}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -36,6 +38,7 @@ export default {
   buildModules: [
     '@nuxtjs/prismic',
     '@nuxtjs/style-resources',
+    '@nuxtjs/robots',
     'nuxt-animejs'
   ],
 
@@ -48,6 +51,11 @@ export default {
     scss: [
       '~/assets/scss/component-imports/*.scss'
     ]
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: ['/playground', 'prismic-all-dynamic-routes'],
   },
 
   // Anime - Add global page transition
@@ -115,6 +123,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+
+
 
      // Makes an external css file
     // extractCSS:  true, \

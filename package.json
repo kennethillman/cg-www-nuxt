@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
     "lax.js": "^2.0.3",
@@ -21,6 +22,7 @@
     "jarallax": "^1.12.5",
     "node-sass": "^5.0.0",
     "nuxt-animejs": "^1.2.1",
+    "nuxt-robots-module": "^1.5.1",
     "sass-loader": "^10.1.0",
     "vue-mq": "^1.0.1",
     "vue-waypoint": "^3.5.2"
