@@ -19,7 +19,6 @@
   "devDependencies": {
     "@nuxtjs/prismic": "^1.2.4",
     "hooper": "^0.3.4",
-    "jarallax": "^1.12.5",
     "node-sass": "^5.0.0",
     "nuxt-animejs": "^1.2.1",
     "sass-loader": "^10.1.0",
