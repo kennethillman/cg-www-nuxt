@@ -1,21 +1,37 @@
 <template>
 
 <div class="cg-expertise">
-      <div
-        v-waypoint="{ active: true, callback: animateTriggerFade }"
-        class="site-content-width -animate-fade-in-up" >
+  <div
+    v-waypoint="{ active: true, callback: animateTriggerFade }"
+    class="case-content-width -animate-fade-in-up" :class="['-text-'+slice.primary.content_text_color]" >
 
-      <!-- Image -->
-  <!--     <figure class="case-image ">
-        <cg-figure class="expertise-svg"  :figures="slice.primary.bg_figure" :class="['lax-svg -fill-'+slice.primary.bg_figure_color]" />
-      </figure>
- -->
-     <!--  <div class="case-box"
-          :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
-          <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
-      </div> -->
+    <!-- Image -->
+    <figure class="case-image ">
+      <cg-figures class="expertise-svg"  :figures="slice.primary.svg_figure" :class="['lax-svg -fill-'+slice.primary.svg_figure_color]" />
+    </figure>
 
+    <div class="cg-expertise-group-header">
+      <prismic-rich-text
+        v-if="slice.primary.header1.length > 0 && slice.primary.header1[0].text !== ''"
+        class="expertise-header" :field="slice.primary.header1" :class="['-text-'+slice.primary.header_color]" />
+      <prismic-rich-text
+        v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
+        class="expertise-sub-header" :field="slice.primary.sub_header" :class="['-text-'+slice.primary.sub_header_color]" />
     </div>
+
+    <div class="cg-edt-content">
+          <prismic-rich-text
+        v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
+        :field="slice.primary.content" />
+    </div>
+
+  </div>
+
+  <!-- BACKGROUND BLOB -->
+  <svg v-if="slice.primary.bg_color !== 'white'" class="bg-blob" preserveAspectRatio="none" width="1440" height="948" viewBox="0 0 1440 948" fill="none" xmlns="http://www.w3.org/2000/svg" :class="['lax-svg -fill-'+slice.primary.bg_color]">
+    <path d="M-29.7239 59.5796C146.147 -41.8132 223.629 46.3894 480.672 46.3894C738.945 46.3894 738.945 13.8534 995.988 13.8534C1253.03 13.8534 1324.36 -39.1624 1500.23 62.2304C1688.4 170.25 1553.12 204.71 1553.12 352.492C1553.12 500.274 1697.01 780.709 1510.07 888.728C1334.2 990.121 1225.24 937.403 995.988 905.958C742.094 871.133 737.715 907.947 480.672 907.947C222.399 907.947 130.159 996.748 -45.7122 895.355C-233.882 788.661 -59.2408 506.901 -114.585 362.432C-172.389 209.349 -217.894 167.599 -29.7239 59.5796Z" />
+  </svg>
+
 </div>
 
 </template>
@@ -35,138 +51,58 @@ export default {
 <style lang="scss">
 
 .cg-expertise {
+  position: relative;
+  z-index: 2;
 
-  padding: 0 0 0;
-  text-align: left;
-  max-width: 420px;
-  float: left;
+  padding: 120px 0 40px;
+  margin:  0 0 80px;
 
-  .site-content-width {
+  .case-content-width {
     position: relative;
-    @include clearfix();
+    z-index: 1;
   }
 
   // Svg figure
   .cg-figure {
     position: absolute;
-    right: -5%;
-    top: 50%;
-    transform: translateY(-40%);
+    left: -80px;
+    top: -20px;
     z-index: -1;
-    width: 35%;
+    width: 160px;
   }
 
-  // Image
-  .case-image {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    img {
-      width: 80%;
-    }
+  .cg-expertise-group-header {
+    margin-bottom: 40px;
   }
 
-  // Box
-  .case-box {
-    top: -60px;
-    border-radius: 8px;
-    padding: 16px 16px 24px;
-    position: relative;
-    z-index: 3;
-    transform: translate3d(0, 0, 2px);
-    width: 80%;
-    float: right;
-    svg,
-    img {
-      height: 80px;
-      width: auto;
-      margin: -16px 0 0 -16px
-    }
-
-    &.-text-white {
-      img {
-        filter: invert(100%);
-      }
+  .expertise-header {
+    padding-bottom: 0.1em;
+    > * {
+      font-family: $font-machina;
+      font-weight: 800;
+       line-height: 1em;
+       font-size: 67px;
+       margin: 0;
     }
   }
 
-  .case-box-text {
-   font-family: $font-sangbleu;
-   font-size: 14px;
-   line-height: 1.6;
-   p {
-    margin: 0;
-   }
+  .expertise-sub-header {
+    > * {
+      font-family: $font-sangbleu;
+      line-height: 1em;
+      font-size: 56px;
+      margin: 0;
+    }
   }
 
-
-  // - - - VERSION - B
-
-  &.-version-b {
-    padding-bottom: 50px;
-    .case-image {
-      img {
-        margin-left: 10%;
-        margin-right: 10%;
-      }
-    }
-
-    .cg-figure {
-        left: auto;
-        right: -5%;
-        top: 100%;
-        transform: translateY(-60%);
-        width: 50%;
-    }
-
-    .case-box {
-      float: left;
-    }
-
-  }
-
-
-
-  // - - - POSITION RIGHT
-
-  &.-position-right {
-    float: right;
-    .cg-figure {
-      right: auto;
-      left: -5%;
-      transform: translateY(-40%) rotate(180deg);
-    }
-    .case-image {
-      img {
-        margin-left: 20%;
-      }
-    }
-    .case-box{
-       margin-right: 20%;
-    }
-
-
-   &.-version-b {
-      .case-image {
-        img {
-          margin-left: 10%;
-          margin-right: 10%;
-        }
-      }
-      .cg-figure {
-        right: auto;
-        left: -5%;
-        top: 100%;
-        transform: translateY(-50%) rotate(180deg);
-
-      }
-      .case-box {
-        float: right;
-        margin-left: 20%;
-        margin-right: 0;
-      }
-    }
-
+  .bg-blob {
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50vw, -46%);
+    z-index: 0;
+    height: 120%;
   }
 
 
@@ -176,9 +112,16 @@ export default {
 
   }
 
-// 768
+// 600
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 600px) {
+
+    // Svg figure
+    .cg-figure {
+      left: -140px;
+      top: -50px;
+      width: 240px;
+    }
 
   }
 

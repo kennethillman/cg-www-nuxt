@@ -68,6 +68,26 @@ export default {
     }
   }
 
+  .-text-white &{
+    li {
+      color: $white;
+      &:before {
+        background-color: $white;
+      }
+    }
+
+  }
+
+    .-text-black &{
+    li {
+      color: $black;
+      &:before {
+        background-color: $black;
+      }
+    }
+
+  }
+
 
 
 // 768
@@ -79,20 +99,20 @@ export default {
       padding-right: 80px;
     }
 
-    ul {
-      padding: 32px 0 48px;
-      width: 680px;
-      margin-left: -50px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+    // ul {
+    //   padding: 32px 0 48px;
+    //   width: 680px;
+    //   margin-left: -50px;
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   align-items: center;
 
-    }
+    // }
 
-    li {
-      width: 50%;
-      box-sizing: border-box;
-    }
+    // li {
+    //   width: 50%;
+    //   box-sizing: border-box;
+    // }
 
   }
 
@@ -117,20 +137,20 @@ export default {
       padding-right: 240px;
     }
 
-    ul {
-      width: 800px;
-      margin-left: -70px;
-    }
+    // ul {
+    //   width: 800px;
+    //   margin-left: -70px;
+    // }
 
-    li {
-      font-size: 26px;
-      padding-left: 32px;
-      &:before {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-      }
-    }
+    // li {
+    //   font-size: 26px;
+    //   padding-left: 32px;
+    //   &:before {
+    //     width: 10px;
+    //     height: 10px;
+    //     border-radius: 10px;
+    //   }
+    // }
 
   }
 
