@@ -1,5 +1,5 @@
 <template>
-  <figure class="cg-figure">
+  <figure class="cg-figure" v-if="figures !== 'none'">
 
     <template v-if="figures == 'square'">
         <svg width="500" height="421" viewBox="0 0 500 421" fill="none" xmlns="http://www.w3.org/2000/svg">
