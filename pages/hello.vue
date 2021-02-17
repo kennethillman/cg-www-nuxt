@@ -1,6 +1,6 @@
 <template>
   <div class="cg-page page-hello">
-    <div class="cg-content">
+    <div class="cg-content -negative">
 
      <TextSplit
         v-waypoint="{ active: true, callback: triggerFade }"
@@ -167,7 +167,7 @@
 .page-hello {
   position: relative;
   .cg-content {
-    margin-top: -160px;
+    // margin-top: -160px;
     position: relative;
     width: 80vw;
   }
@@ -176,6 +176,10 @@
     right: 0;
     top: -56px;
     font-size: 76px;
+  }
+  .cg-person {
+    position: relative;
+    z-index: 10;
   }
 }
 
@@ -186,7 +190,7 @@
     .page-hello {
 
       .cg-content {
-        margin-top: -200px;
+        // margin-top: -200px;
       }
 
       .cg-text-split {
@@ -215,7 +219,7 @@
      .page-hello {
 
       .cg-content {
-        margin-top: -300px;
+        // margin-top: -300px;
       }
         .cg-text-split {
           top: 80px;
@@ -230,18 +234,12 @@
      .page-hello {
 
       .cg-content {
-        margin-top: -360px;
+        // margin-top: -360px;
       }
     }
   }
 
 
-.cg-hero {
-}
 
-.cg-person {
-    position: relative;
-    z-index: 10;
-}
 
 </style>

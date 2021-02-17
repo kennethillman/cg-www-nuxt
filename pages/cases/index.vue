@@ -1,6 +1,6 @@
 <template>
   <div class="cg-page page-cases">
-    <div class="cg-content">
+    <div class="cg-content -negative">
       <slices :slices="slices" />
     </div>
   </div>
@@ -131,31 +131,7 @@
 <style lang="scss">
   .page-cases {
 
-    .cg-content {
-      margin-top: -80px;
-    }
 
-    // 480
-    @media only screen and (min-width: 480px) {
-      .cg-content {
-        margin-top: -100px;
-      }
-    }
-
-
-    // 1024
-    @media only screen and (min-width: 1024px) {
-      .cg-content {
-        margin-top: -150px;
-      }
-    }
-
-    // 1280
-    @media only screen and (min-width: 1280px) {
-      .cg-content {
-        margin-top: -180px;
-      }
-    }
 
   }
 </style>
