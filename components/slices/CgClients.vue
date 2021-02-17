@@ -5,14 +5,14 @@
       <div class="cg-header-group">
         <h2
              v-if="slice.primary.header1[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFadeText }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg-group-header -animate-fade-in-up"
           >{{slice.primary.header1[0].text}}
         </h2>
 
         <h3
              v-if="slice.primary.header1[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFadeText }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg.cg-group-sub-header -animate-fade-in-up"
           >{{slice.primary.sub_header[0].text}}
         </h3>
@@ -25,7 +25,7 @@
         class="cg-client -animate-fade-in-up"
         v-for="(item,index) in slice.items"
         :key="'item'+index"
-        v-waypoint="{ active: true, callback: fadeTrigger }"
+        v-waypoint="{ active: true, callback: fadeRandomTrigger }"
       >
 
          <template v-if="item.link.url">
@@ -57,9 +57,13 @@
 </template>
 
 <script>
+
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-clients',
+  mixins: [animate],
   methods: {
     animeTriggerCircle ({ el, going, direction }) {
       if (this.$mq === 'VP1024' || this.$mq === 'VP1280') {
@@ -75,7 +79,7 @@ export default {
         });
       }
     },
-    fadeTrigger ({ el, going, direction }) {
+    fadeRandomTrigger ({ el, going, direction }) {
 
     if (this.$waypointMap.GOING_IN === going) {
 
@@ -86,15 +90,7 @@ export default {
       el.classList.add('-animate',delayName)
      }
 
-    },
-    triggerFadeText ({ el, going, direction }) {
-
-    if (this.$waypointMap.GOING_IN === going) {
-
-      el.classList.add('-animate')
-     }
-
-    },
+    }
   }
 
 }

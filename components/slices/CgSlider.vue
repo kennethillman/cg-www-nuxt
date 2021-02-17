@@ -5,20 +5,20 @@
       <div class="cg-header-group">
         <h2
              v-if="slice.primary.header1[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg-group-header -animate-fade-in-up"
           >{{slice.primary.header1[0].text}}
         </h2>
         <h3
              v-if="slice.primary.sub_header[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg-group-sub-header  -animate-fade-in-up"
           >{{slice.primary.sub_header[0].text}}
         </h3>
       </div>
 
       <!-- THE SLIDER -->
-      <hooper ref="sliderContent" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: triggerFade }">
+      <hooper ref="sliderContent" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }">
         <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
             <!-- LINK -->
@@ -131,9 +131,13 @@
 </template>
 
 <script>
+
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-slider',
+  mixins: [animate],
   data() {
     return {
       hooperSettings: {
@@ -152,15 +156,7 @@ export default {
   methods: {
     slideNext() {
       this.$refs.sliderContent.slideNext();
-    },
-    triggerFade ({ el, going, direction }) {
-
-    if (this.$waypointMap.GOING_IN === going) {
-
-      el.classList.add('-animate')
-     }
-
-    },
+    }
   }
 
 }

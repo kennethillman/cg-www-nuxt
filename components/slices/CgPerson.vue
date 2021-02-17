@@ -1,6 +1,6 @@
 <template>
 
-  <div class="cg-person -animate-fade-in-up" v-waypoint="{ active: true,  callback: triggerFade}">
+  <div class="cg-person -animate-fade-in-up" v-waypoint="{ active: true,  callback: animateTriggerFade }">
     <div class="site-content-width">
       <div class="person-body">
 
@@ -26,9 +26,13 @@
 </template>
 
 <script>
+
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-person',
+  mixins: [animate],
   methods: {
     randomImgRotation(){
       const _rotations = ['one', 'two', 'three', 'four'];
@@ -36,11 +40,6 @@ export default {
       const rotationName = '-rotation-'+_rotations[rotationRandom]
       this.$refs.image.classList.add(rotationName)
     },
-    triggerFade({ el, going, direction }) {
-      if (this.$waypointMap.GOING_IN === going) {
-        el.classList.add('-animate')
-       }
-    }
   },
   mounted() {
     this.randomImgRotation()

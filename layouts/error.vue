@@ -9,9 +9,6 @@
         <h1 v-else>An error occurred</h1>
         <nuxt-link to="/">Home page</nuxt-link>
 
-
-      <!-- <slices :slices="slices" /> -->
-
     </div>
   </section>
 </template>

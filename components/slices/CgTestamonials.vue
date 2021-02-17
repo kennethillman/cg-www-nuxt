@@ -5,13 +5,13 @@
       <div class="cg-header-group">
         <h2
              v-if="slice.primary.header1[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg-group-header -animate-fade-in-up"
           >{{slice.primary.header1[0].text}}
         </h2>
         <h3
              v-if="slice.primary.sub_header[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade }"
              class="cg-group-sub-header  -animate-fade-in-up"
           >{{slice.primary.sub_header[0].text}}
         </h3>
@@ -63,9 +63,13 @@
 </template>
 
 <script>
+
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-testamonials',
+  mixins: [animate],
   data() {
     return {
       sliding: false,
@@ -80,39 +84,25 @@ export default {
           }
         }
       },
-  }
-
-},
-methods: {
-  slideNext() {
-    if (this.$mq === 'VP320' || this.$mq === 'VP600') {
-      this.$refs.sliderTestamonials.slideNext();
-    } else {
-      this.$refs.sliderTestamonials.slidePrev();
     }
-  },
-  evSlide(){
-    this.sliding = true;
-  },
-  evAfter(){
-    this.sliding = false;
-  },
-  triggerFade ({ el, going, direction }) {
 
-    if (this.$waypointMap.GOING_IN === going) {
+  },
 
-      el.classList.add('-animate')
-     }
-
+  methods: {
+    slideNext() {
+      if (this.$mq === 'VP320' || this.$mq === 'VP600') {
+        this.$refs.sliderTestamonials.slideNext();
+      } else {
+        this.$refs.sliderTestamonials.slidePrev();
+      }
     },
-},
-created() {
-
-
-},
-mounted() {
-
-}
+    evSlide(){
+      this.sliding = true;
+    },
+    evAfter(){
+      this.sliding = false;
+    },
+  }
 
 }
 </script>

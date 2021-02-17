@@ -5,12 +5,11 @@
 
     <div class="cg-container">
 
-    <Hero />
+      <Hero />
 
-    <Nuxt />
+      <Nuxt />
 
-    <TheFooter />
-
+      <TheFooter />
 
     </div>
 

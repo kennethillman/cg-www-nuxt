@@ -125,18 +125,6 @@
       }
     }
 
-    // &.-play {
-    //   figure {
-    //     &:after {
-    //       background: #000;
-    //     }
-    //     svg {
-    //       fill: #000;
-    //     }
-    //   }
-    // }
-
-
 
     // 600
     @media only screen and (min-width: 600px) {

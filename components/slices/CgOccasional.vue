@@ -5,14 +5,14 @@
       <div class="cg-header-group">
         <h2
              v-if="slice.primary.header1[0].text !== ''"
-             v-waypoint="{ active: true, callback: triggerFade }"
+             v-waypoint="{ active: true, callback: animateTriggerFade  }"
              class="cg-group-header -animate-fade-in-up"
           >{{slice.primary.header1[0].text}}
         </h2>
 
         <prismic-rich-text
           v-if="slice.primary.text[0].text !== ''"
-          v-waypoint="{ active: true, callback: triggerFade }"
+          v-waypoint="{ active: true, callback: animateTriggerFade  }"
           class="cg-group-sub-header -animate-fade-in-up"
           :field="slice.primary.text"
         />
@@ -21,10 +21,10 @@
 
       <div class="form" >
         <input
-         v-waypoint="{ active: true, callback: triggerFade }"
+         v-waypoint="{ active: true, callback: animateTriggerFade  }"
          class="input -animate-fade-in-up" type="text" name="" :placeholder="slice.primary.input_text[0].text">
         <button
-          v-waypoint="{ active: true, callback: triggerFade }"
+          v-waypoint="{ active: true, callback: animateTriggerFade  }"
           class="cg-btn -animate-fade-in-up">{{slice.primary.button_text[0].text}}</button>
       </div>
 
@@ -33,21 +33,15 @@
 </template>
 
 <script>
+
+import animate from "~/mixins/animate.js"
+
 export default {
   props: ['slice'],
   name: 'slice-occasional',
-  methods: {
-    triggerFade ({ el, going, direction }) {
-
-    if (this.$waypointMap.GOING_IN === going) {
-
-      el.classList.add('-animate')
-     }
-
-    },
-  }
-
+  mixins: [animate]
 }
+
 </script>
 
 <style lang="scss">
