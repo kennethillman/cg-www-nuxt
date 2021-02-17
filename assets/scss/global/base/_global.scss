@@ -67,6 +67,28 @@ a {
   width: 90vw;
   max-width: 1280px;
   margin: 0 auto;
+
+  &.-negative {
+
+    margin-top: -80px;
+
+    // 480
+    @media only screen and (min-width: 480px) {
+      margin-top: -100px;
+    }
+
+    // 1024
+    @media only screen and (min-width: 1024px) {
+       margin-top: -150px;
+    }
+
+    // 1280
+    @media only screen and (min-width: 1280px) {
+        margin-top: -180px;
+    }
+  }
+
+
 }
 
 
