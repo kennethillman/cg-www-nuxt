@@ -36,8 +36,6 @@
             txt = text.replace(/\S/g, '<span class="letter">$&</span>');
           }
 
-
-
           return txt
         },
         animateHeaderOne(){
@@ -123,6 +121,7 @@
         overflow: hidden;
       }
 
+      .ani-letters-two,
       .ani-letters-two span {
         display: inline-block;
         font-family: $font-sangbleu;
