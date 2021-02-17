@@ -53,9 +53,7 @@
         }
       },
       methods: {
-        animateHeight(he){
-          // console.log('th -> ', this.$refs.thehero.clientHeight)
-          // console.log('hb -> ', this.$refs.herobody.clientHeight)
+        animateHeight(){
 
         const anime = this.$anime;
 
@@ -70,19 +68,10 @@
       },
       mounted() {
 
-        this.heightOld = this.$refs.thehero.clientHeight + 570
-        this.heightNew = this.$refs.thehero.clientHeight + 570
-
-
-
-          console.log('th -> ', this.$refs.thehero.clientHeight)
-          console.log('hb -> ', this.$refs.herobody.clientHeight)
-
-
         let hero = new ResizeObserver(entries => {
           for (let entry of entries) {
+
             const cr = entry.contentRect;
-            // console.log(`Element total height: ${Math.trunc(cr.height + 570)}px`);
 
             let tp = 90
             let bp = 90
@@ -105,7 +94,6 @@
           }
         });
 
-        // Observe one or multiple elements
         hero.observe(this.$refs.herobody);
 
       }
