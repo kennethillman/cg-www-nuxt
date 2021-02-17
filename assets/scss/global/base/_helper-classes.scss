@@ -12,34 +12,58 @@ body {
 
   .-text-black {
     color: $black;
+    > * {
+      color: $black;
+    }
   }
 
   .-text-white {
     color: $white;
+    > * {
+      color: $white;
+    }
   }
 
   .-text-pink {
     color: $pink;
+    > * {
+      color: $pink;
+    }
   }
 
   .-text-blue {
     color: $blue;
+    > * {
+      color: $black;
+    }
   }
 
   .-text-lime {
     color: $lime;
+    > * {
+      color: $lime;
+    }
   }
 
   .-text-turquoise {
     color: $turquoise;
+    > * {
+      color: $turquoise;
+    }
   }
 
   .-text-yellow {
     color: $yellow;
+    > * {
+      color: $yellow;
+    }
   }
 
   .-text-red {
     color: $red;
+    > * {
+      color: $red;
+    }
   }
 
   // Background
