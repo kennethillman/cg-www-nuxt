@@ -1,7 +1,7 @@
 <template>
   <div class="cg-page page-startpage">
 
-    <div class="cg-content">
+    <div class="cg-content -negative">
 
       <slices :slices="slices" />
 
@@ -78,7 +78,6 @@
             if (el.slice_type === 'cg-hero'){
               let newHero = el.primary
               store.dispatch('setHero', newHero)
-              // console.log('index -> ' , newHero)
             }
 
           })
@@ -88,29 +87,6 @@
       } else {
         error({ statusCode: 404, message: 'Page not found' })
       }
-    },
-
-    methods: {
-
-      animeTrigger ({ el, going, direction }) {
-
-        el.classList.toggle('active', this.$waypointMap.GOING_IN === going)
-        const anime = this.$anime;
-
-        anime({
-          targets: '.epic svg path',
-          strokeDashoffset: [anime.setDashoffset, 0],
-          easing: 'easeInOutSine',
-          duration: 8000,
-          direction: 'alternate',
-          loop: true
-        });
-
-      },
-
-
-
-
     },
     mounted() {
 
@@ -147,8 +123,3 @@
   }
 </script>
 
-<style lang="scss">
-
-
-
-</style>

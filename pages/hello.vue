@@ -3,7 +3,7 @@
     <div class="cg-content -negative">
 
      <TextSplit
-        v-waypoint="{ active: true, callback: triggerFade }"
+        v-waypoint="{ active: true, callback: animateTriggerFade }"
         text="PEOPLE"
         split="3"
         class="-text-yellow -text-right -animate-fade-in-up"
@@ -16,8 +16,9 @@
 </template>
 
 
-
 <script>
+
+  import animate from "~/mixins/animate.js"
 
   export default {
 
@@ -94,12 +95,8 @@
         error({ statusCode: 404, message: 'Page not found' })
       }
     },
+    mixins: [animate],
     methods: {
-      triggerFade({ el, going, direction }) {
-        if (this.$waypointMap.GOING_IN === going) {
-          el.classList.add('-animate')
-         }
-      },
       setCenterdActive (event) {
 
         let scrollTop = window.scrollY + ((window.innerHeight / 2) - 120);
@@ -148,7 +145,6 @@
 
         // Add Resize listner
         // window.addEventListener('resize', this.handleResize);
-
 
           window.addEventListener('scroll', this.setCenterdActive);
 

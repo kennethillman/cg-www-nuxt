@@ -75,7 +75,6 @@
             if (el.slice_type === 'cg-hero'){
               let newHero = el.primary
               store.dispatch('setHero', newHero)
-              //console.log('hello -> ' , newHero)
             }
 
           })
@@ -130,8 +129,6 @@
 
 <style lang="scss">
   .page-cases {
-
-
 
   }
 </style>
