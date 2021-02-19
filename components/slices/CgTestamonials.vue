@@ -74,8 +74,7 @@ export default {
     return {
       sliding: false,
       hooperSettings: {
-        itemsToShow: 2,
-        vertical: true,
+        itemsToShow: 1,
         initialSlide: 0,
         breakpoints: {
           600: {
@@ -90,11 +89,7 @@ export default {
 
   methods: {
     slideNext() {
-      if (this.$mq === 'VP320' || this.$mq === 'VP600') {
-        this.$refs.sliderTestamonials.slideNext();
-      } else {
-        this.$refs.sliderTestamonials.slidePrev();
-      }
+      this.$refs.sliderTestamonials.slidePrev();
     },
     evSlide(){
       this.sliding = true;
@@ -157,6 +152,7 @@ export default {
       left: 100px;
       z-index: 2;
       opacity: 1;
+      display: none;
     }
 
     .testamonial-text {
@@ -177,7 +173,7 @@ export default {
 
     // CURRENT SLIDE
 
-      .cg-testamonial.is-current {
+      .cg-testamonial{
           text-align: right;
         .name {
           color: $blue;
