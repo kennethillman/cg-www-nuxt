@@ -29,9 +29,67 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 
+
 /////////////////////
 // FONTS
 ///////////////////
 
 $font-sangbleu: 'SangBleuEmpire', serif;
 $font-machina: 'NeueMachina', serif;
+
+
+/////////////////////
+// SPACING
+///////////////////
+
+// mm -> margin-mobile
+// mt -> margin-tablet
+// md -> margin-desktop
+
+$mm: 40px !default;
+$mt: 60px !default;
+$md: 80px !default;
+
+.cg-spacing {
+  // margin: $mm 0;
+  padding: $mm 0;
+
+  @media only screen and (min-width: 768px) {
+    // margin: $mt 0;
+    padding: $mt 0;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    // margin: $md 0;
+    padding: $md 0;
+  }
+
+}
+
+.cg-margin {
+  margin: $mm 0;
+
+  @media only screen and (min-width: 768px) {
+    margin: $mt 0;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    margin: $md 0;
+  }
+
+}
+
+.cg-padding {
+  padding: $mm 0;
+
+  @media only screen and (min-width: 768px) {
+    padding: $mt 0;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    padding: $md 0;
+  }
+
+}
+
+

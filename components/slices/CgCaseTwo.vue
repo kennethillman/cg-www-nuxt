@@ -2,7 +2,7 @@
 
 
 
-<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-two"
+<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-two cg-spacing cg-margin"
               :class="[
                 '-position-'+slice.primary.position,
                 {
@@ -67,7 +67,7 @@ export default {
 
 .cg-case-two {
 
-  margin: 100px 0 120px;
+  // margin: 100px 0 120px;
   text-align: left;
   max-width: 420px;
   float: left;
@@ -202,7 +202,7 @@ export default {
 // 768
 
   @media only screen and (min-width: 768px) {
-    margin: 70px 0 80px;
+    // margin: 70px 0 80px;
 
     // Image
     .case-image {
@@ -233,7 +233,7 @@ export default {
   @media only screen and (min-width: 1024px) {
 
      max-width: 600px;
-     margin: 180px 0 120px;
+     // margin: 180px 0 120px;
 
       // Box
       .case-box {

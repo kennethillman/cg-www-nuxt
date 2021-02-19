@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-clients">
+  <section class="cg-clients cg-spacing">
     <div class="site-content-width">
 
       <div class="cg-header-group">
@@ -99,7 +99,7 @@ export default {
 <style lang="scss">
 
 .cg-clients {
-  padding: 56px 0 32px;
+  // padding: 56px 0 32px;
   text-align: center;
 
 

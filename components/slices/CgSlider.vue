@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-slider">
+  <section class="cg-slider cg-spacing">
     <div class="site-content-width">
 
       <div class="cg-header-group">
@@ -166,8 +166,8 @@ export default {
 
 .cg-slider {
   position: relative;
-  padding: 50px 0 0;
-  margin: 100px 0 100px;
+  // padding: 50px 0 0;
+  // margin: 100px 0 100px;
   z-index: 2;
 
   .cg-group-header {
@@ -235,9 +235,9 @@ export default {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50vw, -46%);
+    transform: translate(-50vw, -50%);
     z-index: 0;
-    height: 120%;
+    height: 108%;
   }
 
   // 1024

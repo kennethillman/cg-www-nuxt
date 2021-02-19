@@ -1,6 +1,6 @@
 <template>
 
-  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project"
+  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project cg-spacing"
   :class="[
             {'-no-link' : slice.primary.link.link_type === 'Any'},
               '-'+slice.primary.direction]">
@@ -120,7 +120,7 @@ export default {
 
 .cg-featured-project {
 
-  padding: 50px 0 0;
+  // padding: 50px 0 0;
   min-width: 300px;
   cursor: pointer;
   text-decoration: none;
@@ -298,7 +298,7 @@ export default {
 
   @media only screen and (min-width: 768px) {
 
-     padding: 100px 0 0;
+     // padding: 100px 0 0;
 
     .site-content-width {
       display: flex;

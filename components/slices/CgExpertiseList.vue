@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-expertise-list">
+  <section class="cg-expertise-list cg-spacing">
     <div class="centerd-content-width">
 
       <prismic-rich-text :field="slice.primary.list" />
@@ -19,7 +19,7 @@ export default {
 
 .cg-expertise-list {
 
-  padding: 56px 0 32px;
+  // padding: 56px 0 32px;
   font-family: $font-sangbleu;
 
 

@@ -160,16 +160,34 @@
     z-index: 100;
 
     .header-body {
-      max-width: 1280px;
+      max-width: 1920px;
       margin: 0 auto;
+      position: relative;
     }
-     .cg-logo {
+    .cg-logo {
       display: block;
       width: 90px;
       margin: 22px auto 0;
       position: relative;
 
     }
+    .cg-nav {
+      text-align: right;
+      padding: 8px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 10;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        text-align: right;
+        padding: 4px 4px 4px 16px;
+        margin: 4px;
+        background: yellow;
+      }
+    }
+
     .cg-the-logo {
       width: 100%;
       position: relative;

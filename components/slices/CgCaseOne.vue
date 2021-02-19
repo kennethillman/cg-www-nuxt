@@ -1,6 +1,6 @@
 <template>
 
-<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
+<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one cg-spacing"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
       <div
         @click="clickToTop()"
         v-waypoint="{ active: true, callback: animateTriggerFade }"
@@ -79,7 +79,8 @@ export default {
 
   // Box
   .case-box {
-    top: -60px;
+    margin-top: -60px;
+    // top: -60px;
     border-radius: 8px;
     padding: 16px 16px 24px;
     position: relative;
@@ -193,7 +194,7 @@ export default {
 
       // Box
       .case-box {
-        top: -80px;
+        margin-top: -80px;
       }
 
       // - - - VERSION - B
@@ -226,7 +227,7 @@ export default {
 
       // Box
       .case-box {
-        top: -120px;
+        margin-top: -120px;
         padding: 32px 32px 48px;
             svg,
             img {

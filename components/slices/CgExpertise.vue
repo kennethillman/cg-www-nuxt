@@ -1,6 +1,6 @@
 <template>
 
-<div class="cg-expertise">
+<div class="cg-expertise cg-spacing">
   <div
     v-waypoint="{ active: true, callback: animateTriggerFade }"
     class="case-content-width -animate-fade-in-up" :class="['-text-'+slice.primary.content_text_color]" >
@@ -54,7 +54,7 @@ export default {
   position: relative;
   z-index: 2;
 
-  padding: 120px 0 40px;
+  // padding: 120px 0 40px;
   margin:  0 0 80px;
 
   .case-content-width {
@@ -100,9 +100,9 @@ export default {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50vw, -46%);
+    transform: translate(-50vw, -54%);
     z-index: 0;
-    height: 120%;
+    height: 108%;
   }
 
 

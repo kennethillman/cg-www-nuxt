@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-testamonials">
+  <section class="cg-testamonials cg-spacing">
     <div class="site-content-width">
 
       <div class="cg-header-group">
@@ -111,7 +111,7 @@ export default {
 
 .cg-testamonials {
 
-  padding: 50px 0 0;
+  // padding: 50px 0 0;
   text-align: left;
 
 

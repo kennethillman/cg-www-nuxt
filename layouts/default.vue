@@ -72,23 +72,6 @@
     }
   }
 
-  .cg-nav {
-    text-align: right;
-    padding: 8px;
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 10;
-    a {
-      display: inline-block;
-      text-decoration: none;
-      text-align: right;
-      padding: 4px 4px 4px 16px;
-      margin: 4px;
-      background: yellow;
-    }
-
-  }
 
 
 </style>

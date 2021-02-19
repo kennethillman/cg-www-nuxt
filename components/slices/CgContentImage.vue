@@ -89,7 +89,7 @@ export default {
 
     &.-width-screen {
       .content-image {
-        max-width: 1440px;
+        max-width: 1920px;
         margin-left: 120px;
       }
     }

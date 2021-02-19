@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-occasional">
+  <section class="cg-occasional cg-spacing">
     <div class="site-content-width">
 
       <div class="cg-header-group">
@@ -49,7 +49,7 @@ export default {
 .cg-occasional {
 
 
-  padding: 50px 0 0;
+  // padding: 50px 0 0;
   text-align: center;
 
 
@@ -70,7 +70,7 @@ export default {
 // 768
 
   @media only screen and (min-width: 768px) {
-  padding: 180px 0 130px;
+  // padding: 180px 0 130px;
 
 
   .input {
