@@ -19,6 +19,17 @@ export default {
       }
     }
 
+  },
+  mounted() {
+    if (process.client) {
+      if (document.querySelector('.nuxt-link-handler')){
+        document.querySelector('.nuxt-link-handler').addEventListener('click', event => {
+          event.preventDefault()
+          this.clickToTop()
+          this.$router.push(event.target.pathname)
+        })
+      }
+    }
   }
 };
 

@@ -1,9 +1,10 @@
 <template>
-
-  <nuxt-link :to="$prismic.asLink(slice.primary.link)" class="cg-featured-project cg-spacing"
+  <div class="cg-featured-project cg-spacing"
   :class="[
             {'-no-link' : slice.primary.link.link_type === 'Any'},
               '-'+slice.primary.direction]">
+
+  <prismic-link :field="slice.primary.link" >
 
       <!--
         (fix) -> Add fallback for if no link!!
@@ -58,8 +59,9 @@
 
       </div>
 
-      <div class="site-content-width bottom" v-if="slice.primary.more_projects_link_text[0]">
-            <!-- Bottom -->
+  </prismic-link>
+  <div class="site-content-width bottom" v-if="slice.primary.more_projects_link_text[0]">
+        <!-- Bottom -->
         <div class="featured-content bottom -animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }" >
 
             <svg  class="bottom-svg " width="305" height="178" viewBox="0 0 305 178" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,19 +77,22 @@
               </defs>
             </svg>
 
-          <div
+          <prismic-link :field="slice.primary.more_projects_link"
             v-waypoint="{ active: true, callback: animateTriggerFade }"
             class="featured-link "
             v-if="slice.primary.more_projects_link_text.length > 0 "
           >
-              {{slice.primary.more_projects_link_text[0].text}}
+            <span @click="localClickToTop()">
+                {{slice.primary.more_projects_link_text[0].text}}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
-          </div>
+            </span>
+
+          </prismic-link>
 
         </div>
     </div>
 
-  </nuxt-link>
+  </div>
 
 </template>
 
@@ -125,6 +130,11 @@ export default {
   cursor: pointer;
   text-decoration: none;
   display: block;
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
 
   .site-content-width {
      &.bottom {

@@ -22,7 +22,7 @@ export default function (type, element, content, children) {
 
     } else {
       const target = element.data.target ? `target="'${element.data.target}'" rel="noopener"` : ''
-      result = `<a href="${url}" ${target}>${content}</a>`
+      result = `<a class="web-link-handler" href="${url}" ${target}>${content}</a>`
     }
     return result
   }
@@ -37,10 +37,10 @@ export default function (type, element, content, children) {
 
       if (element.linkTo.link_type === 'Document') {
         result = `<a class="nuxt-link-handler" data-nuxt-link href="${url}" >${content}</a>`
-        //result = `<nuxt-link to="${url}">${result}</nuxt-link>`      
+        //result = `<nuxt-link to="${url}">${result}</nuxt-link>`
       } else {
         const target = element.linkTo.target ? `target="${element.linkTo.target}" rel="noopener"` : ''
-        result = `<a href="${url}" ${target}>${result}</a>`
+        result = `<a class="web-link-handler" href="${url}" ${target}>${result}</a>`
       }
     }
     const wrapperClassList = [element.label || '', 'block-img']
