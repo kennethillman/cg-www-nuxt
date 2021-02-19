@@ -32,14 +32,17 @@
 
                   <template v-if="item.header1.length > 0 && item.header1[0].text !== ''  || item.text.length > 0 && item.text[0].text !== '' ">
                     <prismic-link :field="item.link"  class="slide-box" :class="['-bg-'+ item.color_background]">
-                      <h4 class="box-header" v-if="item.header1.length > 0 && item.header1[0].text !== ''" :class="['-text-'+ item.color_header]">
-                        {{item.header1[0].text}}
-                      </h4>
-                      <p v-if="item.text.length > 0 && item.text[0].text !== '' ">
-                        {{item.text[0].text}}
-                      </p>
+                      <span @click="clickToTop()">
+                        <h4 class="box-header" v-if="item.header1.length > 0 && item.header1[0].text !== ''" :class="['-text-'+ item.color_header]">
+                          {{item.header1[0].text}}
+                        </h4>
+                        <p v-if="item.text.length > 0 && item.text[0].text !== '' ">
+                          {{item.text[0].text}}
+                        </p>
+                      </span>
                     </prismic-link>
                   </template>
+
                 </figure>
               </div>
             </template>
@@ -133,11 +136,12 @@
 <script>
 
 import animate from "~/mixins/animate.js"
+import click from "~/mixins/click.js"
 
 export default {
   props: ['slice'],
   name: 'slice-slider',
-  mixins: [animate],
+  mixins: [animate,click],
   data() {
     return {
       hooperSettings: {
