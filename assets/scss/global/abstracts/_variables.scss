@@ -50,46 +50,6 @@ $mm: 40px !default;
 $mt: 60px !default;
 $md: 80px !default;
 
-.cg-spacing {
-  // margin: $mm 0;
-  padding: $mm 0;
 
-  @media only screen and (min-width: 768px) {
-    // margin: $mt 0;
-    padding: $mt 0;
-  }
-
-  @media only screen and (min-width: 1280px) {
-    // margin: $md 0;
-    padding: $md 0;
-  }
-
-}
-
-.cg-margin {
-  margin: $mm 0;
-
-  @media only screen and (min-width: 768px) {
-    margin: $mt 0;
-  }
-
-  @media only screen and (min-width: 1280px) {
-    margin: $md 0;
-  }
-
-}
-
-.cg-padding {
-  padding: $mm 0;
-
-  @media only screen and (min-width: 768px) {
-    padding: $mt 0;
-  }
-
-  @media only screen and (min-width: 1280px) {
-    padding: $md 0;
-  }
-
-}
 
 
