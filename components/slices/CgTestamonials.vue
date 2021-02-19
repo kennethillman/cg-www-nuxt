@@ -318,7 +318,6 @@ export default {
       opacity: 0;
     }
     .testamonial-text {
-
       left: auto;
       padding-right: 140px;
       align-items: flex-end;
@@ -347,7 +346,7 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
-    padding: 100px 0 50px;
+    // padding: 100px 0 50px;
 
 
   }
