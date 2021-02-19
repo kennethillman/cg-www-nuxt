@@ -7,7 +7,7 @@
 
     <!-- Image -->
     <figure class="case-image ">
-      <cg-figures class="expertise-svg"  :figures="slice.primary.svg_figure" :class="['lax-svg -fill-'+slice.primary.svg_figure_color]" />
+      <cg-figures class="expertise-svg"  :figures="slice.primary.svg_figure" :class="['-fill-'+slice.primary.svg_figure_color]" />
     </figure>
 
     <div class="cg-expertise-group-header">
@@ -28,7 +28,7 @@
   </div>
 
   <!-- BACKGROUND BLOB -->
-  <svg v-if="slice.primary.bg_color !== 'white'" class="bg-blob" preserveAspectRatio="none" width="1440" height="948" viewBox="0 0 1440 948" fill="none" xmlns="http://www.w3.org/2000/svg" :class="['lax-svg -fill-'+slice.primary.bg_color]">
+  <svg v-if="slice.primary.bg_color !== 'white'" class="bg-blob" preserveAspectRatio="none" width="1440" height="948" viewBox="0 0 1440 948" fill="none" xmlns="http://www.w3.org/2000/svg" :class="[' -fill-'+slice.primary.bg_color]">
     <path d="M-29.7239 59.5796C146.147 -41.8132 223.629 46.3894 480.672 46.3894C738.945 46.3894 738.945 13.8534 995.988 13.8534C1253.03 13.8534 1324.36 -39.1624 1500.23 62.2304C1688.4 170.25 1553.12 204.71 1553.12 352.492C1553.12 500.274 1697.01 780.709 1510.07 888.728C1334.2 990.121 1225.24 937.403 995.988 905.958C742.094 871.133 737.715 907.947 480.672 907.947C222.399 907.947 130.159 996.748 -45.7122 895.355C-233.882 788.661 -59.2408 506.901 -114.585 362.432C-172.389 209.349 -217.894 167.599 -29.7239 59.5796Z" />
   </svg>
 
