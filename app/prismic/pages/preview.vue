@@ -1,5 +1,5 @@
 <template>
-  <p>Custom Loading Prismic preview...</p>
+  <p>CG - Custom Loading Prismic preview...</p>
 </template>
 
 <script>
