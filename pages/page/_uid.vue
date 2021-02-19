@@ -1,16 +1,17 @@
 <template>
   <div class="cg-page page-page">
-
     <div class="cg-content">
       <slices :slices="slices" />
     </div>
-
   </div>
 </template>
 
 <script>
 
+  import click from "~/mixins/click.js"
+
   export default {
+    mixins: [click],
     head() {
       let meta = []
       let title, description, keywords, robots
