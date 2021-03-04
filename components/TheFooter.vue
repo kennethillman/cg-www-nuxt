@@ -66,23 +66,10 @@
 
           </div>
 
-         <!-- Background & Svg Wave -->
-         <!--
-           <svg class="bg-wave " fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"  viewBox="0 0 1440 537">
-            <g clip-path="url(#clip0)">
-              <path d="M31.7 54.7c163.5-94 235.5-12.2 474.4-12.2 240 0 240-30.2 478.9-30.2 238.8 0 305.1-49.2 468.6 44.9 174.8 100.3 49.1 132.2 49.1 269.4s133.7 173.5-40 273.7c-163.4 94.1-237.7 16-477.7 16s-240 1.9-479 1.9c-240 0-325.7 82.4-489.1-11.7-175-99-12.6-136.6-64-270.7-53.8-142-96-180.8 78.8-281z" fill="#000" />
-            </g>
-            <defs>
-              <clipPath id="clip0">
-                <path fill="#fff" transform="translate(-94)" d="M0 0h1647v652H0z" />
-              </clipPath>
-            </defs>
+          <!-- Background & Svg Wave -->
+          <svg class="bg-wave " preserveAspectRatio="none"  viewBox="0 0 1400 300" enable-background="new 0 0 1400 300" xml:space="preserve">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7 54.7c163.5-94 235.5-12.2 474.4-12.2 240 0 240-30.2 478.9-30.2 238.8 0 305.1-49.2 468.6 44.9 174.8 100.3 49.1 132.2 49.1 269.4s133.7 173.5-40 273.7c-163.4 94.1-237.7 16-477.7 16s-240 1.9-479 1.9c-240 0-325.7 82.4-489.1-11.7-175-99-12.6-136.6-64-270.7-53.8-142-96-180.8 78.8-281z" fill="#000"  />
           </svg>
-        -->
-
-        <svg class="bg-wave " preserveAspectRatio="none"  viewBox="0 0 1400 300" enable-background="new 0 0 1400 300" xml:space="preserve">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7 54.7c163.5-94 235.5-12.2 474.4-12.2 240 0 240-30.2 478.9-30.2 238.8 0 305.1-49.2 468.6 44.9 174.8 100.3 49.1 132.2 49.1 269.4s133.7 173.5-40 273.7c-163.4 94.1-237.7 16-477.7 16s-240 1.9-479 1.9c-240 0-325.7 82.4-489.1-11.7-175-99-12.6-136.6-64-270.7-53.8-142-96-180.8 78.8-281z" fill="#000"  />
-        </svg>
 
       </div>
 

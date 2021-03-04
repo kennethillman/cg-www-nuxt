@@ -3,7 +3,6 @@
 
         <section v-for="(slice, index) in slices" :key="'slice-' + index">
 
-
         <!-- Case / Article -->
 
             <!-- cg-content -->
@@ -24,6 +23,12 @@
             <!-- cg-content-quote -->
             <template v-if="slice.slice_type === 'cg-content-quote'">
                 <cg-content-quote :slice="slice"/>
+            </template>
+
+
+            <!-- cg-content-quote -->
+            <template v-if="slice.slice_type === 'cg-case-next-previuos'">
+                <cg-case-next-previous :slice="slice"/>
             </template>
 
 

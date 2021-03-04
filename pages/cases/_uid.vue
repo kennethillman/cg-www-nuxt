@@ -52,7 +52,6 @@
         robots = this.$store.state.theSettings.seo_robots[0].text
       }
 
-
       meta = [
         { hid: 'description', name: 'description', content: description},
         { hid: 'keywords', name: 'keywords', content: keywords },
@@ -88,3 +87,8 @@
   }
 
 </script>
+
+
+<style lang="scss">
+
+</style>
