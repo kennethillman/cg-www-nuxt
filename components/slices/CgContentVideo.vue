@@ -12,12 +12,14 @@
   </section>
 </template>
 
+
 <script>
 export default {
   props: ['slice'],
   name: 'slice-edt-content-video'
 }
 </script>
+
 
 <style lang="scss">
 
