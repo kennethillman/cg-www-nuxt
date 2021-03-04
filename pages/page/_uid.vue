@@ -1,6 +1,6 @@
 <template>
   <div class="cg-page page-page">
-    <div class="cg-content">
+    <div class="cg-content -negative">
       <slices :slices="slices" />
     </div>
   </div>
