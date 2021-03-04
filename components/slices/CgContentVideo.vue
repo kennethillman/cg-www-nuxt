@@ -1,10 +1,14 @@
 <template>
   <section class="cg-edt-content-video" :class="['-width-'+slice.primary.width]">
-    <div class="case-content-width">
 
-      <prismic-embed v-if="Object.keys(slice.primary.video_embed_url).length > 0" class="content-video" :field="slice.primary.video_embed_url" />
-
+    <div class="case-content-width video-url" v-if="Object.keys(slice.primary.video_embed_url).length > 0">
+      <prismic-embed  class="content-video" :field="slice.primary.video_embed_url" />
     </div>
+
+    <div class="case-content-width video-html" v-if="Object.keys(slice.primary.video_embed_html).length > 0">
+      <div class="content-video" v-html="slice.primary.video_embed_html[0].text"></div>
+    </div>
+
   </section>
 </template>
 
@@ -24,6 +28,15 @@ export default {
   .content-video {
     @include aspect-ratio-iframe(4,3);
   }
+
+  .video-html {
+    .content-video {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
 
 // 768
 
