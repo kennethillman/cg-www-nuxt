@@ -10,7 +10,7 @@ html {
 
 
 body {
-  font-family: $font-sangbleu;
+  font-family: $font-apercu;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -93,8 +93,8 @@ h6, .h6 {
       max-width: 620px;
       margin: 0 auto 32px;
       font-size: 18px;
-      line-height: 1.8;
-      font-family: $font-sangbleu;
+      line-height: 1.6;
+      font-family: $font-apercu;
     }
 
     @media only screen and (min-width: 768px) {
