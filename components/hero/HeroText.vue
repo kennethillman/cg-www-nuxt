@@ -29,12 +29,12 @@
 
   .cg-hero-text {
     opacity: 0;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 1.4;
     width: 100%;
     // margin-bottom: 60px;
     color: #fff ;
-    font-family: 'Prata', serif;
+    font-family: $font-apercu;
     position: relative;
     z-index: 2;
     transition: opacity .750s ease-in-out .250s;
@@ -44,12 +44,36 @@
     }
 
 
+// 768
+
+  @media only screen and (min-width: 768px) {
+
+    font-size: 22px;
+    .cg-client {
+
+    }
+
+  }
+
+
+
+// 1024
+
+  @media only screen and (min-width: 768px) {
+
+    max-width: 700px;
+
+
+  }
+
 // 1280
 
   @media only screen and (min-width: 1280px) {
 
+    font-size: 26px;
+
     .cg-client {
-      font-size: 24px;
+      font-size: 26px;
     }
 
   }

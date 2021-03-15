@@ -68,7 +68,8 @@
 
           <!-- Background & Svg Wave -->
           <svg class="bg-wave " preserveAspectRatio="none"  viewBox="0 0 1400 300" enable-background="new 0 0 1400 300" xml:space="preserve">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7 54.7c163.5-94 235.5-12.2 474.4-12.2 240 0 240-30.2 478.9-30.2 238.8 0 305.1-49.2 468.6 44.9 174.8 100.3 49.1 132.2 49.1 269.4s133.7 173.5-40 273.7c-163.4 94.1-237.7 16-477.7 16s-240 1.9-479 1.9c-240 0-325.7 82.4-489.1-11.7-175-99-12.6-136.6-64-270.7-53.8-142-96-180.8 78.8-281z" fill="#000"  />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7 54.7c163.5-94 235.5-12.2 474.4-12.2 240 0 240-30.2 478.9-30.2 238.8 0 305.1-49.2 468.6 44.9 174.8 100.3 49.1 132.2 49.1 269.4s133.7 173.5-40 273.7c-163.4 94.1-237.7 16-477.7 16s-240 1.9-479 1.9c-240 0-325.7 82.4-489.1-11.7-175-99-12.6-136.6-64-270.7-53.8-142-96-180.8 78.8-281z" fill="#2F3437
+"  />
           </svg>
 
       </div>
@@ -208,6 +209,13 @@
   overflow: hidden;
   background-color: #FCF4FF;
 
+  .site-content-width {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 24px;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -215,16 +223,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $black;
+    background-color: #2F3437;
   }
 
   .cg-nav-footer {
     position: relative;
-
     z-index: 3;
-    padding: 32px 0 0;
-
-
+    padding: 0;
 
     .blob {
       position: fixed;
@@ -235,7 +240,6 @@
       .blob-inner {
         transition: 150ms;
         transform-origin: center center;
-        // transform: scale(0);
         transform: scale(0);
 
       }
@@ -252,8 +256,10 @@
 
     ul{
       display: flex;
-      justify-content: center;
+      justify-content: left;
       flex-wrap: wrap;
+      max-width: 1040px;
+      margin: 0 auto;
     }
 
     li {
@@ -263,7 +269,7 @@
 
     a {
       color: $white;
-      font-family: $font-sangbleu;
+      font-family: $font-apercu;
       font-size: 16px;
       text-decoration: none;
       &:hover,
@@ -276,6 +282,7 @@
   .site-content-width {
     position: relative;
     z-index: 2;
+    padding-bottom: 0;
   }
 
 
@@ -293,17 +300,16 @@
     font-family: $font-machina;
     line-height: 1.1;
     color: $white;
-    text-align: center;
   }
 
   .footer-text {
     max-width: 620px;
-    margin: 0 auto 50px;
-    padding: 0 16px;
+    margin: 0 0 48px;
+    padding: 0;
     font-size: 18px;
     line-height: 1.8;
-    text-align: center;
-    font-family: $font-sangbleu;
+    text-align: left;
+    font-family: $font-apercu;
     p {
       margin-bottom: 0;
     }
@@ -320,7 +326,7 @@
   // Logo
 
   .cg-logo {
-    display: block;
+    display: none;
     width: 90px;
     margin: 22px auto 0;
     position: relative;

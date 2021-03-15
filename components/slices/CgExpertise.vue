@@ -1,29 +1,32 @@
 <template>
 
 <div class="cg-expertise cg-spacing">
-  <div
-    v-waypoint="{ active: true, callback: animateTriggerFade }"
-    class="case-content-width -animate-fade-in-up" :class="['-text-'+slice.primary.content_text_color]" >
+  <div class="expertise-content-width " :class="['-text-'+slice.primary.content_text_color, '-figure-'+slice.primary.svg_figure]" >
 
-    <!-- Image -->
-    <figure class="case-image ">
-      <cg-figures class="expertise-svg"  :figures="slice.primary.svg_figure" :class="['-fill-'+slice.primary.svg_figure_color]" />
-    </figure>
+    <div class="cg-expertise-body">
 
-    <div class="cg-expertise-group-header">
-      <prismic-rich-text
-        v-if="slice.primary.header1.length > 0 && slice.primary.header1[0].text !== ''"
-        class="expertise-header" :field="slice.primary.header1" :class="['-text-'+slice.primary.header_color]" />
-      <prismic-rich-text
-        v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
-        class="expertise-sub-header" :field="slice.primary.sub_header" :class="['-text-'+slice.primary.sub_header_color]" />
+      <!-- Image -->
+      <figure class="expertise-figure ">
+        <cg-figures class="expertise-svg"  :figures="slice.primary.svg_figure" :class="['-fill-'+slice.primary.svg_figure_color]" />
+      </figure>
+
+      <div class="cg-expertise-group-header -animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }">
+        <prismic-rich-text
+          v-if="slice.primary.header1.length > 0 && slice.primary.header1[0].text !== ''"
+          class="expertise-header" :field="slice.primary.header1" :class="['-text-'+slice.primary.header_color]" />
+        <prismic-rich-text
+          v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
+          class="expertise-sub-header" :field="slice.primary.sub_header" :class="['-text-'+slice.primary.sub_header_color]" />
+      </div>
+
+      <div class="cg-edt-content -animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }">
+            <prismic-rich-text
+          v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
+          :field="slice.primary.content" />
+      </div>
+
     </div>
 
-    <div class="cg-edt-content">
-          <prismic-rich-text
-        v-if="slice.primary.sub_header.length > 0 && slice.primary.sub_header[0].text !== ''"
-        :field="slice.primary.content" />
-    </div>
 
   </div>
 
@@ -51,28 +54,72 @@ export default {
 <style lang="scss">
 
 .cg-expertise {
+  width: 100vw;
   position: relative;
   z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
 
-  // padding: 120px 0 40px;
-  margin:  0 0 80px;
+  .cg-expertise-body {
+    max-width: 630px;
+    margin: 0 auto;
+    position: relative;
+  }
 
-  .case-content-width {
+  .expertise-content-width {
     position: relative;
     z-index: 1;
+    padding: 0 24px;
+    margin: 0 auto;
+    max-width: 1040px;
+
+    &.-figure-blob-big-right{
+      position: static;
+
+      .cg-expertise-body {
+        position: static;
+      }
+
+      .cg-figure {
+        width: 100vw;
+        left: auto;
+        right: 0;
+        top: 200px;
+        max-width: 500px;
+      }
+
+    }
+
+    &.-figure-blob-big-left{
+      position: static;
+
+      .cg-expertise-body {
+        position: static;
+      }
+
+      .cg-figure {
+        width: 100vw;
+        left: 0;
+        top: -40px;
+        max-width: 400px;
+      }
+
+    }
+
+
   }
 
   // Svg figure
   .cg-figure {
     position: absolute;
-    left: -80px;
-    top: -20px;
+    left: -20px;
+    top: -40px;
     z-index: -1;
-    width: 160px;
+    width: 136px;
   }
 
   .cg-expertise-group-header {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
 
   .expertise-header {
@@ -81,16 +128,21 @@ export default {
       font-family: $font-machina;
       font-weight: 800;
        line-height: 1em;
-       font-size: 67px;
+       font-size: 40px;
        margin: 0;
     }
+  }
+
+  .cg-edt-content {
+    padding: 0;
   }
 
   .expertise-sub-header {
     > * {
       font-family: $font-sangbleu;
       line-height: 1em;
-      font-size: 56px;
+      font-size: 40px;
+      font-weight: normal;
       margin: 0;
     }
   }
@@ -116,12 +168,6 @@ export default {
 
   @media only screen and (min-width: 600px) {
 
-    // Svg figure
-    .cg-figure {
-      left: -140px;
-      top: -50px;
-      width: 240px;
-    }
 
   }
 
@@ -129,6 +175,26 @@ export default {
 // 1024
 
   @media only screen and (min-width: 1024px) {
+
+    // Svg figure
+    .cg-figure {
+      left: -70px;
+      top: -40px;
+      width: 180px;
+    }
+
+    .cg-expertise-body {
+      margin: 0;
+    }
+
+    .page-expertise .container > section:nth-child(even) & {
+
+      .expertise-content-width {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+    }
 
 
   }
@@ -138,7 +204,39 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
+    .expertise-header,
+    .expertise-sub-header {
+      > * {
+         font-size: 80px;
+      }
+    }
 
+        // Svg figure
+    .cg-figure {
+      left: -100px;
+      top: -50px;
+      width: 240px;
+    }
+
+    .expertise-content-width {
+      &.-figure-blob-big-right{
+        .cg-figure {
+
+          max-width: 800px;
+        }
+      }
+          &.-figure-blob-big-left{
+
+
+
+
+      .cg-figure {
+
+        max-width: 700px;
+      }
+
+    }
+    }
 
   }
 

@@ -30,7 +30,7 @@
           <template v-for="(item, index) in menu">
             <nuxt-link :to="$prismic.asLink(item.link)">
               {{$prismic.asText(item.label)}}
-            </nuxt-link><br>
+            </nuxt-link>
           </template>
 
         </div>
@@ -150,7 +150,6 @@
 </script>
 
 
-
 <style lang="scss">
   .cg-the-header {
     position: fixed;
@@ -164,27 +163,34 @@
       margin: 0 auto;
       position: relative;
     }
+
     .cg-logo {
       display: block;
-      width: 90px;
-      margin: 22px auto 0;
+      width: 60px;
+      margin: 22px 12px 0;
       position: relative;
-
+      filter: drop-shadow(24px 24px 48px rgba(0, 0, 0, .2));
     }
+
     .cg-nav {
-      text-align: right;
-      padding: 8px;
+      text-align: left;
       position: absolute;
       top: 0px;
-      right: 0px;
+      left: 80px;
       z-index: 10;
+      a:nth-child(n+5) {
+          display: none;
+        }
       a {
+        font-family: $font-apercu;
+        color: $blue;
+        line-height: 1;
         display: inline-block;
         text-decoration: none;
         text-align: right;
-        padding: 4px 4px 4px 16px;
-        margin: 4px;
-        background: yellow;
+        padding: 0 2px;
+        margin: 10px 4px 0;
+        font-size: 16px;
       }
     }
 
@@ -212,12 +218,59 @@
       right: 26%;
     }
 
+    @include VP375 {
+      .cg-logo {
+        margin: 22px 24px 0;
+      }
+      .cg-nav {
+        left: 96px;
+        a {
+          font-size: 18px;
+        }
+      }
+    }
 
-    @include VP1024 {
+    @include VP480 {
+
+      .cg-nav {
+        left: 96px;
+        a {
+          padding: 0 4px;
+        }
+      }
+    }
+
+    @include VP768 {
+      .cg-logo {
+        width: 90px;
+        margin: 40px 48px 0;
+      }
+
+      .cg-nav {
+        left: 164px;
+        a {
+          font-size: 22px;
+          padding: 0 6px;
+          margin-top: 16px;
+        }
+      }
+
+    }
+
+
+    @include VP1280 {
 
       .cg-logo {
         width: 125px;
         margin: 40px 48px 0;
+      }
+      .cg-nav {
+        left: 224px;
+        a {
+          font-size: 26px;
+          padding: 0 8px;
+          margin-top: 22px;
+        }
       }
     }
 

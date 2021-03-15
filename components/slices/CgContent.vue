@@ -21,7 +21,7 @@ export default {
 
   padding: 56px 0 32px;
   font-size: 18px;
-  font-family: $font-sangbleu;
+  font-family: $font-apercu;
   line-height: 1.8;
 
   h2,h3,h4 {

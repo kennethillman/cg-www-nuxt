@@ -64,6 +64,9 @@
     background: $gradient;
     flex: 1;
     padding: 0 0 24px;
+    position: relative;
+    z-index: 10;
+
 
     .container {
       > section {

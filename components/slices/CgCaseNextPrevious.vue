@@ -2,28 +2,27 @@
 
   <div class="cg-case-next-prevoius">
 
-       <prismic-link :field="slice.primary.next_link" class="cg-case-other  -next">
-          <figure v-if="slice.primary.next_image.url">
-            <ImageResponsive :image="slice.primary.next_image" />
-          </figure>
-          <div class="text-twrapper">
-            <div class="header" v-if="slice.primary.next_header.length > 0 && slice.primary.next_header[0].text !== ''"
-            >{{slice.primary.next_header[0].text}}</div>
-            <div class="text" v-if="slice.primary.next_text.length > 0 && slice.primary.next_text[0].text !== ''">{{slice.primary.next_text[0].text}}</div>
-          </div>
-       </prismic-link>
+   <prismic-link :field="slice.primary.next_link" class="cg-case-other  -next">
+      <figure v-if="slice.primary.next_image.url">
+        <ImageResponsive :image="slice.primary.next_image" />
+      </figure>
+      <div class="text-twrapper">
+        <div class="header" v-if="slice.primary.next_header.length > 0 && slice.primary.next_header[0].text !== ''"
+        >{{slice.primary.next_header[0].text}}</div>
+        <div class="text" v-if="slice.primary.next_text.length > 0 && slice.primary.next_text[0].text !== ''">{{slice.primary.next_text[0].text}}</div>
+      </div>
+   </prismic-link>
 
-       <prismic-link :field="slice.primary.previous_link"  class="cg-case-other -previous">
-          <figure v-if="slice.primary.previous_image.url">
-            <ImageResponsive :image="slice.primary.previous_image" />
-          </figure>
-          <div class="text-twrapper">
-            <div class="header" v-if="slice.primary.previous_header.length > 0 && slice.primary.previous_header[0].text !== ''"
-            >{{slice.primary.previous_header[0].text}}</div>
-            <div class="text" v-if="slice.primary.previous_text.length > 0 && slice.primary.previous_text[0].text !== ''">{{slice.primary.previous_text[0].text}}</div>
-          </div>
-       </prismic-link>
-
+   <prismic-link :field="slice.primary.previous_link"  class="cg-case-other -previous">
+      <figure v-if="slice.primary.previous_image.url">
+        <ImageResponsive :image="slice.primary.previous_image" />
+      </figure>
+      <div class="text-twrapper">
+        <div class="header" v-if="slice.primary.previous_header.length > 0 && slice.primary.previous_header[0].text !== ''"
+        >{{slice.primary.previous_header[0].text}}</div>
+        <div class="text" v-if="slice.primary.previous_text.length > 0 && slice.primary.previous_text[0].text !== ''">{{slice.primary.previous_text[0].text}}</div>
+      </div>
+   </prismic-link>
 
   </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-page">
+  <div class="cg-page page-expertise">
     <div class="cg-content -negative">
 
         <slices :slices="slices" />

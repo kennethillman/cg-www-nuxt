@@ -3,16 +3,18 @@
 
         <h1 class="the-header">
 
+
           <div class="ani-letters-one"
             v-if="text.header1[0].text"
-            v-html="addLetterSpans(text.header1[0].text)"
+
             :style="[text.header_1_color ? {'color': text.header_1_color} : {'color': '#fff'}]">
+            {{text.header1[0].text}}
           </div>
 
           <div class="ani-letters-two"
             v-if="text.header2[0].text"
-            v-html="addLetterSpans(text.header2[0].text)"
             :style="[text.header_2_color ? {'color': text.header_2_color} : {'color': '#fff'}]">
+            {{text.header2[0].text}}
           </div>
 
         </h1>
@@ -74,8 +76,8 @@
 
         setTimeout(() => {
           this.hideHeader = false
-          this.animateHeaderOne()
-          this.animateHeaderTwo()
+          // this.animateHeaderOne()
+          // this.animateHeaderTwo()
          }, 30)
 
 
@@ -94,21 +96,26 @@
     }
 
     opacity: 1;
+    transition: opacity .750s ease-in-out .250s;
 
     .the-header {
       visibility: visible;
       opacity: 1;
       transition: all .5s ease;
       color: #fff;
-      font-size: 56px;
-      line-height: 67px;
-      margin: 56px 0 56px;
+      font-size: 40px;
+      line-height: 1.16;
+      margin: 32px 0 24px;
       position: relative;
       z-index: 2;
 
+
+      @include VP768 {
+        font-size: 60px;
+      }
+
       @include VP1280 {
         font-size: 80px;
-        line-height: 96px;
       }
 
       .ani-letters-two,

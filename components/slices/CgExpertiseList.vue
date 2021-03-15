@@ -1,9 +1,8 @@
 <template>
   <section class="cg-expertise-list cg-spacing">
-    <div class="centerd-content-width">
-
+    <div class="cg-expertise-list-width">
+      <prismic-rich-text class="list-header" :field="slice.primary.header1"  />
       <prismic-rich-text :field="slice.primary.list" />
-
     </div>
   </section>
 </template>
@@ -22,6 +21,18 @@ export default {
   // padding: 56px 0 32px;
   font-family: $font-sangbleu;
 
+  .list-header {
+    color: $blue;
+    max-width: 700px;
+    margin: 0 auto;
+    > * {
+      font-family: $font-sangbleu!important;
+      font-size: 28px;
+      line-height: 1;
+      margin: 0 0 24px;
+      color: $blue;
+    }
+  }
 
   .centerd-content-width {
     max-width: 580px;
@@ -29,23 +40,24 @@ export default {
   }
 
   ul {
-    padding: 16px 0 24px;
+    padding: 0 0 0px;
+    max-width: 700px;
   }
 
   li {
     position: relative;
-
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.6;
     padding: 12px 0;
     padding-left: 24px;
     color: $blue;
-    font-weight: bold;
+    font-weight: normal;
     box-sizing: content-box;
+    font-family: $font-machina;
 
     &:before {
       content: "";
-      background-color: $red;
+      background-color: $yellow;
       display: block;
       width: 8px;
       height: 8px;
@@ -55,6 +67,7 @@ export default {
       left: 4px;
       transform: translateY(-60%);
     }
+
   }
 
 
@@ -68,7 +81,7 @@ export default {
       left: 50%;
       transform: translateX(-50%);
       padding: 32px 0 48px;
-      width: 680px;
+      width: 1040px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -86,18 +99,23 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
+    .list-header {
+      max-width: 960px;
+  }
+      ul {
+     max-width: 960px;
+    }
+
   }
 
 // 1280
 
   @media only screen and (min-width: 1280px) {
 
-    ul {
-      width: 1060px;
-    }
+
 
     li {
-      font-size: 36px;
+      font-size: 32px;
       padding-left: 32px;
       &:before {
         width: 10px;
@@ -105,6 +123,19 @@ export default {
         border-radius: 10px;
       }
     }
+
+    .list-header {
+      max-width: 1040px;
+      > * {
+        font-size: 40px;
+      }
+    }
+
+    ul {
+     max-width: 1280px;
+    }
+
+
 
   }
 
