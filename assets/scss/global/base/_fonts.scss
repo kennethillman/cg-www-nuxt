@@ -4,6 +4,29 @@
 
 
 ///////////////////////////////////
+// Apercu
+///////////////////////////////////
+
+  @font-face {
+      font-family: 'Apercu';
+      src: url('~assets/fonts/apercu_regular_0-webfont.woff2') format('woff2'),
+           url('~assets/fonts/apercu_regular_0-webfont.woff') format('font-woff'),
+           url('~assets/fonts/apercu_regular_0-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  // @font-face {
+  //     font-family: 'apercubold';
+  //     src: url('~assets/fonts/apercu_bold-webfont.woff2') format('woff2'),
+  //          url('~assets/fonts/apercu_bold-webfont.woff') format('font-woff'),
+  //          url('~assets/fonts/apercu_bold-webfont.ttf') format('truetype');
+  //     font-weight: bold;
+  //     font-style: normal;
+
+  // }
+
+///////////////////////////////////
 // SangBleuEmpire
 ///////////////////////////////////
 
@@ -59,11 +82,11 @@
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
-  src: local("NeueMachina-Black"),
-       local("Neue Machina Black"),
-       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
-       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
-       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+  src: local("NeueMachina-Regular"),
+       local("Neue Machina Regular"),
+       url(~assets/fonts/NeueMachina-Regular.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Regular.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Regular.otf) format('otf');
 }
 
 // -> normal / italic
@@ -72,11 +95,11 @@
   font-weight: normal;
   font-style: italic;
   font-display: fallback;
-  src: local("NeueMachina-Black"),
-       local("Neue Machina Black"),
-       url(~assets/fonts/NeueMachina-Black.woff2) format('woff2'),
-       url(~assets/fonts/NeueMachina-Black.woff) format('woff'),
-       url(~assets/fonts/NeueMachina-Black.otf) format('otf');
+  src: local("NeueMachina-Regular"),
+       local("Neue Machina Regular"),
+       url(~assets/fonts/NeueMachina-Regular.woff2) format('woff2'),
+       url(~assets/fonts/NeueMachina-Regular.woff) format('woff'),
+       url(~assets/fonts/NeueMachina-Regular.otf) format('otf');
 }
 
 // -> bold / normal
