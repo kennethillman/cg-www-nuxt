@@ -210,7 +210,7 @@
   background-color: #FCF4FF;
 
   .site-content-width {
-    max-width: 1040px;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
     padding: 48px 24px;
@@ -258,7 +258,7 @@
       display: flex;
       justify-content: left;
       flex-wrap: wrap;
-      max-width: 1040px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 

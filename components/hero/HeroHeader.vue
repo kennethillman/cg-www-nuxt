@@ -94,14 +94,16 @@
     &.-ghost {
       opacity: 0;
     }
+    position: relative;
+    z-index: 2;
 
     opacity: 1;
     transition: opacity .750s ease-in-out .250s;
 
     .the-header {
-      visibility: visible;
+      // visibility: visible;
       opacity: 1;
-      transition: all .5s ease;
+
       color: #fff;
       font-size: 40px;
       line-height: 1.16;
