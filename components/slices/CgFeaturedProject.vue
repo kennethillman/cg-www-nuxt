@@ -272,6 +272,7 @@ export default {
       transform: translateY(-50%);
       height: 20px;
       width: 20px;
+      fill: $blue;
     }
   }
 

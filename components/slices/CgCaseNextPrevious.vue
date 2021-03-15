@@ -69,6 +69,10 @@ export default {
       width: 124px;
     }
 
+    .header {
+      font-family: $font-sangbleu;
+    }
+
     &.-next {
       background: $blue;
       color: $white;
@@ -138,7 +142,7 @@ export default {
           padding-top: 24px;
           display: block;
           font-size: 18px;
-          font-style: italic;
+
           line-height: 1.4;
         }
 

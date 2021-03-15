@@ -103,7 +103,7 @@ export default {
   }
 
   .case-box-text {
-   font-family: $font-sangbleu;
+   font-family: $font-apercu;
    font-size: 14px;
    line-height: 1.6;
    p {
