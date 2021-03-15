@@ -134,6 +134,9 @@ export default {
   a {
     display: block;
     text-decoration: none;
+    &:hover {
+      filter: none;
+    }
   }
 
   .site-content-width {
@@ -237,33 +240,36 @@ export default {
     font-size: 40px;
     font-family: $font-sangbleu;
     text-decoration: none;
+     color: $blue;
   }
 
   .featured-text{
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.6;
     text-decoration: none;
+    font-weight: normal;
+    color: $blue;
   }
 
   // Link
 
   .featured-link{
-    font-family: $font-sangbleu;
-    font-size: 20px;
-    line-height: 1.256;
-    text-transform: uppercase;
+    font-family: $font-apercu;
+    font-size: 18px;
+    line-height: 1.1;
     text-decoration: none;
     font-weight: bold;
     margin-top: 1.5em;
     position: relative;
     display: inline-block;
     padding-right: 28px;
+     color: $blue;
 
     svg {
       position: absolute;
       right: 0;
       top: 50%;
-      transform: translateY(-60%);
+      transform: translateY(-50%);
       height: 20px;
       width: 20px;
     }
@@ -410,9 +416,12 @@ export default {
      top: -80px;
      left: -48px;
     }
+    .featured-text{
+      font-size: 22px;
+    }
 
     .featured-header{
-      font-size: 72px;
+      font-size: 64px;
     }
 
     &.-right {
