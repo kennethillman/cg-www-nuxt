@@ -38,6 +38,7 @@
 
 // MQ Viewport
 $VP320:                                 true !default;
+$VP375:                                 true !default;
 $VP480:                                 true !default;
 $VP600:                                 true !default;
 $VP680:                                 true !default;
@@ -57,6 +58,8 @@ $DESKTOP:                               true !default;
 $MOBILETABLET:                          true !default;
 
 // Breakpoints
+$bp-320:                                320px !default;
+$bp-375:                                375px !default;
 $bp-480:                                480px !default;
 $bp-600:                                600px !default;
 $bp-680:                                680px !default;
@@ -77,6 +80,7 @@ $bp-1920:                               1920px !default;
 
 // Viewport
 @mixin VP320                            { @if $VP320                     { @content; } }
+@mixin VP375                            { @if $VP375                     { @include media-min($bp-375)  {@content;} }  }
 @mixin VP480                            { @if $VP480                     { @include media-min($bp-480)  {@content;} }  }
 @mixin VP600                            { @if $VP600                     { @include media-min($bp-600)  {@content;} }  }
 @mixin VP680                            { @if $VP680                    { @include media-min($bp-680) {@content;} }  }
