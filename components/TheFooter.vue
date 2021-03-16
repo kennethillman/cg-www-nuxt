@@ -9,7 +9,14 @@
                v-if="footer.header[0].text !== ''"
                v-waypoint="{ active: true, callback: triggerFade }"
                class="footer-header -animate-fade-in-up -delay-one"
-            >{{footer.header[0].text}}
+            >
+              <template v-if="text !== ''">
+                {{text}}
+              </template>
+              <template v-else>
+                {{footer.header[0].text}}
+              </template>
+
           </h2>
           <prismic-rich-text
             v-if="footer.text[0].text !== ''"
@@ -80,6 +87,12 @@
 <script>
 
   export default {
+    props:{
+      text: {
+        type: String,
+        default: ''
+      }
+    },
     data() {
       return {
           blob: 1,
