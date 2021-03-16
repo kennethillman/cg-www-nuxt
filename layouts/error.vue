@@ -104,6 +104,7 @@ export default {
 <style lang="scss">
 
   .page-error {
+    padding: 0!important;
     .cg-content{
         text-align: center;
         min-height: 100vh;
