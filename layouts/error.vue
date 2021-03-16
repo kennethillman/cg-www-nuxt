@@ -1,7 +1,7 @@
 <template>
   <section class="common-ground cg-page page-error">
 
-    <TheHeader />
+
 
       <nuxt-link to="/" class="cg-content">
 
@@ -36,7 +36,7 @@
 
       </nuxt-link>
 
-    <TheFooter text="Common Ground" />
+
 
   </section>
 </template>
@@ -45,7 +45,7 @@
 export default {
   props: ['error'],
   name: 'NotFound',
-  layout: 'error'
+  layout: 'clean'
 }
 </script>
 
