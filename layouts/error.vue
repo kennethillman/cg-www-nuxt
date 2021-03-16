@@ -2,7 +2,6 @@
   <section class="common-ground cg-page page-error">
 
 
-
       <nuxt-link to="/" class="cg-content">
 
 
@@ -36,7 +35,7 @@
 
       </nuxt-link>
 
-
+    <TheFooter text="Common Ground" />
 
   </section>
 </template>
