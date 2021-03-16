@@ -27,8 +27,17 @@
         </nuxt-link>
 
 
+        <!-- NAV -->
 
+        <div class="cg-nav" @click="clickToTop()">
 
+          <template v-for="(item, index) in menu">
+            <nuxt-link :to="$prismic.asLink(item.link)">
+              {{$prismic.asText(item.label)}}
+            </nuxt-link>
+          </template>
+
+        </div>
 
 
       </div>
@@ -76,7 +85,19 @@
 export default {
   props: ['error'],
   name: 'NotFound',
-  layout: 'clean'
+  layout: 'clean',
+  data() {
+      return {
+          blob: 1,
+          menu: ''
+      }
+    },
+    async fetch() {
+      const menu = await this.$prismic.api.getSingle('menu')
+      this.menu = menu.data.menu_links;
+
+
+    },
 }
 </script>
 
