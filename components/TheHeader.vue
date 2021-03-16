@@ -1,5 +1,5 @@
 <template>
-    <div class="cg-the-header">
+    <div class="cg-the-header" :class="{ '-hide-menu': !menuShow, '-white-menu': menuWhite }">
       <div class="header-body">
 
         <!-- LOGO --->
@@ -31,6 +31,7 @@
             <nuxt-link :to="$prismic.asLink(item.link)">
               {{$prismic.asText(item.label)}}
             </nuxt-link>
+
           </template>
 
         </div>
@@ -48,7 +49,13 @@
     data() {
       return {
           blob: 1,
-          menu: this.$store.getters.getTheMenu
+          menu: this.$store.getters.getTheMenu,
+          menuShow: true,
+          menuWhite: false,
+          lastScrollPosition: 0,
+          scrollValue: 0,
+          heroHeight: 0,
+          headerHeight: 0,
       }
     },
     mixins: [click],
@@ -138,10 +145,40 @@
 
 
 
+        },
+        onScroll () {
+          if (window.pageYOffset < 0) {
+            return
+          }
+          if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 86) {
+            return
+          }
+
+          if (window.pageYOffset > (this.heroHeight - this.headerHeight)) {
+            this.menuWhite = true;
+          } else {
+            this.menuWhite = false;
+          }
+          this.menuShow = window.pageYOffset < this.lastScrollPosition
+          this.lastScrollPosition = window.pageYOffset
         }
     },
     mounted() {
       this.animateLogoBlobs();
+
+      this.heroHeight = document.querySelector('.cg-hero').clientHeight;
+      this.headerHeight = document.querySelector('.cg-the-header').clientHeight;
+      this.lastScrollPosition = window.pageYOffset
+      window.addEventListener('scroll', this.onScroll)
+      const viewportMeta = document.createElement('meta')
+      viewportMeta.name = 'viewport'
+      viewportMeta.content = 'width=device-width, initial-scale=1'
+      document.head.appendChild(viewportMeta)
+
+
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.onScroll)
     }
   }
 
@@ -157,6 +194,19 @@
     left: 0;
     width: 100%;
     z-index: 100;
+    transition: 0.375s all ease-out;
+    padding-bottom: 18px;
+
+    &.-hide-menu {
+      transform: translateY(-100%);
+    }
+
+    &.-white-menu {
+      background: $white;
+      a {
+        color: $blue!important;
+      }
+    }
 
     .header-body {
       max-width: 1920px;
@@ -241,6 +291,7 @@
     }
 
     @include VP768 {
+      padding-bottom: 32px;
       .cg-logo {
         width: 90px;
         margin: 40px 48px 0;
