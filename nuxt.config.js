@@ -143,6 +143,6 @@ export default {
 
   },
   generate: {
-    fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
+    fallback: true // Netlify reads a 404.html, Nuxt will load as an SPA
   }
 }

@@ -45,7 +45,7 @@
 export default {
   props: ['error'],
   name: 'NotFound',
-  layout: 'clean'
+  layout: 'error'
 }
 </script>
 
@@ -65,6 +65,7 @@ export default {
 
         &:hover {
           cursor: pointer;
+          filter: none;
         }
 
         span {
