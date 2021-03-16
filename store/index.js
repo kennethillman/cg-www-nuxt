@@ -79,14 +79,6 @@ export const actions = {
     const menu = await this.$prismic.api.getSingle('menu')
     commit('setTheMenu', menu.data.menu_links)
 
-    // Getting the footer from Prismic.io
-    const footer = await this.$prismic.api.getSingle('footer')
-    commit('setTheFooter', footer.data)
-
-     // Getting the footer menu from Prismic.io
-    const menuFooter = await this.$prismic.api.getSingle('menu_footer')
-    commit('setTheMenuFooter', menuFooter.data.menu_links)
-
 
   },
 

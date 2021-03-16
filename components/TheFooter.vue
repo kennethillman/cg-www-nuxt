@@ -96,8 +96,8 @@
     data() {
       return {
           blob: 1,
-          menu: this.$store.getters.getTheMenu,
-          footer: this.$store.getters.getTheFooter,
+          menu: '',
+          footer: '',
           morph: null,
           rotate: null,
           paths: [
@@ -136,7 +136,14 @@
                 ]
       }
     },
+    async fetch() {
+      const footer = await this.$prismic.api.getSingle('footer')
+      this.footer = footer.data;
 
+       // Getting the footer menu from Prismic.io
+      const menuFooter = await this.$prismic.api.getSingle('menu_footer')
+      this.menu = menuFooter.data.menu_links;
+    },
     methods: {
       moveBlob(event) {
         this.$refs.blob.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
