@@ -9,6 +9,7 @@ export const state = () => ({
 
   theSettings: {},
   theMenu: {},
+  theMenuColor: 'dark',
   theMenuFooter: {},
   theFooter: {},
 
@@ -37,6 +38,9 @@ export const mutations = {
   },
   setTheMenu(state, payload) {
     state.theMenu = payload
+  },
+  setTheMenuColor(state, payload) {
+    state.theMenuColor = payload
   },
   setTheMenuFooter(state, payload) {
     state.theMenuFooter = payload
@@ -85,6 +89,9 @@ export const actions = {
   setHero(vuexContext, state) {
     vuexContext.commit('setHero', state)
   },
+  setTheMenuColor(vuexContext, state) {
+    vuexContext.commit('setMenuColor', state)
+  },
   setHeroShow(vuexContext, state) {
     vuexContext.commit('setHeroShow', state)
   },
@@ -115,6 +122,9 @@ export const getters = {
   },
   getTheMenu(state) {
     return state.theMenu
+  },
+  getTheMenuColor(state) {
+    return state.theMenuColor
   },
   getTheMenuFooter(state) {
     return state.theMenuFooter
