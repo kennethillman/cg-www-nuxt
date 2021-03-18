@@ -1,7 +1,7 @@
 <template>
   <div class="cg-page page-startpage">
 
-    <div class="cg-content -negative">
+    <div class="cg-content ">
 
       <slices :slices="slices" />
 

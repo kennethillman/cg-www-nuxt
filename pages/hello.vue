@@ -1,6 +1,6 @@
 <template>
   <div class="cg-page page-hello">
-    <div class="cg-content -negative">
+    <div class="cg-content ">
 
      <TextSplit
         v-waypoint="{ active: true, callback: animateTriggerFade }"

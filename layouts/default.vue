@@ -63,9 +63,20 @@
   .cg-page {
     background: $gradient;
     flex: 1;
-    padding: 0 0 24px;
+    padding: 0 0 $mm;
     position: relative;
     z-index: 10;
+
+    // 768
+    @media only screen and (min-width: 768px) {
+      padding: 0 0 $mt;
+
+    }
+
+    // 1280
+    @media only screen and (min-width: 1280px) {
+      padding: 0 0 $md;
+    }
 
 
     .container {
