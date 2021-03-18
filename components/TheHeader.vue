@@ -147,33 +147,39 @@
 
 
 
-        },
-        onScroll () {
-          if (window.pageYOffset < 0) {
-            return
-          }
-          if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 86) {
-            return
-          }
-
-          if (window.pageYOffset > (this.heroHeight - this.headerHeight)) {
-            this.menuWhite = true;
-          } else {
-            this.menuWhite = false;
-          }
-
-          if (window.pageYOffset > this.headerHeight ) {
-            this.menuNotTop = true;
-          } else {
-            this.menuNotTop = false;
-          }
-
-          this.menuShow = window.pageYOffset < this.lastScrollPosition
-          this.lastScrollPosition = window.pageYOffset
+      },
+      onScroll () {
+        if (window.pageYOffset < 0) {
+          return
         }
+        if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 86) {
+          return
+        }
+
+        if (window.pageYOffset > (this.heroHeight - this.headerHeight)) {
+          this.menuWhite = true;
+        } else {
+          this.menuWhite = false;
+        }
+
+        if (window.pageYOffset > this.headerHeight ) {
+          this.menuNotTop = true;
+        } else {
+          this.menuNotTop = false;
+        }
+
+        this.menuShow = window.pageYOffset < this.lastScrollPosition
+        this.lastScrollPosition = window.pageYOffset
+      }
     },
     mounted() {
       this.animateLogoBlobs();
+
+      if (this.$store.getters.getHero.menu_color === 'light') {
+        this.menuColor = 'light'
+      } else {
+        this.menuColor = 'dark';
+      }
 
       this.heroHeight = document.querySelector('.cg-hero').clientHeight;
       this.headerHeight = document.querySelector('.cg-the-header').clientHeight;
@@ -183,7 +189,6 @@
       viewportMeta.name = 'viewport'
       viewportMeta.content = 'width=device-width, initial-scale=1'
       document.head.appendChild(viewportMeta)
-
 
     },
     beforeDestroy () {
