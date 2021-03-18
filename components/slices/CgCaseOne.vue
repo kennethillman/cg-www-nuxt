@@ -1,6 +1,6 @@
 <template>
 
-<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one cg-spacing"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
+<prismic-link :field="slice.primary.link_to" class="cg-case cg-case-one cg-spacing cg-margin"  :class="['-version-'+slice.primary.version, '-position-'+slice.primary.position]">
       <div
         @click="clickToTop()"
         v-waypoint="{ active: true, callback: animateTriggerFade }"

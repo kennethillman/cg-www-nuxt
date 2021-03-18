@@ -78,12 +78,12 @@
       padding: 0 0 $md;
     }
 
-
     .container {
       > section {
         @include clearfix();
       }
     }
+
   }
 
 
