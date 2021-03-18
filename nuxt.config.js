@@ -6,7 +6,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { 'http-equiv':'X-UA-Compatible', content:'IE=edge' },
-      { name: 'viewport', content: 'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0' },
       { hid: 'description', name: 'description', content: 'Common Ground is a UX design studio based in Stockholm, Sweden.  The Common Ground toolbox holds research, strategy, design, user testing, prototyping and visual design.' },
       { hid: 'keywords', name: 'keywords', content: 'Common Ground, UX, Design studio' },
       { hid: 'robots', name: 'robots', content: 'index, follow '}
