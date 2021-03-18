@@ -1,5 +1,5 @@
 <template>
-    <div class="cg-the-header" :class="{ '-hide-menu': !menuShow, '-white-menu': menuWhite, '-menu-not-top': menuNotTop }">
+    <div class="cg-the-header" :class="{ '-menu-light': menuColor === 'light' , '-hide-menu': !menuShow, '-white-menu': menuWhite, '-menu-not-top': menuNotTop }">
       <div class="header-body">
 
         <!-- LOGO --->
@@ -48,6 +48,7 @@
           menu: this.$store.getters.getTheMenu,
           menuShow: true,
           menuWhite: false,
+          menuColor: false,
           menuNotTop: false,
           lastScrollPosition: 0,
           scrollValue: 0,
@@ -65,7 +66,11 @@
         }
         this.animateLogoBlobs();
       },
+      '$store.state.hero'() {
+        this.menuColor = this.$store.state.hero.menu_color;
+      }
     },
+
     methods: {
 
       animateLogoBlobs() {
@@ -203,6 +208,14 @@
 
     &.-hide-menu {
       transform: translateY(-100%);
+    }
+
+    &.-menu-light {
+      .cg-nav {
+        a {
+          color: $white;
+        }
+      }
     }
 
     &.-white-menu {

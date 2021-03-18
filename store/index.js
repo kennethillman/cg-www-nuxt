@@ -90,7 +90,7 @@ export const actions = {
     vuexContext.commit('setHero', state)
   },
   setTheMenuColor(vuexContext, state) {
-    vuexContext.commit('setMenuColor', state)
+    vuexContext.commit('setTheMenuColor', state)
   },
   setHeroShow(vuexContext, state) {
     vuexContext.commit('setHeroShow', state)

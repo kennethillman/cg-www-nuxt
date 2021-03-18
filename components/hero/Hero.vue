@@ -3,7 +3,7 @@
     v-if="compHero"
     :class="[{
               '-curtain' : compHero.curtain === 'yes',
-              '-play' : compHero.background_color === '#000000'
+              '-play' : compHero.background_color === '#000000',
             }]"
     :style="[compHero.background_color ? {'background': compHero.background_color} : {'background': '#004A84'}]"
   >
@@ -45,7 +45,6 @@
           heightNew: false
         }
       },
-
       computed: {
         compHero () {
           this.rerender ++
@@ -95,6 +94,13 @@
         });
 
         hero.observe(this.$refs.herobody);
+
+
+        if (this.compHero.menu_color === 'light') {
+            this.$store.dispatch('setTheMenuColor', 'light');
+        } else {
+          this.$store.dispatch('setTheMenuColor', 'dark');
+        }
 
       }
     };
