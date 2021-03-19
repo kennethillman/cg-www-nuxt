@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-edt-content">
+  <section class="cg-edt-content cg-spacing">
     <div class="case-content-width" :class="['-pos-' + slice.primary.position_text, '-text-pos-' + slice.primary.text_vertical]">
 
       <div class="col">
@@ -30,7 +30,6 @@ export default {
 
 .cg-edt-content {
 
-  padding: 56px 0 32px;
   font-size: 18px;
   font-family: $font-apercu;
   line-height: 1.4; // (22px/30px desktop enligt spec = 1.4)
