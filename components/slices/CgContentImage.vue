@@ -1,9 +1,12 @@
 <template>
-  <section class="cg-edt-content-image" :class="['-width-'+slice.primary.width]">
+  <section class="cg-edt-content-image cg-spacing" :class="['-width-'+slice.primary.width]">
     <div class="case-content-width">
 
       <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0">
         <ImageResponsive class="featured-browser" :image="slice.primary.image" />
+        <div class="content-image-text" v-if="slice.primary.image_text.length > 0 && slice.primary.image_text[0].text !== ''">
+          {{slice.primary.image_text[0].text}}
+        </div>
       </figure>
 
     </div>
