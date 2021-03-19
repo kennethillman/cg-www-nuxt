@@ -7,10 +7,9 @@
         class="site-content-width -animate-fade-in-up" >
 
       <!-- Image -->
-      <figure class="case-image lax-image">
+      <figure class="case-image lax-image" v-if="slice.primary.image.dimensions">
 
-
-          <ImageResponsive :image="slice.primary.image" />
+         <ImageResponsive :image="slice.primary.image" />
 
 
         <!-- Background figure-->

@@ -18,15 +18,17 @@
       <!-- Image -->
 
 
-        <template v-if="slice.primary.image_phone.url">
+        <template v-if="slice.primary.image_phone.dimensions">
           <figure class="case-image image-phone">
             <ImageResponsive :image="slice.primary.image_phone" />
           </figure>
+
         </template>
-        <template else-if="slice.primary.image_browser.url">
+        <template v-if="slice.primary.image_browser.dimensions">
           <figure class="case-image image-browser">
             <ImageResponsive :image="slice.primary.image_browser" />
           </figure>
+
         </template>
 
       </figure>
@@ -37,8 +39,6 @@
           <prismic-image :field="slice.primary.svg_logo" />
           <!-- Text -->
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
-
-
       </div>
 
       <!-- Background figure-->
