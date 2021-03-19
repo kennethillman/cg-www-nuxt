@@ -12,12 +12,12 @@
       />
       <source
         v-if="image.tablet"
-        :srcSet="image.tablet"
+        :srcSet="image.tablet.url"
         media="(min-width: 768px)"
       />
       <source
         v-if="image.desktop"
-        :srcSet="image.desktop"
+        :srcSet="image.desktop.url"
         media="(min-width: 1280px)"
       />
 
