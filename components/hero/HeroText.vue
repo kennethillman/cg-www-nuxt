@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-hero-text" :class=" {'-show-text' : showText}"
+  <div class="cg-hero-text" :class="[ '-text-'+hero.text_palette_color,{'-show-text' : showText}]"
     :style="[hero.text_color ? {'color': hero.text_color} : {'color': '#fff'}]"
   >
 

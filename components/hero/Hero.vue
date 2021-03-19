@@ -1,9 +1,9 @@
 <template>
   <div class="cg-hero" ref="thehero"
     v-if="compHero"
-    :class="[{
+    :class="['-bg-'+compHero.background_palette_color, {
               '-curtain' : compHero.curtain === 'yes',
-              '-play' : compHero.background_color === '#000000',
+              '-play' : compHero.background_color === '#000000'
             }]"
     :style="[compHero.background_color ? {'background': compHero.background_color} : {'background': '#004A84'}]"
   >
@@ -18,7 +18,6 @@
 
         <!-- SVG -->
         <HeroSvg :graphic="compHero.svg_graphic"  v-if="compHero.svg_graphic !== 'none' "/>
-
 
       </div>
 

@@ -6,13 +6,14 @@
 
           <div class="ani-letters-one"
             v-if="text.header1[0].text"
-
+            :class="['-text-'+text.header_1_palette_color]"
             :style="[text.header_1_color ? {'color': text.header_1_color} : {'color': '#fff'}]">
             {{text.header1[0].text}}
           </div>
 
           <div class="ani-letters-two"
             v-if="text.header2[0].text"
+            :class="['-text-'+text.header_2_palette_color]"
             :style="[text.header_2_color ? {'color': text.header_2_color} : {'color': '#fff'}]">
             {{text.header2[0].text}}
           </div>
