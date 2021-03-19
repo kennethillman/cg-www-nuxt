@@ -89,6 +89,21 @@ a {
 
 }
 
+// Content - Image
+
+  .content-image-text {
+    text-align: center;
+    font-size: 14px;
+    padding-top: .85em;
+  }
+
+  // 1280
+
+  @media only screen and (min-width: 1280px) {
+    .content-image-text {
+      font-size: 18px;
+    }
+  }
 
 // Case - content
 

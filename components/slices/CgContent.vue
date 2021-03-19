@@ -8,7 +8,7 @@
       <div class="col">
         <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0">
           <ImageResponsive class="featured-browser" :image="slice.primary.image" />
-          <div class="image-text" v-if="slice.primary.image_text.length > 0 && slice.primary.image_text[0].text !== ''">
+          <div class="content-image-text" v-if="slice.primary.image_text.length > 0 && slice.primary.image_text[0].text !== ''">
             {{slice.primary.image_text[0].text}}
           </div>
         </figure>
@@ -104,11 +104,7 @@ export default {
   }
 
 
-  .image-text {
-    text-align: center;
-    font-size: 14px;
-    padding-top: .85em;
-  }
+
 
 
   // Images
@@ -157,9 +153,6 @@ export default {
       }
     }
 
-    .image-text {
-     // font-size: 16px;
-    }
 
   }
 
@@ -224,10 +217,6 @@ export default {
   @media only screen and (min-width: 1280px) {
 
     font-size: 22px;
-
-    .image-text {
-      font-size: 18px;
-    }
 
     h2,h3,h4 {
       padding-bottom: 24px;
