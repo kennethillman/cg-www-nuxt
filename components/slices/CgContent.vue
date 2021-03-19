@@ -1,6 +1,6 @@
 <template>
   <section class="cg-edt-content">
-    <div class="case-content-width" :class="['-pos-' + slice.primary.position_text]">
+    <div class="case-content-width" :class="['-pos-' + slice.primary.position_text, '-text-pos-' + slice.primary.text_vertical]">
 
       <div class="col">
         <prismic-rich-text :field="slice.primary.content" />
@@ -13,6 +13,7 @@
           </div>
         </figure>
       </div>
+
 
     </div>
   </section>
@@ -171,6 +172,8 @@ export default {
 
 
 
+
+
     .-pos-center {
       // Images
       .-portrait {
@@ -207,6 +210,12 @@ export default {
 
     .-pos-right {
       flex-direction: row-reverse;
+    }
+
+    .-text-pos-top {
+      .col {
+            align-items: flex-start;
+      }
     }
 
   }
