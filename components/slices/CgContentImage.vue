@@ -42,6 +42,10 @@ export default {
     }
   }
 
+  .case-content-width {
+    max-width: none;
+  }
+
 
 
 
@@ -50,13 +54,13 @@ export default {
   @media only screen and (min-width: 768px) {
 
     .content-image {
-      width: 120%;
-      transform: translateX(-4%);
+      // width: 120%;
+      //transform: translateX(-4%);
     }
 
     &.-width-screen {
       .content-image {
-        margin-left: 40px;
+        // margin-left: 40px;
       }
     }
 
@@ -68,13 +72,13 @@ export default {
   @media only screen and (min-width: 1024px) {
 
     .content-image {
-      width: 160%;
-      transform: translateX(-14%);
+      // width: 160%;
+     // transform: translateX(-14%);
     }
 
     &.-width-screen {
       .content-image {
-        margin-left: 70px;
+       // margin-left: 70px;
       }
     }
 
@@ -90,7 +94,7 @@ export default {
     &.-width-screen {
       .content-image {
         max-width: 1920px;
-        margin-left: 120px;
+       // margin-left: 120px;
       }
     }
 

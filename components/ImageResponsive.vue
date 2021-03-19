@@ -1,5 +1,5 @@
 <template>
-  <picture class="cg-image-respnsive">
+  <picture class="cg-image-respnsive" :class="[ratio]">
 
       <img
         :srcSet="image.desktop.url"
@@ -31,6 +31,11 @@
         type: Object
       }
     },
+    data (){
+      return {
+        ratio: this.image.dimensions.width > this.image.dimensions.height ? '-landscape' : '-portrait',
+      }
+    }
   }
 </script>
 

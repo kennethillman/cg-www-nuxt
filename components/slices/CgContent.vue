@@ -1,8 +1,18 @@
 <template>
   <section class="cg-edt-content">
-    <div class="case-content-width">
+    <div class="case-content-width" :class="['-pos-' + slice.primary.position_text]">
 
-      <prismic-rich-text :field="slice.primary.content" />
+      <div class="col">
+        <prismic-rich-text :field="slice.primary.content" />
+      </div>
+      <div class="col">
+        <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0">
+          <ImageResponsive class="featured-browser" :image="slice.primary.image" />
+          <div class="image-text" v-if="slice.primary.image_text.length > 0 && slice.primary.image_text[0].text !== ''">
+            {{slice.primary.image_text[0].text}}
+          </div>
+        </figure>
+      </div>
 
     </div>
   </section>
@@ -22,12 +32,17 @@ export default {
   padding: 56px 0 32px;
   font-size: 18px;
   font-family: $font-apercu;
-  line-height: 1.8;
+  line-height: 1.4; // (22px/30px desktop enligt spec = 1.4)
+  color: $blue;
+  * {
+    color: $blue;
+  }
 
   h2,h3,h4 {
     padding-bottom: 16px;
-    padding-top: 16px;
+    padding-top: 0;
     margin: 0;
+    font-family: $font-sangbleu;
   }
 
   p {
@@ -35,7 +50,7 @@ export default {
   }
 
   .case-content-width {
-    max-width: 580px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
@@ -89,30 +104,62 @@ export default {
   }
 
 
+  .image-text {
+    text-align: center;
+    font-size: 14px;
+    padding-top: .85em;
+  }
+
+
+  // Images
+  .-portrait {
+    img {
+      max-height: 400px;
+      width: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+
+// 600
+
+  @media only screen and (min-width: 600px) {
+
+    // Images
+    .-portrait {
+      img {
+        max-height: 500px;
+      }
+    }
+
+  }
+
+
 
 // 768
 
   @media only screen and (min-width: 768px) {
 
-    .case-content-width {
-      box-sizing: content-box;
-      padding-right: 80px;
+    h2,h3,h4 {
+      padding-bottom: 20px;
+      padding-top: 0;
     }
 
-    // ul {
-    //   padding: 32px 0 48px;
-    //   width: 680px;
-    //   margin-left: -50px;
-    //   display: flex;
-    //   flex-wrap: wrap;
-    //   align-items: center;
+    .case-content-width {
+      box-sizing: content-box;
+    }
 
-    // }
+    // Images
+    .-portrait {
+      img {
+        max-height: 600px;
+      }
+    }
 
-    // li {
-    //   width: 50%;
-    //   box-sizing: border-box;
-    // }
+    .image-text {
+     // font-size: 16px;
+    }
 
   }
 
@@ -121,8 +168,45 @@ export default {
 
   @media only screen and (min-width: 1024px) {
 
-    .case-content-width {
-      padding-right: 140px;
+
+
+
+    .-pos-center {
+      // Images
+      .-portrait {
+        img {
+          max-height: 680px;
+        }
+      }
+    }
+
+    .-pos-left,
+    .-pos-right {
+      display: flex;
+      max-width: none;
+      justify-content: space-between;
+      .col {
+        width: 46%;
+        display: flex;
+        align-items: center;
+
+      }
+
+      figure {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .-portrait {
+        img {
+          max-height: 420px;
+        }
+      }
+
+    }
+
+    .-pos-right {
+      flex-direction: row-reverse;
     }
 
   }
@@ -131,26 +215,20 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
-    font-size: 20px;
+    font-size: 22px;
 
-    .case-content-width {
-      padding-right: 240px;
+    .image-text {
+      font-size: 18px;
     }
 
-    // ul {
-    //   width: 800px;
-    //   margin-left: -70px;
-    // }
+    h2,h3,h4 {
+      padding-bottom: 24px;
+      padding-top: 0;
+    }
 
-    // li {
-    //   font-size: 26px;
-    //   padding-left: 32px;
-    //   &:before {
-    //     width: 10px;
-    //     height: 10px;
-    //     border-radius: 10px;
-    //   }
-    // }
+
+
+
 
   }
 
