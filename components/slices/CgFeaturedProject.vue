@@ -24,7 +24,10 @@
           />
 
           <figure v-waypoint="{ active: true, callback: animateTriggerFade }" class="-animate-fade-in-up">
-            <ImageResponsive class="featured-browser" :image="slice.primary.image_browser" />
+            <div class="featured-browser" >
+              <ImageResponsive :image="slice.primary.image_browser" />
+            </div>
+
             <ImageResponsive class="featured-mobile"  :image="slice.primary.image_mobile" />
           </figure>
 
@@ -156,12 +159,10 @@ export default {
 
       &:hover {
         .featured-mobile {
-          transform: perspective(500px) translateX(0) translateY(0%)  rotate(6deg)
-            rotateX(4deg) rotateY(-12deg);
+          //transform: perspective(500px) translateX(0) translateY(0%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
         }
         .featured-browser {
-          transform: perspective(40vw) translateX(-50%) translateY(-50%)
-            rotate(-5deg) rotateX(4deg) rotateY(11deg);
+         // transform: perspective(40vw) translateX(-50%) translateY(-50%) rotate(-5deg) rotateX(4deg) rotateY(11deg);
         }
       }
 
@@ -210,13 +211,16 @@ export default {
   .featured-mobile,
   .featured-browser {
     position: absolute;
-    transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+
+   // border: 1px solid blue;
+    z-index: 100;
   }
 
   .featured-mobile {
     height: 86%;
     width: 28%;
-    transform: perspective(500px) translateX(0) translateY(0%) rotate(8deg) rotateX(6deg) rotateY(-14deg);
+    // transform: perspective(500px) translate(0, 0) rotate(8deg) rotateX(6deg) rotateY(-14deg);
+    transform: perspective(500px) translate(0, 0) rotate(8deg);
     right: 0;
     bottom: 0;
   }
@@ -226,21 +230,18 @@ export default {
     width: 82%;
     top: 44%;
     left: 51%;
-    transform: perspective(40vw) translateX(-50%) translateY(-50%) rotate(-7deg) rotateX(5deg) rotateY(13deg);
+    // transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg) rotateX(5deg) rotateY(13deg);
+    transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg);
   }
 
 
-
-
-
   // Text
-
 
   .featured-header{
     font-size: 40px;
     font-family: $font-sangbleu;
     text-decoration: none;
-     color: $blue;
+    color: $blue;
   }
 
   .featured-text{
@@ -321,6 +322,19 @@ export default {
       display: flex;
     }
     .featured-content {
+
+
+      .featured-mobile {
+        transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+        transform: perspective(500px) translate(0, 0) rotate(8deg) rotateX(6deg) rotateY(-14deg);
+
+      }
+
+      .featured-browser {
+        transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+        transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg) rotateX(5deg) rotateY(13deg);
+      }
+
       &.left {
         width: 53%;
       }
