@@ -27,8 +27,9 @@
             <div class="featured-browser" >
               <ImageResponsive :image="slice.primary.image_browser" />
             </div>
-
-            <ImageResponsive class="featured-mobile"  :image="slice.primary.image_mobile" />
+            <div class="featured-mobile" >
+              <ImageResponsive  :image="slice.primary.image_mobile" />
+            </div>
           </figure>
 
         </div>
@@ -159,10 +160,10 @@ export default {
 
       &:hover {
         .featured-mobile {
-          //transform: perspective(500px) translateX(0) translateY(0%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+          transform: perspective(500px) translate(0, 0%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
         }
         .featured-browser {
-         // transform: perspective(40vw) translateX(-50%) translateY(-50%) rotate(-5deg) rotateX(4deg) rotateY(11deg);
+         transform: perspective(40vw) translate(-50%, -50%) rotate(-5deg) rotateX(4deg) rotateY(11deg);
         }
       }
 
@@ -220,7 +221,7 @@ export default {
     height: 86%;
     width: 28%;
     // transform: perspective(500px) translate(0, 0) rotate(8deg) rotateX(6deg) rotateY(-14deg);
-    transform: perspective(500px) translate(0, 0) rotate(8deg);
+    transform: perspective(500px) translate(-22%, 0) rotate(8deg);
     right: 0;
     bottom: 0;
   }
@@ -231,7 +232,7 @@ export default {
     top: 44%;
     left: 51%;
     // transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg) rotateX(5deg) rotateY(13deg);
-    transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg);
+    transform: perspective(40vw) translate(-64%, -50%) rotate(-7deg);
   }
 
 
@@ -324,6 +325,8 @@ export default {
     .featured-content {
 
 
+
+
       .featured-mobile {
         transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1);
         transform: perspective(500px) translate(0, 0) rotate(8deg) rotateX(6deg) rotateY(-14deg);
@@ -334,6 +337,21 @@ export default {
         transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1);
         transform: perspective(40vw) translate(-50%, -50%) rotate(-7deg) rotateX(5deg) rotateY(13deg);
       }
+
+
+      &.left {
+
+        &:hover {
+          .featured-mobile {
+            transform: perspective(500px) translateX(0, 0%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+          }
+          .featured-browser {
+           transform: perspective(40vw) translate(-50%, -50%) rotate(-5deg) rotateX(4deg) rotateY(11deg);
+          }
+        }
+
+      }
+
 
       &.left {
         width: 53%;
