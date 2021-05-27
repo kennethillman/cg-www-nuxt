@@ -184,7 +184,7 @@ export default {
 
     }
     .case-box{
-      padding-right: 0px;
+      padding-right: 32px;
       padding-left: 100px;
        float: right;
        margin-left: 20%;
@@ -280,7 +280,7 @@ export default {
           }
         }
         .case-box{
-          padding-right: 0px;
+          padding-right: 32px;
           padding-left: 120px;
         }
       }
