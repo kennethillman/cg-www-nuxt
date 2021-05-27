@@ -153,7 +153,7 @@ export default {
   @media only screen and (min-width: 1024px) {
 
     .cg-client {
-      width: 20%;
+      width: 25%;
       margin: 24px 0;
     }
 
