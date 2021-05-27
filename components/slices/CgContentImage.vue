@@ -3,7 +3,7 @@
     <div class="case-content-width">
 
       <figure class="content-image" v-if="Object.keys(slice.primary.image.desktop).length > 0">
-        <ImageResponsive class="featured-browser" :image="slice.primary.image" />
+        <ImageResponsiveCase class="featured-browser" :image="slice.primary.image" :imageMobile="slice.primary.image_mobile" />
         <div class="content-image-text" v-if="slice.primary.image_text.length > 0 && slice.primary.image_text[0].text !== ''">
           {{slice.primary.image_text[0].text}}
         </div>
