@@ -24,7 +24,7 @@ export default {
 
 .cg-edt-content-image {
 
-  padding: 0 0 32px;
+  // padding: 0 0 32px;
 
   .content-image {
     width: 100%;

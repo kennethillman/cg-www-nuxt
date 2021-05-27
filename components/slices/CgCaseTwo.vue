@@ -139,7 +139,7 @@ export default {
 
   .case-box-text {
    font-family: $font-apercu;
-   font-size: 14px;
+   font-size: 18px;
    line-height: 1.6;
    p {
     margin: 0;

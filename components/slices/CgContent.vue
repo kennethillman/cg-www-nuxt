@@ -40,7 +40,7 @@ export default {
 
   h2,h3,h4 {
     padding-bottom: 16px;
-    padding-top: 0;
+    padding-top: 8px;
     margin: 0;
     font-family: $font-sangbleu;
   }
@@ -50,23 +50,24 @@ export default {
   }
 
   .case-content-width {
-    max-width: 800px;
+    max-width: 650px;
     margin: 0 auto;
   }
 
   ul {
-    padding: 16px 0 24px;
+    padding: 0 0 24px;
+    margin-top: -8px;
   }
 
   li {
     position: relative;
 
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 18px;
+    font-family: "Apercu", serif;
+    line-height: 1.4;
     padding: 12px 0;
     padding-left: 24px;
     color: $blue;
-    font-weight: bold;
     box-sizing: content-box;
 
     &:before {
@@ -139,7 +140,7 @@ export default {
 
     h2,h3,h4 {
       padding-bottom: 20px;
-      padding-top: 0;
+      padding-top: 12px;
     }
 
     .case-content-width {
@@ -216,11 +217,11 @@ export default {
 
   @media only screen and (min-width: 1280px) {
 
-    font-size: 22px;
+    // font-size: 22px;
 
     h2,h3,h4 {
-      padding-bottom: 24px;
-      padding-top: 0;
+      //padding-bottom: 24px;
+      //padding-top: 0;
     }
 
 
