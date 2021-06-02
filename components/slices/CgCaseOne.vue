@@ -98,6 +98,7 @@ export default {
       width: auto;
       height: auto;
       margin: 16px 0;
+      max-width: 100%;
     }
 
     &.-text-white {

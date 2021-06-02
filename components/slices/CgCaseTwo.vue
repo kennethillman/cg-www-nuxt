@@ -135,7 +135,8 @@ export default {
     .case-logo {
       width: auto;
       height: auto;
-      margin: 24px 16px;
+      margin: 24px 0px;
+      max-width: 100%;
     }
     &.-text-white {
       img {
