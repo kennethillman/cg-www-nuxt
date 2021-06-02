@@ -20,7 +20,7 @@
       <div class="case-box"
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
           <!-- Logo -->
-          <prismic-image  :field="slice.primary.logo_svg" />
+          <prismic-image class="case-logo" :field="slice.primary.logo_svg" />
 
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
       </div>
@@ -92,6 +92,12 @@ export default {
       height: 80px;
       width: auto;
       margin: -16px 0 0 -16px
+    }
+
+    .case-logo {
+      width: auto;
+      height: auto;
+      margin: 16px 0;
     }
 
     &.-text-white {

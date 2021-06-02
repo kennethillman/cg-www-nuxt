@@ -1,9 +1,7 @@
 <template>
   <figure class="cg-image-respnsive" >
 
-
     <template v-if="imageMobile.dimensions">
-
 
       <mq-layout :mq="['VP320', 'VP600', 'VP768']">
         <img
@@ -27,8 +25,6 @@
         :alt="image.alt"
       />
     </template>
-
-
 
   </figure>
 </template>

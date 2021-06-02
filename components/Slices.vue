@@ -15,6 +15,11 @@
                 <cg-content-image :slice="slice"/>
             </template>
 
+             <!-- cg-content-image -->
+            <template v-if="slice.slice_type === 'cg-content-img-img'">
+                <cg-content-image-image :slice="slice"/>
+            </template>
+
             <!-- cg-content-video -->
             <template v-if="slice.slice_type === 'cg-content-video'">
                 <cg-content-video :slice="slice"/>

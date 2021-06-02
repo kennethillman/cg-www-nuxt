@@ -36,7 +36,7 @@
       <div class="case-box lax-box "
           :class="['-text-'+slice.primary.box_text_color, '-bg-'+slice.primary.box_bg_color]">
           <!-- Logo -->
-          <prismic-image :field="slice.primary.svg_logo" />
+          <prismic-image class="case-logo" :field="slice.primary.svg_logo" />
           <!-- Text -->
           <prismic-rich-text class="case-box-text" :field="slice.primary.box_text" />
       </div>
@@ -73,6 +73,8 @@ export default {
   float: left;
   width: 100%;
   position: relative;
+
+
 
   .site-content-width {
     position: relative;
@@ -128,7 +130,12 @@ export default {
     img {
       height: 80px;
       width: auto;
-      margin: -16px 0 0 -16px
+      margin: 16px 0;
+    }
+    .case-logo {
+      width: auto;
+      height: auto;
+      margin: 24px 16px;
     }
     &.-text-white {
       img {
