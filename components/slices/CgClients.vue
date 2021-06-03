@@ -104,6 +104,7 @@ export default {
 
 
   .site-content-width {
+    padding-top: 32px;
     &.-logos{
       display: flex;
       justify-content: space-around;

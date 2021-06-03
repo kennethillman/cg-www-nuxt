@@ -1,5 +1,7 @@
 <template>
-  <section class="cg-slider cg-spacing">
+  <section class="cg-slider cg-spacing"
+    :class="['-items-'+slice.items.length]"
+  >
     <div class="site-content-width">
 
       <div class="cg-header-group">
@@ -17,21 +19,21 @@
         </h3>
       </div>
 
-      <!-- THE SLIDER -->
-      <hooper ref="sliderContent" :transition="375" :shortDrag="false" :wheelControl="false" :settings="hooperSettings" class="-animate-fade-in-up" v-waypoint="{ active: true, callback: animateTriggerFade }">
-        <slide class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
+
+      <section class="cg-slide-list -animate-fade-in-u" v-waypoint="{ active: true, callback: animateTriggerFade }">
+        <div class="cg-slide"  v-for="(item, index) in slice.items" :key="index+'item'">
 
             <!-- LINK -->
             <template v-if="item.link.uid || item.link.url">
-              <div class="slide-body">
-                <figure @click.stop="slideNext">
+              <prismic-link :field="item.link" v class="slide-body">
+                <figure>
 
                   <template v-if="item.image">
                     <ImageResponsive class="featured-browser" :image="item.image" />
                   </template>
 
                   <template v-if="item.header1.length > 0 && item.header1[0].text !== ''  || item.text.length > 0 && item.text[0].text !== '' ">
-                    <prismic-link :field="item.link"  class="slide-box" :class="['-bg-'+ item.color_background]">
+                    <div class="slide-box" :class="['-bg-'+ item.color_background]">
                       <span @click="clickToTop()">
                         <h4 class="box-header" v-if="item.header1.length > 0 && item.header1[0].text !== ''" :class="['-text-'+ item.color_header]">
                           {{item.header1[0].text}}
@@ -40,16 +42,16 @@
                           {{item.text[0].text}}
                         </p>
                       </span>
-                    </prismic-link>
+                    </div>
                   </template>
 
                 </figure>
-              </div>
+              </prismic-link>
             </template>
 
             <!-- NO LINK -->
             <template v-else>
-              <div class="slide-body" @click="slideNext">
+              <div class="slide-body">
                 <figure>
 
                   <template v-if="item.image">
@@ -70,8 +72,8 @@
               </div>
             </template>
 
-        </slide>
-      </hooper>
+        </div>
+      </section>
 
       <!-- SVG:s -->
 
@@ -142,25 +144,25 @@ export default {
   props: ['slice'],
   name: 'slice-slider',
   mixins: [animate,click],
-  data() {
-    return {
-      hooperSettings: {
-        itemsToShow: 1,
-        breakpoints: {
-          480: {
-            itemsToShow: 2
-          },
-          768: {
-            itemsToShow: 3
-          }
-        }
-      }
-    };
-  },
+  // data() {
+  //   return {
+  //     hooperSettings: {
+  //       itemsToShow: 1,
+  //       breakpoints: {
+  //         480: {
+  //           itemsToShow: 2
+  //         },
+  //         768: {
+  //           itemsToShow: 3
+  //         }
+  //       }
+  //     }
+  //   };
+  // },
   methods: {
-    slideNext() {
-      this.$refs.sliderContent.slideNext();
-    }
+    // slideNext() {
+    //   this.$refs.sliderContent.slideNext();
+    // }
   }
 
 }
@@ -176,9 +178,14 @@ export default {
 
   .cg-group-header {
     color: $white;
+    margin-top: 32px;
   }
   .cg-group-sub-header {
     color: $red;
+  }
+
+  .site-content-width {
+      padding-bottom: 32px;
   }
 
   img {
@@ -202,16 +209,21 @@ export default {
     width: 110px;
   }
 
-  .hooper {
-    height: auto;
-  }
+  // .hooper {
+  //   height: auto;
+  // }
 
-  .hooper-list {
-    overflow: visible;
-  }
+  // .hooper-list {
+  //   overflow: visible;
+  // }
 
   .cg-slide {
-    padding:10px;
+    padding:0 0 24px;
+    position: relative;
+    z-index: 3;
+    max-width: 460px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .slide-body {
@@ -240,13 +252,40 @@ export default {
     left: 50%;
     top: 50%;
     transform: translate(-50vw, -50%);
-    z-index: 0;
+    z-index: -1;
     height: 108%;
   }
 
   // 1024
 
   @media only screen and (min-width: 1024px) {
+
+    &.-items-2 {
+      .cg-slide {
+        width: 50%;
+      }
+    }
+
+    &.-items-3 {
+      .cg-slide {
+        width: 33.3%;
+      }
+    }
+
+    &.-items-4 {
+      .cg-slide {
+        width: 25%;
+      }
+    }
+
+    .cg-slide {
+      padding: 24px 12px;
+    }
+
+    .cg-slide-list {
+      display: flex;
+    }
+
     .slide-box {
       padding: 40px;
       .box-header {
@@ -262,6 +301,17 @@ export default {
       height: 200px;
       width: 200px;
     }
+  }
+
+
+  // 1280
+
+  @media only screen and (min-width: 1280px) {
+
+    .cg-slide {
+      padding: 24px 24px;
+    }
+
   }
 
 
