@@ -51,6 +51,11 @@ export default {
   max-width: 420px;
   float: left;
 
+  &:hover {
+    cursor: pointer;
+    filter: none;
+  }
+
   .site-content-width {
     position: relative;
     @include clearfix();

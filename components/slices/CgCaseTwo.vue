@@ -74,7 +74,10 @@ export default {
   width: 100%;
   position: relative;
 
-
+  &:hover {
+    cursor: pointer;
+    filter: none;
+  }
 
   .site-content-width {
     position: relative;
