@@ -103,7 +103,8 @@ export default {
     }
 
     &.image-phone {
-      transform: perspective(240px) translateX(-16%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+     // transform: perspective(240px) translateX(-16%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+      transform: translateY(-44%);
     }
 
     &.image-browser {
@@ -122,7 +123,7 @@ export default {
     padding-right: 100px;
     position: relative;
     z-index: 3;
-    transform: translate3d(0, 0, 2px);
+    //transform: translate3d(0, 0, 2px);
     width: 80%;
     float: left;
     margin-right: 20%;
@@ -186,7 +187,7 @@ export default {
       left: 0;
 
       &.image-phone {
-        transform: perspective(260px) translateX(16%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
+        //transform: perspective(260px) translateX(16%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
 
       }
 
@@ -267,7 +268,7 @@ export default {
           width: 220px;
         }
         &.image-phone {
-          transform: perspective(300px) translateX(-6%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
+          //transform: perspective(300px) translateX(-6%) translateY(-54%)  rotate(6deg) rotateX(4deg) rotateY(-12deg);
         }
         &.image-browser {
           transform: translateX(12%) translateY(-54%);
@@ -281,7 +282,7 @@ export default {
       &.-position-right {
         .case-image {
           &.image-phone {
-            transform: perspective(300px) translateX(6%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
+           // transform: perspective(300px) translateX(6%) translateY(-54%)  rotate(-6deg) rotateX(4deg) rotateY(12deg);
           }
           &.image-browser {
             transform: translateX(-12%) translateY(-54%);
