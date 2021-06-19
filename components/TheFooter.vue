@@ -230,11 +230,16 @@
   background-color: #FCF4FF;
 
   .site-content-width {
-    max-width: 1280px;
+    max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
     padding: 48px 24px;
+    @include VP768 {
+      padding: 48px;
+    }
   }
+
+
 
   &:before {
     content: '';
@@ -278,8 +283,11 @@
       display: flex;
       justify-content: left;
       flex-wrap: wrap;
-      max-width: 1280px;
+      max-width: 1920px;
       margin: 0 auto;
+      @include VP768 {
+        padding: 0 24px;
+      }
     }
 
     li {
