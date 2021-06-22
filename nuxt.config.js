@@ -40,7 +40,6 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // '@nuxtjs/google-analytics',
-    '@nuxtjs/netlify-files',
     '@nuxtjs/prismic',
     '@nuxtjs/style-resources',
     '@nuxtjs/robots',
@@ -50,18 +49,6 @@ export default {
   // googleAnalytics: {
   //   id: 'UA-74774637-1'
   // },
-
-   netlifyFiles: {
-    netlifyToml: {
-      redirects: [
-        {
-          from: '/test',
-          to: 'https://www.dn.se',
-          status: 302
-        }
-      ]
-    }
-  },
 
   prismic: {
     endpoint: 'https://lab-cg-www-nuxt.cdn.prismic.io/api/v2',
