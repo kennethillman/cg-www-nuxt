@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/c"
+  to = "/cases"
+
+[[redirects]]
+  from = "/d"
+  to = "https://www.dn.se"
