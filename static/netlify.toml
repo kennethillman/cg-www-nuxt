@@ -1,7 +1,7 @@
 [[redirects]]
-  from = "/c"
-  to = "/cases"
+  from = "/pello"
+  to = "https://apps.commonground.se/pello/"
 
 [[redirects]]
-  from = "/d"
-  to = "https://www.dn.se"
+  from = "/prima"
+  to = "https://apps.commonground.se/prima/"
