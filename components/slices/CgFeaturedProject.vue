@@ -174,10 +174,18 @@ export default {
     }
 
     &.bottom {
-      padding: 50px 0 ;
+      padding: 0 0 50px;
+
+      @include VP768{
+        padding: 50px 0;
+      }
+
       a {
-        // margin-left: 32px;
         font-size: 20px;
+        margin-top: 0;
+        @include VP768{
+          margin-top: 1.5em;
+        }
       }
       .bottom-svg {
         display: none;
