@@ -39,16 +39,16 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // '@nuxtjs/google-analytics',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/prismic',
     '@nuxtjs/style-resources',
     '@nuxtjs/robots',
     'nuxt-animejs'
   ],
 
-  // googleAnalytics: {
-  //   id: 'UA-74774637-1'
-  // },
+  googleAnalytics: {
+    id: 'UA-74774637-1'
+  },
 
   prismic: {
     endpoint: 'https://lab-cg-www-nuxt.cdn.prismic.io/api/v2',
