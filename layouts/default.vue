@@ -1,5 +1,5 @@
 <template>
-  <div class="common-ground" :class="[this.$store.getters.getClassAnimation]">
+  <div class="common-ground" :class="[this.$store.getters.getClassAnimation, {'-portrait': this.orientation === 'p', '-landscape': this.orientation === 'l'}]" >
 
     <TheHeader />
 
@@ -17,37 +17,43 @@
 </template>
 
 <script type="text/javascript">
-   export default {
+export default {
 
-      data() {
-        return {
-          hero: this.$store.getters.getHero,
-          r: this.$route.fullPath,
-          hideHeader: false,
-          hero: this.$store.getters.getHero,
-        }
-      },
-      watch: {
-        classAnimation (){
-        },
-        $route() {
-
-        },
-      },
-      computed: {
-
-      },
-      methods: {
-
-      },
-      mounted() {
-        if (!this.$store.getters.getClassAnimation) {
-          setTimeout(() => {
-            this.$store.dispatch('setClassAnimation', '-tran-enter')
-          }, 250)
-        }
+  data() {
+    return {
+      hero: this.$store.getters.getHero,
+      r: this.$route.fullPath,
+      hideHeader: false,
+      hero: this.$store.getters.getHero,
+      orientation: null
+    }
+  },
+  methods: {
+    onResize(event) {
+      this.deviceOrientation()
+    },
+    deviceOrientation() {
+      let winH = window.innerHeight;
+      let winW = window.innerWidth;
+      if (winH > winW && this.orientation !== 'p') {
+        this.orientation = 'p'
+        this.$store.commit("setOrientation",'portrait')
+      } else if (winW > winH && this.orientation !== 'l'){
+        this.orientation = 'l'
+        this.$store.commit("setOrientation",'landscape')
       }
-    };
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.onResize)
+    this.deviceOrientation();
+    if (!this.$store.getters.getClassAnimation) {
+      setTimeout(() => {
+        this.$store.dispatch('setClassAnimation', '-tran-enter')
+      }, 250)
+    }
+  }
+};
 </script>
 
 <style lang="scss">

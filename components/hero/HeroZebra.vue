@@ -298,6 +298,13 @@
     &.-show-zebra {
       opacity: 1;
     }
+
+    .-portrait & {
+      svg {
+          width: auto;
+          height: 100%;
+      }
+    }
   }
 
 </style>
